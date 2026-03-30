@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nested Learning — Mahwiz Khalil</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<style>
+:root {
+  --bg:        #0e0c09;
+  --bg-subtle: #131008;
+  --text:      #e8dcc8;
+  --text-2:    #a89060;
+  --text-3:    #6b5a3a;
+  --accent:    #c8782a;
+  --accent-2:  #d4a843;
+  --border:    #2a1f0f;
+  --border-2:  #3d2b0e;
+  --code-bg:   #181410;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+::selection { background:rgba(200,120,42,.2); color:var(--text); }
+
+body {
+  font-family:'Crimson Pro',Georgia,serif;
+  font-size:19px;
+  line-height:1.82;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+
+.book {
+  max-width:680px;
+  margin:0 auto;
+  padding:5rem 2rem 6rem;
+}
+
+/* back link */
+.back {
+  display:inline-block;
+  margin-bottom:3.5rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--text-3);
+  text-decoration:none;
+  transition:color .25s;
+}
+.back::before { content:'← '; }
+.back:hover { color:var(--accent); }
+
+/* header */
+header {
+  margin-bottom:5rem;
+  text-align:center;
+  position:relative;
+}
+header::after {
+  content:'';
+  display:block;
+  width:52px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  margin:3rem auto 0;
+}
+header h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:2.4rem;
+  letter-spacing:.04em;
+  color:var(--text);
+  margin-bottom:1.4rem;
+  line-height:1.25;
+}
+.author-line {
+  font-size:.9rem;
+  color:var(--text-3);
+  font-family:'Cormorant Garamond',serif;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+/* article body */
+article p {
+  margin-bottom:1.6rem;
+  color:var(--text-2);
+  font-size:1.02rem;
+}
+article p:first-child { color:var(--text); }
+
+article h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:1.55rem;
+  color:var(--text);
+  margin:3rem 0 1rem;
+  letter-spacing:.02em;
+}
+article h3 {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  font-size:1.2rem;
+  color:var(--accent-2);
+  margin:2.2rem 0 .8rem;
+  letter-spacing:.03em;
+  font-style:italic;
+}
+
+article strong { color:var(--text); font-weight:600; }
+article em { color:var(--accent-2); font-style:italic; }
+
+article a {
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid var(--border-2);
+  transition:color .25s,border-color .25s;
+}
+article a:hover { color:var(--accent-2); border-color:var(--accent); }
+
+article hr {
+  border:none;
+  border-top:1px solid var(--border);
+  margin:3rem 0;
+}
+
+/* blockquote */
+article blockquote {
+  border-left:2px solid var(--accent);
+  padding:.8rem 0 .8rem 1.6rem;
+  margin:2rem 0;
+  background:rgba(200,120,42,.04);
+}
+article blockquote p {
+  margin:0;
+  font-style:italic;
+  color:var(--text-2);
+}
+
+/* images */
+article img {
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:2.5rem auto;
+  border-radius:3px;
+  border:1px solid var(--border);
+  box-shadow:0 8px 40px rgba(0,0,0,.5);
+}
+
+/* figure caption */
+.fig-cap {
+  text-align:center;
+  font-size:.82rem;
+  color:var(--text-3);
+  font-style:italic;
+  margin-top:-.8rem;
+  margin-bottom:2rem;
+  letter-spacing:.02em;
+}
+
+/* math */
+.math-block {
+  overflow-x:auto;
+  padding:1.4rem 1.6rem;
+  background:var(--code-bg);
+  border:1px solid var(--border);
+  border-radius:3px;
+  margin:2rem 0;
+  font-size:.9rem;
+  color:var(--accent-2);
+  font-family:'Crimson Pro',serif;
+  font-style:italic;
+  text-align:center;
+}
+
+/* code */
+article pre {
+  background:var(--code-bg);
+  border:1px solid var(--border);
+  border-radius:3px;
+  padding:1.4rem 1.6rem;
+  overflow-x:auto;
+  margin:2rem 0;
+  font-size:.88rem;
+  line-height:1.6;
+}
+article code {
+  font-family:'Courier Prime',monospace;
+  font-size:.88em;
+  color:#7ec699;
+  background:rgba(126,198,153,.08);
+  padding:.1em .35em;
+  border-radius:2px;
+}
+article pre code {
+  background:none;
+  padding:0;
+  color:#ccc;
+}
+
+/* footer */
+footer {
+  margin-top:6rem;
+  padding-top:3rem;
+  text-align:center;
+  position:relative;
+}
+footer::before {
+  content:'';
+  position:absolute; top:0; left:50%;
+  transform:translateX(-50%);
+  width:44px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--border-2),transparent);
+}
+.foot-orn { color:var(--accent); opacity:.35; font-size:.75rem; letter-spacing:.25em; }
+
+@media(max-width:600px){
+  .book { padding:4rem 1.4rem 5rem; }
+  header h1 { font-size:1.9rem; }
+  .lb-nav.prev { left:8px; }
+  .lb-nav.next { right:8px; }
+}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <a href="index.html" class="back">Mahwiz Khalil</a>
+
+  <header>
+    <h1>Nested Learning</h1>
+    <div class="author-line">Mahwiz Khalil &nbsp;·&nbsp; 2026</div>
+  </header>
+
+  <article>
+
+    <p>
+      There is a paper that has been quietly circulating in ML research circles that I think deserves more attention.
+      It is called <strong>Nested Learning</strong>, and it proposes something radical: that every major architecture
+      in deep learning — RNNs, Transformers, state-space models, even the optimizer itself — is secretly the same thing,
+      viewed from different angles.
+    </p>
+
+    <h2>The Problem with How We Think About Architecture</h2>
+
+    <p>
+      When most people think about neural network architectures, they think about <em>layers</em>.
+      You stack a self-attention block on top of a feedforward network, wrap it in residual connections,
+      repeat 96 times, and call it GPT-4. The architecture is the recipe. The optimizer is separate.
+      Training is something that <em>happens to</em> the architecture.
+    </p>
+
+    <p>
+      Nested Learning (NL) says this view is wrong — not slightly off, but fundamentally backward.
+      The architecture <em>is</em> the optimizer. Or more precisely: what we call an "architecture"
+      is a set of nested optimization processes running at different frequencies, each with its own
+      objective and context window.
+    </p>
+
+    <img src="NL-1a.png" alt="Uniform and Reusable Structure — Nested Learning">
+    <div class="fig-cap">Fig 1. The brain's uniform structure (left) and its NL analogue: decomposing architectures into uniform, reusable neural learning modules.</div>
+
+    <h2>Uniform and Reusable Structure</h2>
+
+    <p>
+      The brain has a remarkable property: its basic computational unit — the cortical column — is essentially
+      the same whether it's processing vision, language, or motor control. Neuroplasticity works precisely
+      because this structure is uniform and reusable. The brain doesn't rewire itself with new types of neurons;
+      it rewires the <em>connections</em> between the same building blocks.
+    </p>
+
+    <blockquote>
+      <p>
+        In NL, architectures are decomposed into a set of neurons (i.e., linear or locally deep MLPs),
+        each of which with its own context flow and objective. This design provides a uniform and reusable
+        structure for learning.
+      </p>
+    </blockquote>
+
+    <p>
+      This is the first key insight. Once you decompose any architecture into its NL form,
+      you see the same thing everywhere: feedforward networks being optimized with respect to
+      some local objective, over some local context. The apparent heterogeneity of modern architectures
+      is an illusion.
+    </p>
+
+    <h2>Multi Time Scale Update</h2>
+
+    <p>
+      The brain doesn't update all its neurons at the same speed. Delta waves (0.5–4 Hz) govern
+      deep slow consolidation. Gamma waves (30–100 Hz) handle rapid local processing.
+      There is no single centralized clock. Earlier layers update quickly in response to immediate inputs;
+      later layers integrate information over much longer time scales.
+    </p>
+
+    <blockquote>
+      <p>
+        In NL, parameters in each <em>"level"</em> are updated with their own specific frequency
+        and does not rely on a single centralized clock. The HoPE's design allows the earlier layers
+        update their activity quickly in high-frequency cycles, whereas later layers integrate
+        information over longer, slower cycles.
+      </p>
+    </blockquote>
+
+    <img src="NL-2.png" alt="Nested Learning — Gradient Flow and Deep Learning Comparison">
+    <div class="fig-cap">Fig 2. Left: how deep learning flattens gradient flow. Right: NL's hierarchical gradient structure, making the internal process mathematically transparent.</div>
+
+    <p>
+      This is where NL becomes genuinely strange and interesting. The standard Transformer updates
+      all its parameters at the same rate — one gradient step per forward pass. But in the NL framework,
+      a Transformer is actually doing something more subtle: the attention mechanism is updating
+      a "fast memory" at frequency ∞ (every token), while the FFN weights update slowly (only during
+      the outer training loop).
+    </p>
+
+    <h2>Everything is the Same Thing</h2>
+
+    <p>
+      Here is the claim that initially sounds too strong to be true, but becomes more convincing
+      the longer you think about it: <strong>RNNs, Transformers, and SSMs are all the same
+      optimization process, parameterized differently.</strong>
+    </p>
+
+    <p>
+      An RNN is a level-1 NL module: it maintains a hidden state (fast memory) that it updates
+      at every timestep using its recurrence weights (slow memory). The recurrence is the optimizer;
+      the weights are the model being optimized.
+    </p>
+
+    <p>
+      A Transformer's attention mechanism, viewed through NL, is solving a different optimization:
+      it finds the optimal "memory state" for the entire context at once, rather than incrementally.
+      This is why attention has infinite context but quadratic cost — it's re-solving the whole
+      optimization problem from scratch at every layer.
+    </p>
+
+    <div class="math-block">
+      M* = argmin_M Σᵢ s(kᵢ, q) ‖vᵢ − M‖₂² = Σᵢ [s(kᵢ,q) / Σⱼ s(kⱼ,q)] vᵢ
+    </div>
+
+    <p>
+      This is exactly softmax attention. It's finding the optimal memory state for the
+      <em>entire context</em> at once, rather than incrementally updating parameters. The formula
+      that underlies every modern LLM is, in the NL view, just one particular solution to
+      a particular memory optimization problem.
+    </p>
+
+    <img src="NL-3.png" alt="Nested Learning — Multi-level Frequency Architecture">
+    <div class="fig-cap">Fig 3. Frequency levels in NL: each level optimizes at its own timescale. The architecture becomes a stack of nested optimization processes.</div>
+
+    <h2>Why This Matters</h2>
+
+    <p>
+      The standard deep learning framework has a hidden bug: catastrophic forgetting.
+      When you fine-tune a model on new data, it overwrites old knowledge. This happens because
+      everything runs at the same frequency — there's no slow consolidation, no long-term
+      memory that resists rapid updates.
+    </p>
+
+    <p>
+      The promise of Nested Learning is that we can build AI systems that don't suffer from this amnesia,
+      systems that can form new long-term memories gradually, consolidate experiences across time scales,
+      and truly learn continually without catastrophic forgetting.
+    </p>
+
+    <p>
+      But more than that, NL suggests that the distinction between "architecture" and "optimizer"
+      is artificial. They're both parts of the same nested system. The question isn't
+      "What layers should I stack?" but <strong>"What optimization processes should I nest,
+      and at what frequencies?"</strong>
+    </p>
+
+    <p>
+      This is a paradigm shift in the Thomas Kuhn sense — not just new techniques,
+      but a new way of seeing the entire field. Whether NL becomes the dominant framework
+      or just a useful perspective, it's asking the right questions.
+    </p>
+
+    <p>
+      And asking the right questions, as always, is half the battle.
+    </p>
+
+    <hr>
+
+    <p><em>Will cover the HoPE architecture in the next part.</em></p>
+
+  </article>
+
+  <footer>
+    <div class="foot-orn">✦</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahwiz Khalil</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<style>
+:root {
+  --bg:        #0e0c09;
+  --bg-subtle: #131008;
+  --bg-card:   #181410;
+  --bg-hover:  #1e1912;
+  --text:      #e8dcc8;
+  --text-2:    #a89060;
+  --text-3:    #6b5a3a;
+  --accent:    #c8782a;
+  --accent-2:  #d4a843;
+  --border:    #2a1f0f;
+  --border-2:  #3d2b0e;
+  --link:      #c8a878;
+  --link-h:    #e8c898;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+::selection { background: rgba(200,120,42,0.2); color: var(--text); }
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.78;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── LAYOUT ── */
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes up {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes in { from{opacity:0} to{opacity:1} }
+
+.hero          { animation: up .9s ease-out both; }
+.about-sec     { animation: up .9s ease-out .1s both; }
+.sep           { animation: in .9s ease-out .18s both; }
+.research-sec  { animation: up .9s ease-out .22s both; }
+.models-sec    { animation: up .9s ease-out .28s both; }
+.datasets-sec  { animation: up .9s ease-out .32s both; }
+.connect-sec   { animation: up .9s ease-out .36s both; }
+footer         { animation: in .9s ease-out .4s both; }
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  margin-bottom: 4.5rem;
+  padding-bottom: 4.5rem;
+  position: relative;
+}
+.hero::after {
+  content:'';
+  position:absolute; bottom:0; left:50%;
+  transform:translateX(-50%);
+  width:48px; height:1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 2.4rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+.hero .tagline {
+  font-size: 1.05rem;
+  color: var(--text-2);
+  font-style: italic;
+  font-weight: 300;
+  max-width: 380px;
+  margin: 0 auto;
+  line-height: 1.7;
+  letter-spacing: .01em;
+}
+
+/* ── SECTION HEADER ── */
+.sec-head {
+  text-align: center;
+  margin-bottom: 2.6rem;
+}
+.sec-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: .75rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-block;
+  position: relative;
+}
+.sec-label::before,
+.sec-label::after {
+  content:'';
+  position:absolute; top:50%;
+  width:26px; height:1px;
+  background: var(--border-2);
+}
+.sec-label::before { right:calc(100% + 14px); }
+.sec-label::after  { left:calc(100% + 14px); }
+
+/* ── ABOUT ── */
+.about-sec {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.about-sec p {
+  color: var(--text-2);
+  max-width: 490px;
+  margin: 0 auto .9rem;
+  line-height: 1.95;
+  font-size: 1.02rem;
+  letter-spacing: .005em;
+}
+.about-sec p:last-child { margin-bottom: 0; }
+.about-sec a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-2);
+  transition: color .25s, border-color .25s;
+}
+.about-sec a:hover { color: var(--link-h); border-color: var(--accent); }
+
+/* ── SEPARATOR ── */
+.sep {
+  text-align: center;
+  margin: 3.5rem auto;
+  color: var(--accent);
+  opacity: .35;
+  font-size: .7rem;
+  letter-spacing: .9em;
+}
+
+/* ── WRITING LIST (research + articles) ── */
+.write-list { list-style: none; }
+.write-item {
+  position: relative;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background .25s;
+}
+.write-item:first-child { border-top: 1px solid var(--border); }
+.write-item a { text-decoration: none; display: block; }
+.write-item h3 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.12rem;
+  color: var(--text);
+  margin-bottom: .28rem;
+  transition: color .25s;
+  letter-spacing: .01em;
+}
+.write-item .meta {
+  font-size: .88rem;
+  color: var(--text-3);
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: .005em;
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.write-item .tag {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: 'Cormorant Garamond', serif;
+  opacity: .75;
+}
+.write-item:hover h3 { color: var(--accent); }
+.write-item:hover { padding-left: 6px; }
+
+/* ── COVERFLOW (for research paper images) ── */
+.coverflow-wrap {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  padding: 2rem 0 2.5rem;
+  overflow: hidden;
+}
+.coverflow-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+.cf-slide {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 155px;
+  position: relative;
+  transition: all .6s cubic-bezier(.23,1,.32,1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  opacity: .35;
+  filter: blur(1px);
+}
+.cf-slide img {
+  width:100%; height:100%;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  border: 1px solid var(--border);
+  transition: box-shadow .6s ease;
+}
+.cf-slide.active {
+  opacity:1; filter:blur(0); z-index:10;
+  transform: translateZ(80px) scale(1.15);
+}
+.cf-slide.active img {
+  box-shadow: 0 20px 60px rgba(200,120,42,.2);
+  border-color: var(--border-2);
+}
+.cf-slide.prev-1 { opacity:.65; filter:blur(.4px); transform:translateX(30px) translateZ(-60px) rotateY(35deg) scale(.9); z-index:5; }
+.cf-slide.next-1 { opacity:.65; filter:blur(.4px); transform:translateX(-30px) translateZ(-60px) rotateY(-35deg) scale(.9); z-index:5; }
+.cf-slide.prev-2 { opacity:.4;  filter:blur(1px);  transform:translateX(60px) translateZ(-120px) rotateY(45deg) scale(.75); z-index:3; }
+.cf-slide.next-2 { opacity:.4;  filter:blur(1px);  transform:translateX(-60px) translateZ(-120px) rotateY(-45deg) scale(.75); z-index:3; }
+.cf-slide.hidden  { opacity:0; pointer-events:none; transform:translateZ(-200px) scale(.5); }
+
+.cf-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.cf-btn {
+  width:34px; height:34px;
+  border: 1px solid var(--border-2);
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items:center; justify-content:center;
+  color: var(--text-3);
+  font-size: .9rem;
+  transition: all .3s ease;
+}
+.cf-btn:hover { border-color:var(--accent); color:var(--accent); background:rgba(200,120,42,.06); }
+.cf-btn:disabled { opacity:.25; cursor:not-allowed; }
+.cf-dots { display:flex; gap:.5rem; }
+.cf-dot {
+  width:5px; height:5px;
+  border-radius:50%;
+  background:var(--border-2);
+  border:none; cursor:pointer;
+  transition: all .3s ease; padding:0;
+}
+.cf-dot.active { background:var(--accent); transform:scale(1.4); }
+.cf-dot:hover:not(.active) { background:var(--text-3); }
+
+/* ── LIGHTBOX ── */
+.lb {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.94);
+  z-index:1000;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; visibility:hidden;
+  transition: opacity .3s, visibility .3s;
+  backdrop-filter: blur(10px);
+}
+.lb.on { opacity:1; visibility:visible; }
+.lb-inner {
+  position:relative;
+  max-width:90vw; max-height:90vh;
+  transform:scale(.92);
+  transition:transform .3s cubic-bezier(.25,.46,.45,.94);
+}
+.lb.on .lb-inner { transform:scale(1); }
+.lb img {
+  max-width:90vw; max-height:85vh;
+  object-fit:contain;
+  border-radius:3px;
+  box-shadow:0 25px 80px rgba(0,0,0,.7);
+}
+.lb-close {
+  position:absolute; top:-48px; right:0;
+  width:38px; height:38px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.07);
+  border-radius:50%; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  color:rgba(255,255,255,.7); font-size:1.4rem;
+  transition:all .3s ease;
+}
+.lb-close:hover { background:rgba(255,255,255,.18); color:#fff; transform:rotate(90deg); }
+.lb-nav {
+  position:absolute; top:50%;
+  transform:translateY(-50%);
+  width:46px; height:46px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.07);
+  border-radius:50%; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  color:rgba(255,255,255,.7); font-size:1.4rem;
+  transition:all .3s ease;
+}
+.lb-nav:hover { background:rgba(255,255,255,.18); color:#fff; }
+.lb-nav:disabled { opacity:.25; cursor:not-allowed; }
+.lb-nav.prev { left:-64px; }
+.lb-nav.next { right:-64px; }
+.lb-count {
+  position:absolute; bottom:-38px; left:50%;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,.45);
+  font-family:'Cormorant Garamond',serif;
+  font-size:.88rem; letter-spacing:.12em;
+}
+
+/* ── GRID (models / datasets) ── */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .6rem;
+  margin-bottom: .5rem;
+}
+.grid-item {
+  border: 1px solid var(--border);
+  padding: .85rem 1rem;
+  border-radius: 3px;
+  transition: all .3s cubic-bezier(.25,.46,.45,.94);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+.grid-item::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; bottom:0;
+  background: rgba(200,120,42,.04);
+  opacity:0; transition:opacity .3s;
+}
+.grid-item a { text-decoration:none; display:block; position:relative; z-index:1; }
+.grid-item .g-name {
+  font-size: .92rem;
+  color: var(--text);
+  transition:color .25s;
+  line-height:1.4;
+  margin-bottom:.28rem;
+  letter-spacing:.005em;
+}
+.grid-item .g-meta {
+  font-size: .75rem;
+  color: var(--text-3);
+  letter-spacing:.04em;
+  font-family:'Cormorant Garamond',serif;
+  text-transform:uppercase;
+}
+.grid-item .g-badge {
+  font-size:.68rem;
+  color:var(--accent);
+  opacity:.8;
+}
+.grid-item:hover { border-color:var(--border-2); transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.3); }
+.grid-item:hover::before { opacity:1; }
+.grid-item:hover .g-name { color:var(--accent); }
+
+.view-all {
+  text-align:center;
+  margin-top:1.2rem;
+}
+.view-all a {
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-3);
+  text-decoration:none;
+  border-bottom:1px solid var(--border);
+  padding-bottom:1px;
+  transition:all .25s;
+}
+.view-all a:hover { color:var(--accent); border-color:var(--accent); }
+
+/* ── CONTACT ── */
+.connect-sec {
+  text-align:center;
+  margin-top:4rem;
+  margin-bottom:2rem;
+}
+.connect-links {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:2.5rem;
+  margin-top:2rem;
+}
+.connect-links a {
+  font-size:.72rem;
+  color:var(--text-3);
+  text-decoration:none;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-family:'Cormorant Garamond',serif;
+  padding:.4rem 0;
+  position:relative;
+  transition:color .3s;
+}
+.connect-links a::after {
+  content:'';
+  position:absolute; bottom:0; left:50%;
+  width:0; height:1px;
+  background:var(--accent);
+  transition:all .35s cubic-bezier(.25,.46,.45,.94);
+  transform:translateX(-50%);
+}
+.connect-links a:hover { color:var(--accent); }
+.connect-links a:hover::after { width:100%; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top:5rem;
+  padding-top:3rem;
+  text-align:center;
+  position:relative;
+}
+footer::before {
+  content:'';
+  position:absolute; top:0; left:50%;
+  transform:translateX(-50%);
+  width:44px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--border-2),transparent);
+}
+.foot-orn { color:var(--accent); opacity:.35; font-size:.75rem; letter-spacing:.25em; }
+.foot-note {
+  margin-top:1.2rem;
+  font-size:.75rem;
+  color:var(--text-3);
+  letter-spacing:.08em;
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px) {
+  .wrap { padding:5rem 1.4rem 4rem; }
+  .item-grid { grid-template-columns:1fr; }
+  .lb-nav.prev { left:8px; }
+  .lb-nav.next { right:8px; }
+  .cf-slide { width:160px; height:113px; }
+}
+
+/* ── RESEARCH SEC ── */
+.research-sec { margin-bottom:4.5rem; }
+.models-sec   { margin-bottom:4.5rem; }
+.datasets-sec { margin-bottom:4.5rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Muhammad Mahwiz Khalil</h1>
+    <p class="tagline">Building AI for languages the world forgot to teach its machines</p>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about-sec">
+    <div class="sec-head"><span class="sec-label">About</span></div>
+    <p>
+      I'm an AI engineer and researcher based in Karachi, Pakistan, working on
+      low-resource language models — primarily Urdu, Sindhi, and Pakistani NLP.
+      My focus is speech synthesis, automatic speech recognition, and large language models
+      for languages that have been systematically underserved by the field.
+    </p>
+    <p>
+      I work at the intersection of audio ML, LLMs, and RAG systems. Currently building
+      at <a href="https://huggingface.co/ProximaAI" target="_blank">Proxima AI</a>
+      and <a href="https://huggingface.co/2DamnWav" target="_blank">2DamnWav</a>.
+      33 models and 25 datasets published on
+      <a href="https://huggingface.co/mahwizzzz" target="_blank">HuggingFace</a>.
+    </p>
+  </section>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- RESEARCH PAPERS / ARTICLES -->
+  <section class="research-sec">
+    <div class="sec-head"><span class="sec-label">Research &amp; Writing</span></div>
+
+    <!-- Coverflow for paper figures -->
+    <div class="coverflow-wrap">
+      <div class="coverflow-track" id="cfTrack">
+        <div class="cf-slide" data-idx="0"><img src="NL-1a.png" alt="Nested Learning — Uniform Structure"></div>
+        <div class="cf-slide" data-idx="1"><img src="NL-2.png" alt="Nested Learning — Gradient Flow"></div>
+        <div class="cf-slide" data-idx="2"><img src="NL-3.png" alt="Nested Learning — Frequency Levels"></div>
+        <div class="cf-slide" data-idx="3"><img src="nest.png" alt="Nested Learning — Architecture"></div>
+      </div>
+      <div class="cf-nav">
+        <button class="cf-btn" id="cfPrev" aria-label="Previous">‹</button>
+        <div class="cf-dots" id="cfDots"></div>
+        <button class="cf-btn" id="cfNext" aria-label="Next">›</button>
+      </div>
+    </div>
+
+    <ul class="write-list">
+      <li class="write-item">
+        <a href="nested_learning.html" target="_blank">
+          <h3>Nested Learning — A Paradigm for AI Architecture</h3>
+          <div class="meta">
+            <span>A deep-dive into how NL decomposes architectures into nested optimization processes, making architecture and optimizer a unified system.</span>
+          </div>
+          <div class="meta" style="margin-top:.4rem">
+            <span class="tag">Research · Reading</span>
+            <span>2026</span>
+          </div>
+        </a>
+      </li>
+      <li class="write-item">
+        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank">
+          <h3>Orpheus Urdu TTS — 3B Parameter Text-to-Speech</h3>
+          <div class="meta">
+            <span>Fine-tuning a 3B parameter model for natural Urdu speech synthesis. 179K+ downloads, state-of-the-art for Pakistani languages.</span>
+          </div>
+          <div class="meta" style="margin-top:.4rem">
+            <span class="tag">Model · TTS · Urdu</span>
+            <span>2025</span>
+          </div>
+        </a>
+      </li>
+      <li class="write-item">
+        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank">
+          <h3>Dia 1.6B Urdu — Dialogue-Aware Speech Synthesis</h3>
+          <div class="meta">
+            <span>Adapting Dia architecture for Urdu. Focused on conversational prosody, natural intonation patterns, and multi-speaker synthesis.</span>
+          </div>
+          <div class="meta" style="margin-top:.4rem">
+            <span class="tag">Model · TTS · 1.6B</span>
+            <span>2026</span>
+          </div>
+        </a>
+      </li>
+      <li class="write-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank">
+          <h3>Urdu 208h — Building a Large-Scale Urdu ASR Corpus</h3>
+          <div class="meta">
+            <span>Curating 208 hours of clean Urdu audio — the challenges of data collection, cleaning, and normalization for low-resource ASR.</span>
+          </div>
+          <div class="meta" style="margin-top:.4rem">
+            <span class="tag">Dataset · ASR · Corpus</span>
+            <span>2026</span>
+          </div>
+        </a>
+      </li>
+      <li class="write-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank">
+          <h3>UrOCR — Optical Character Recognition for Urdu Script</h3>
+          <div class="meta">
+            <span>A 40K+ sample dataset for Nastaliq script OCR. The unique challenges of right-to-left ligature-heavy writing systems.</span>
+          </div>
+          <div class="meta" style="margin-top:.4rem">
+            <span class="tag">Dataset · OCR · Vision</span>
+            <span>2026</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- MODELS -->
+  <section class="models-sec">
+    <div class="sec-head"><span class="sec-label">Models</span></div>
+    <div class="item-grid">
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank">
+          <div class="g-name">Orpheus Urdu TTS</div>
+          <div class="g-meta">TTS · 3B &nbsp;<span class="g-badge">179K ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/kani-tts-400m-ur" target="_blank">
+          <div class="g-name">Kani TTS 400M Urdu</div>
+          <div class="g-meta">TTS · 400M &nbsp;<span class="g-badge">12 ♥</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank">
+          <div class="g-name">Dia 1.6B Urdu</div>
+          <div class="g-meta">TTS · 1.6B &nbsp;<span class="g-badge">66 ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/Qalb-1.0-8B-Instruct-Q4_0" target="_blank">
+          <div class="g-name">Qalb 1.0 — 8B Instruct</div>
+          <div class="g-meta">LLM · 8B &nbsp;<span class="g-badge">Q4 Quant</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/qyra-350m" target="_blank">
+          <div class="g-name">Qyra 350M</div>
+          <div class="g-meta">Text Gen · 350M</div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/urd-wav2vec2-94m" target="_blank">
+          <div class="g-name">Urdu Wav2Vec2 94M</div>
+          <div class="g-meta">ASR · 94M</div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/F5-TTS-UR" target="_blank">
+          <div class="g-name">F5-TTS Urdu</div>
+          <div class="g-meta">TTS · Urdu</div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/aurora-ckpt" target="_blank">
+          <div class="g-name">Aurora CKPT</div>
+          <div class="g-meta">Checkpoint &nbsp;<span class="g-badge">Latest</span></div>
+        </a>
+      </div>
+
+    </div>
+    <div class="view-all">
+      <a href="https://huggingface.co/mahwizzzz/models" target="_blank">View all 33 models →</a>
+    </div>
+  </section>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- DATASETS -->
+  <section class="datasets-sec">
+    <div class="sec-head"><span class="sec-label">Datasets</span></div>
+    <div class="item-grid">
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank">
+          <div class="g-name">Urdu 208h Audio</div>
+          <div class="g-meta">ASR · Audio &nbsp;<span class="g-badge">319K ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/pak-cleaned-multilang-2025" target="_blank">
+          <div class="g-name">Pak Multilang 2025</div>
+          <div class="g-meta">Corpus &nbsp;<span class="g-badge">480K ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/1DamnAudio" target="_blank">
+          <div class="g-name">1DamnAudio</div>
+          <div class="g-meta">Audio &nbsp;<span class="g-badge">222K ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank">
+          <div class="g-name">UrOCR</div>
+          <div class="g-meta">OCR · Vision &nbsp;<span class="g-badge">40.8K ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/sindhi-tts-haveli" target="_blank">
+          <div class="g-name">Sindhi TTS Haveli</div>
+          <div class="g-meta">TTS · Sindhi &nbsp;<span class="g-badge">3.7K ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/ur-med-sft" target="_blank">
+          <div class="g-name">Urdu Medical SFT</div>
+          <div class="g-meta">Medical · SFT</div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/syn-ur-2" target="_blank">
+          <div class="g-name">Synthetic Urdu V2</div>
+          <div class="g-meta">Synthetic &nbsp;<span class="g-badge">85K ↓</span></div>
+        </a>
+      </div>
+
+      <div class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/ur_nano_codec" target="_blank">
+          <div class="g-name">Urdu Nano Codec</div>
+          <div class="g-meta">Audio Codec &nbsp;<span class="g-badge">31K ↓</span></div>
+        </a>
+      </div>
+
+    </div>
+    <div class="view-all">
+      <a href="https://huggingface.co/mahwizzzz/datasets" target="_blank">View all 25 datasets →</a>
+    </div>
+  </section>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- CONNECT -->
+  <section class="connect-sec">
+    <div class="sec-head"><span class="sec-label">Connect</span></div>
+    <div class="connect-links">
+      <a href="https://huggingface.co/mahwizzzz" target="_blank">HuggingFace</a>
+      <a href="https://github.com/mwzkhalil" target="_blank">GitHub</a>
+      <a href="https://twitter.com/mwzkhalil" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com/in/mahwiz-khalil" target="_blank">LinkedIn</a>
+      <a href="https://topmate.io/mahwiz" target="_blank">Book a Call</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-orn">✦</div>
+    <div class="foot-note">Mahwiz Khalil · Karachi, Pakistan · mahwiz.me</div>
+  </footer>
+
+</div><!-- /wrap -->
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose">×</button>
+    <button class="lb-nav prev" id="lbPrev">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav next" id="lbNext">›</button>
+    <div class="lb-count"><span id="lbCur">1</span> / <span id="lbTot">4</span></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ── COVERFLOW ── */
+  const slides = Array.from(document.querySelectorAll('.cf-slide'));
+  const dotsEl = document.getElementById('cfDots');
+  const prevBtn = document.getElementById('cfPrev');
+  const nextBtn = document.getElementById('cfNext');
+  let cur = 1;
+
+  // build dots
+  slides.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'cf-dot' + (i===cur?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click', () => go(i));
+    dotsEl.appendChild(d);
+  });
+
+  const dots = Array.from(document.querySelectorAll('.cf-dot'));
+  const imgs = slides.map(s => s.querySelector('img').src);
+
+  function update(){
+    slides.forEach((s,i) => {
+      s.className = 'cf-slide';
+      const d = i - cur;
+      if(d===0) s.classList.add('active');
+      else if(d===-1) s.classList.add('prev-1');
+      else if(d===-2) s.classList.add('prev-2');
+      else if(d===1)  s.classList.add('next-1');
+      else if(d===2)  s.classList.add('next-2');
+      else s.classList.add('hidden');
+    });
+    dots.forEach((d,i) => d.classList.toggle('active', i===cur));
+    prevBtn.disabled = cur===0;
+    nextBtn.disabled = cur===slides.length-1;
+  }
+
+  function go(i){ if(i>=0&&i<slides.length){cur=i;update();} }
+  prevBtn.addEventListener('click', () => go(cur-1));
+  nextBtn.addEventListener('click', () => go(cur+1));
+
+  slides.forEach((s,i) => {
+    s.addEventListener('click', () => {
+      if(s.classList.contains('active')) openLb(i);
+      else go(i);
+    });
+  });
+
+  // touch swipe coverflow
+  let tx=0;
+  const track = document.getElementById('cfTrack');
+  track.addEventListener('touchstart',e=>tx=e.changedTouches[0].screenX,{passive:true});
+  track.addEventListener('touchend',e=>{
+    const diff=tx-e.changedTouches[0].screenX;
+    if(Math.abs(diff)>50){ diff>0?go(cur+1):go(cur-1); }
+  },{passive:true});
+
+  update();
+
+  /* ── LIGHTBOX ── */
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  const lbCur = document.getElementById('lbCur');
+  const lbTot = document.getElementById('lbTot');
+  let lbIdx = 0;
+  lbTot.textContent = imgs.length;
+
+  function openLb(i){ lbIdx=i; syncLb(); lb.classList.add('on'); document.body.style.overflow='hidden'; }
+  function closeLb(){ lb.classList.remove('on'); document.body.style.overflow=''; }
+  function syncLb(){
+    lbImg.src = imgs[lbIdx];
+    lbCur.textContent = lbIdx+1;
+    lbPrev.disabled = lbIdx===0;
+    lbNext.disabled = lbIdx===imgs.length-1;
+  }
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if(e.target===lb) closeLb(); });
+  lbPrev.addEventListener('click', () => { if(lbIdx>0){lbIdx--;syncLb();} });
+  lbNext.addEventListener('click', () => { if(lbIdx<imgs.length-1){lbIdx++;syncLb();} });
+
+  document.addEventListener('keydown', e => {
+    if(lb.classList.contains('on')){
+      if(e.key==='Escape') closeLb();
+      if(e.key==='ArrowLeft'&&lbIdx>0){lbIdx--;syncLb();}
+      if(e.key==='ArrowRight'&&lbIdx<imgs.length-1){lbIdx++;syncLb();}
+    }
+  });
+
+  // touch swipe lightbox
+  let ltx=0;
+  lb.addEventListener('touchstart',e=>ltx=e.changedTouches[0].screenX,{passive:true});
+  lb.addEventListener('touchend',e=>{
+    const diff=ltx-e.changedTouches[0].screenX;
+    if(Math.abs(diff)>50){
+      if(diff>0&&lbIdx<imgs.length-1){lbIdx++;syncLb();}
+      else if(diff<0&&lbIdx>0){lbIdx--;syncLb();}
+    }
+  },{passive:true});
+
+})();
+</script>
+</body>
+</html>
