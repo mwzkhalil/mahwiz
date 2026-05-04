@@ -7,25 +7,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
 <style>
 :root {
-  --bg:        #0e0c09;
-  --bg-subtle: #131008;
-  --bg-card:   #181410;
-  --bg-hover:  #1e1912;
-  --text:      #e8dcc8;
-  --text-2:    #a89060;
-  --text-3:    #6b5a3a;
-  --accent:    #c8782a;
-  --accent-2:  #d4a843;
-  --border:    #2a1f0f;
-  --border-2:  #3d2b0e;
-  --link:      #c8a878;
-  --link-h:    #e8c898;
+  --bg:        #0c0c0b;
+  --bg-subtle: #11110f;
+  --bg-card:   #171613;
+  --bg-hover:  #1c1a16;
+  --text:      #e4dccf;
+  --text-2:    #b8ad9d;
+  --text-3:    #8b8171;
+  --accent:    #ad8250;
+  --accent-2:  #c0a373;
+  --border:    #24211b;
+  --border-2:  #383126;
+  --link:      #b59b74;
+  --link-h:    #d0b98f;
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 
-::selection { background: rgba(200,120,42,0.2); color: var(--text); }
+::selection { background: rgba(173,130,80,0.18); color: var(--text); }
 
 body {
   font-family: 'Crimson Pro', Georgia, serif;
@@ -33,15 +33,41 @@ body {
   line-height: 1.78;
   color: var(--text);
   background: var(--bg);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: .75rem;
+  left: .75rem;
+  z-index: 2000;
+  padding: .55rem .8rem;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform .2s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+
 /* ── LAYOUT ── */
 .wrap {
+  width: min(100%, 640px);
   max-width: 640px;
   margin: 0 auto;
-  padding: 7rem 2rem 5rem;
+  padding: 5rem 2rem 4.5rem;
 }
 
 /* ── ANIMATIONS ── */
@@ -51,20 +77,21 @@ body {
 }
 @keyframes in { from{opacity:0} to{opacity:1} }
 
-.hero          { animation: up .9s ease-out both; }
-.about-sec     { animation: up .9s ease-out .1s both; }
-.sep           { animation: in .9s ease-out .18s both; }
-.research-sec  { animation: up .9s ease-out .22s both; }
-.models-sec    { animation: up .9s ease-out .28s both; }
-.datasets-sec  { animation: up .9s ease-out .32s both; }
-.connect-sec   { animation: up .9s ease-out .36s both; }
-footer         { animation: in .9s ease-out .4s both; }
+.hero,
+.about-sec,
+.sep,
+.research-sec,
+.selected-sec,
+.models-sec,
+.datasets-sec,
+.connect-sec,
+footer { animation: up .35s ease-out both; }
 
 /* ── HERO ── */
 .hero {
   text-align: center;
-  margin-bottom: 4.5rem;
-  padding-bottom: 4.5rem;
+  margin-bottom: 3.4rem;
+  padding-bottom: 3.4rem;
   position: relative;
 }
 .hero::after {
@@ -78,10 +105,11 @@ footer         { animation: in .9s ease-out .4s both; }
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
   font-size: 2.4rem;
-  letter-spacing: .16em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--text);
   margin-bottom: 1.2rem;
+  line-height: 1.35;
 }
 .hero .tagline {
   font-size: 1.05rem;
@@ -93,17 +121,54 @@ footer         { animation: in .9s ease-out .4s both; }
   line-height: 1.7;
   letter-spacing: .01em;
 }
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.7rem;
+}
+.btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-2);
+  padding: .55rem .95rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: background .25s, border-color .25s, color .25s, transform .25s;
+}
+.btn.primary {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-2);
+  transform: translateY(-1px);
+}
+.btn.primary:hover {
+  color: var(--bg);
+  background: var(--link-h);
+  border-color: var(--link-h);
+}
 
 /* ── SECTION HEADER ── */
 .sec-head {
   text-align: center;
-  margin-bottom: 2.6rem;
+  margin-bottom: 2rem;
 }
 .sec-label {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 400;
-  font-size: .75rem;
-  letter-spacing: .28em;
+  font-weight: 500;
+  font-size: .82rem;
+  letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--accent);
   display: inline-block;
@@ -121,7 +186,7 @@ footer         { animation: in .9s ease-out .4s both; }
 
 /* ── ABOUT ── */
 .about-sec {
-  margin-bottom: 4rem;
+  margin-bottom: 3.2rem;
   text-align: center;
 }
 .about-sec p {
@@ -131,6 +196,7 @@ footer         { animation: in .9s ease-out .4s both; }
   line-height: 1.95;
   font-size: 1.02rem;
   letter-spacing: .005em;
+  font-weight: 400;
 }
 .about-sec p:last-child { margin-bottom: 0; }
 .about-sec a {
@@ -144,7 +210,7 @@ footer         { animation: in .9s ease-out .4s both; }
 /* ── SEPARATOR ── */
 .sep {
   text-align: center;
-  margin: 3.5rem auto;
+  margin: 2.8rem auto;
   color: var(--accent);
   opacity: .35;
   font-size: .7rem;
@@ -155,12 +221,16 @@ footer         { animation: in .9s ease-out .4s both; }
 .write-list { list-style: none; }
 .write-item {
   position: relative;
-  padding: 1.4rem 0;
+  padding: 1.25rem 1rem;
   border-bottom: 1px solid var(--border);
-  transition: background .25s;
+  transition: background .25s, transform .25s, border-color .25s;
 }
 .write-item:first-child { border-top: 1px solid var(--border); }
 .write-item a { text-decoration: none; display: block; }
+.write-item a,
+.grid-item a {
+  min-height: 44px;
+}
 .write-item h3 {
   font-family: 'Crimson Pro', Georgia, serif;
   font-weight: 400;
@@ -169,6 +239,8 @@ footer         { animation: in .9s ease-out .4s both; }
   margin-bottom: .28rem;
   transition: color .25s;
   letter-spacing: .01em;
+  line-height: 1.35;
+  overflow-wrap: break-word;
 }
 .write-item .meta {
   font-size: .88rem;
@@ -181,6 +253,7 @@ footer         { animation: in .9s ease-out .4s both; }
   flex-wrap: wrap;
   align-items: center;
 }
+.write-item .meta span { min-width: 0; }
 .write-item .tag {
   font-size: .72rem;
   letter-spacing: .1em;
@@ -190,63 +263,76 @@ footer         { animation: in .9s ease-out .4s both; }
   opacity: .75;
 }
 .write-item:hover h3 { color: var(--accent); }
-.write-item:hover { padding-left: 6px; }
+.write-item:hover {
+  background: rgba(173,130,80,.035);
+  border-color: var(--border-2);
+  transform: translateX(4px);
+}
 
-/* ── COVERFLOW (for research paper images) ── */
+/* ── ARTICLE FIGURE VIEWER ── */
 .coverflow-wrap {
-  perspective: 1200px;
-  perspective-origin: 50% 50%;
-  padding: 2rem 0 2.5rem;
-  overflow: hidden;
+  padding: .2rem 1rem 1.7rem;
+  margin-bottom: .2rem;
 }
 .coverflow-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-subtle);
+  box-shadow: 0 18px 56px rgba(0,0,0,.28);
 }
 .cf-slide {
-  flex: 0 0 auto;
-  width: 220px;
-  height: 155px;
-  position: relative;
-  transition: all .6s cubic-bezier(.23,1,.32,1);
-  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity .35s ease, transform .35s ease;
+  transform: translateX(18px);
   cursor: pointer;
-  opacity: .35;
-  filter: blur(1px);
+  opacity: 0;
+  pointer-events: none;
 }
 .cf-slide img {
   width:100%; height:100%;
-  object-fit: cover;
-  border-radius: 3px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.5);
-  border: 1px solid var(--border);
-  transition: box-shadow .6s ease;
+  object-fit: contain;
+  border-radius: 0;
+  background: #eee9df;
+  padding: 10px;
+  filter: brightness(1.12) contrast(1.08);
 }
 .cf-slide.active {
-  opacity:1; filter:blur(0); z-index:10;
-  transform: translateZ(80px) scale(1.15);
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
 }
-.cf-slide.active img {
-  box-shadow: 0 20px 60px rgba(200,120,42,.2);
-  border-color: var(--border-2);
+.cf-slide.prev-1,
+.cf-slide.prev-2,
+.cf-slide.hidden { transform: translateX(-18px); }
+.cf-slide.next-1,
+.cf-slide.next-2 { transform: translateX(18px); }
+
+.cf-caption {
+  min-height: 2.6rem;
+  margin-top: .8rem;
+  color: var(--text-3);
+  font-size: .82rem;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
 }
-.cf-slide.prev-1 { opacity:.65; filter:blur(.4px); transform:translateX(30px) translateZ(-60px) rotateY(35deg) scale(.9); z-index:5; }
-.cf-slide.next-1 { opacity:.65; filter:blur(.4px); transform:translateX(-30px) translateZ(-60px) rotateY(-35deg) scale(.9); z-index:5; }
-.cf-slide.prev-2 { opacity:.4;  filter:blur(1px);  transform:translateX(60px) translateZ(-120px) rotateY(45deg) scale(.75); z-index:3; }
-.cf-slide.next-2 { opacity:.4;  filter:blur(1px);  transform:translateX(-60px) translateZ(-120px) rotateY(-45deg) scale(.75); z-index:3; }
-.cf-slide.hidden  { opacity:0; pointer-events:none; transform:translateZ(-200px) scale(.5); }
 
 .cf-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1.2rem;
+  gap: .9rem;
+  margin-top: .85rem;
 }
 .cf-btn {
-  width:34px; height:34px;
+  width:44px; height:44px;
   border: 1px solid var(--border-2);
   background: transparent;
   border-radius: 50%;
@@ -256,18 +342,29 @@ footer         { animation: in .9s ease-out .4s both; }
   font-size: .9rem;
   transition: all .3s ease;
 }
-.cf-btn:hover { border-color:var(--accent); color:var(--accent); background:rgba(200,120,42,.06); }
+.cf-btn:hover { border-color:var(--accent); color:var(--accent); background:rgba(173,130,80,.055); }
 .cf-btn:disabled { opacity:.25; cursor:not-allowed; }
 .cf-dots { display:flex; gap:.5rem; }
 .cf-dot {
-  width:5px; height:5px;
+  width:24px; height:24px;
   border-radius:50%;
-  background:var(--border-2);
+  background:transparent;
   border:none; cursor:pointer;
   transition: all .3s ease; padding:0;
+  position:relative;
 }
-.cf-dot.active { background:var(--accent); transform:scale(1.4); }
-.cf-dot:hover:not(.active) { background:var(--text-3); }
+.cf-dot::after {
+  content:'';
+  position:absolute;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--border-2);
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  transition:all .25s ease;
+}
+.cf-dot.active::after { background:var(--accent); transform:translate(-50%,-50%) scale(1.45); }
+.cf-dot:hover:not(.active)::after { background:var(--text-3); }
 
 /* ── LIGHTBOX ── */
 .lb {
@@ -327,18 +424,18 @@ footer         { animation: in .9s ease-out .4s both; }
   font-size:.88rem; letter-spacing:.12em;
 }
 
-/* ── GRID (models / datasets) ── */
+/* ── PROJECT LISTS (models / datasets) ── */
 .item-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: .6rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   margin-bottom: .5rem;
+  border-top: 1px solid var(--border);
 }
 .grid-item {
-  border: 1px solid var(--border);
-  padding: .85rem 1rem;
-  border-radius: 3px;
-  transition: all .3s cubic-bezier(.25,.46,.45,.94);
+  border-bottom: 1px solid var(--border);
+  padding: 1.05rem 1rem;
+  transition: background .25s, transform .25s, border-color .25s;
   position: relative;
   overflow: hidden;
   background: transparent;
@@ -346,17 +443,18 @@ footer         { animation: in .9s ease-out .4s both; }
 .grid-item::before {
   content:'';
   position:absolute; top:0; left:0; right:0; bottom:0;
-  background: rgba(200,120,42,.04);
+  background: rgba(173,130,80,.035);
   opacity:0; transition:opacity .3s;
 }
 .grid-item a { text-decoration:none; display:block; position:relative; z-index:1; }
 .grid-item .g-name {
-  font-size: .92rem;
+  font-size: 1.02rem;
   color: var(--text);
   transition:color .25s;
-  line-height:1.4;
+  line-height:1.35;
   margin-bottom:.28rem;
   letter-spacing:.005em;
+  overflow-wrap: break-word;
 }
 .grid-item .g-meta {
   font-size: .75rem;
@@ -370,7 +468,11 @@ footer         { animation: in .9s ease-out .4s both; }
   color:var(--accent);
   opacity:.8;
 }
-.grid-item:hover { border-color:var(--border-2); transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.3); }
+.grid-item:hover {
+  border-color:var(--border-2);
+  transform:translateX(4px);
+  background:rgba(173,130,80,.035);
+}
 .grid-item:hover::before { opacity:1; }
 .grid-item:hover .g-name { color:var(--accent); }
 
@@ -411,6 +513,9 @@ footer         { animation: in .9s ease-out .4s both; }
   letter-spacing:.14em;
   text-transform:uppercase;
   font-family:'Cormorant Garamond',serif;
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
   padding:.4rem 0;
   position:relative;
   transition:color .3s;
@@ -451,31 +556,86 @@ footer::before {
 
 /* ── RESPONSIVE ── */
 @media(max-width:600px) {
-  .wrap { padding:5rem 1.4rem 4rem; }
-  .item-grid { grid-template-columns:1fr; }
+  .wrap { max-width:100vw; padding:3.8rem 1.4rem 4rem; }
+  .hero { margin-bottom:2.8rem; padding-bottom:2.8rem; }
+  .hero h1 {
+    font-size:1.5rem;
+    letter-spacing:.08em;
+    line-height:1.45;
+    max-width:14ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .hero .tagline { font-size:1rem; max-width:300px; }
+  .hero-actions { align-items:stretch; }
+  .btn { width:100%; max-width:260px; }
+  .sec-label { letter-spacing:.2em; }
+  .sec-label::before,
+  .sec-label::after { width:18px; }
+  .write-item,
+  .grid-item { padding-left:.7rem; padding-right:.7rem; }
+  .write-item:hover,
+  .grid-item:hover { transform:none; }
+  .connect-links { gap:1.1rem 1.5rem; }
   .lb-nav.prev { left:8px; }
   .lb-nav.next { right:8px; }
-  .cf-slide { width:160px; height:113px; }
+  .coverflow-wrap { padding-left:0; padding-right:0; }
+  .coverflow-track { height: 210px; }
+  .cf-slide img { padding:5px; }
+  .cf-caption { text-align:left; }
+}
+
+@media(max-width:520px) {
+  .wrap {
+    width: 390px;
+    max-width: 100vw;
+  }
+  .hero .tagline,
+  .about-sec p,
+  .write-list,
+  .item-grid {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
 }
 
 /* ── RESEARCH SEC ── */
-.research-sec { margin-bottom:4.5rem; }
-.models-sec   { margin-bottom:4.5rem; }
-.datasets-sec { margin-bottom:4.5rem; }
+.research-sec { margin-bottom:3.8rem; }
+.selected-sec { margin-bottom:3.8rem; }
+.models-sec   { margin-bottom:3.8rem; }
+.datasets-sec { margin-bottom:3.8rem; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 <div class="wrap">
 
   <!-- HERO -->
   <header class="hero">
     <h1>Muhammad Mahwiz Khalil</h1>
     <p class="tagline">Building AI for languages the world forgot to teach its machines</p>
+    <div class="hero-actions" aria-label="Primary actions">
+      <a class="btn primary" href="#research">Read Research</a>
+      <a class="btn" href="#selected">View Work</a>
+      <a class="btn" href="#connect">Contact</a>
+    </div>
   </header>
 
+  <main id="content">
+
   <!-- ABOUT -->
-  <section class="about-sec">
-    <div class="sec-head"><span class="sec-label">About</span></div>
+  <section class="about-sec" aria-labelledby="about-title">
+    <div class="sec-head"><h2 class="sec-label" id="about-title">About</h2></div>
     <p>
       I'm an AI engineer and researcher based in Karachi, Pakistan, working on
       low-resource language models — primarily Urdu, Sindhi, and Pakistani NLP.
@@ -484,37 +644,38 @@ footer::before {
     </p>
     <p>
       I work at the intersection of audio ML, LLMs, and RAG systems. Currently building
-      at <a href="https://huggingface.co/ProximaAI" target="_blank">Proxima AI</a>
-      and <a href="https://huggingface.co/2DamnWav" target="_blank">2DamnWav</a>.
+      at <a href="https://huggingface.co/ProximaAI" target="_blank" rel="noopener noreferrer">Proxima AI</a>
+      and <a href="https://huggingface.co/2DamnWav" target="_blank" rel="noopener noreferrer">2DamnWav</a>.
       33 models and 25 datasets published on
-      <a href="https://huggingface.co/mahwizzzz" target="_blank">HuggingFace</a>.
+      <a href="https://huggingface.co/mahwizzzz" target="_blank" rel="noopener noreferrer">HuggingFace</a>.
     </p>
   </section>
 
-  <div class="sep">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
 
   <!-- RESEARCH PAPERS / ARTICLES -->
-  <section class="research-sec">
-    <div class="sec-head"><span class="sec-label">Research &amp; Writing</span></div>
+  <section class="research-sec" id="research" aria-labelledby="research-title">
+    <div class="sec-head"><h2 class="sec-label" id="research-title">Research &amp; Writing</h2></div>
 
-    <!-- Coverflow for paper figures -->
-    <div class="coverflow-wrap">
+    <!-- Figure viewer for the featured article -->
+    <div class="coverflow-wrap" role="region" aria-label="Nested Learning article figures">
       <div class="coverflow-track" id="cfTrack">
-        <div class="cf-slide" data-idx="0"><img src="NL-1a.png" alt="Nested Learning — Uniform Structure"></div>
-        <div class="cf-slide" data-idx="1"><img src="NL-2.png" alt="Nested Learning — Gradient Flow"></div>
-        <div class="cf-slide" data-idx="2"><img src="NL-3.png" alt="Nested Learning — Frequency Levels"></div>
-        <div class="cf-slide" data-idx="3"><img src="nest.png" alt="Nested Learning — Architecture"></div>
+        <div class="cf-slide" data-idx="0" data-caption="Fig 1. Uniform reusable structure and multi-timescale updates in Nested Learning."><img src="NL-1a.png" alt="Nested Learning — Uniform Structure"></div>
+        <div class="cf-slide" data-idx="1" data-caption="Fig 2. Hierarchical gradient flow compared with standard deep learning."><img src="NL-2.png" alt="Nested Learning — Gradient Flow"></div>
+        <div class="cf-slide" data-idx="2" data-caption="Fig 3. Frequency levels for nested optimization processes."><img src="NL-3.png" alt="Nested Learning — Frequency Levels"></div>
+        <div class="cf-slide" data-idx="3" data-caption="Fig 4. Nested Learning architecture overview."><img src="nest.png" alt="Nested Learning — Architecture"></div>
       </div>
+      <div class="cf-caption" id="cfCaption" aria-live="polite"></div>
       <div class="cf-nav">
-        <button class="cf-btn" id="cfPrev" aria-label="Previous">‹</button>
+        <button class="cf-btn" id="cfPrev" type="button" aria-label="Previous figure">‹</button>
         <div class="cf-dots" id="cfDots"></div>
-        <button class="cf-btn" id="cfNext" aria-label="Next">›</button>
+        <button class="cf-btn" id="cfNext" type="button" aria-label="Next figure">›</button>
       </div>
     </div>
 
     <ul class="write-list">
       <li class="write-item">
-        <a href="nested_learning.html" target="_blank">
+        <a href="nested_learning.html">
           <h3>Nested Learning — A Paradigm for AI Architecture</h3>
           <div class="meta">
             <span>A deep-dive into how NL decomposes architectures into nested optimization processes, making architecture and optimizer a unified system.</span>
@@ -525,8 +686,17 @@ footer::before {
           </div>
         </a>
       </li>
+    </ul>
+  </section>
+
+  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
+
+  <!-- SELECTED WORK -->
+  <section class="selected-sec" id="selected" aria-labelledby="selected-title">
+    <div class="sec-head"><h2 class="sec-label" id="selected-title">Selected Work</h2></div>
+    <ul class="write-list">
       <li class="write-item">
-        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank" rel="noopener noreferrer">
           <h3>Orpheus Urdu TTS — 3B Parameter Text-to-Speech</h3>
           <div class="meta">
             <span>Fine-tuning a 3B parameter model for natural Urdu speech synthesis. 179K+ downloads, state-of-the-art for Pakistani languages.</span>
@@ -538,7 +708,7 @@ footer::before {
         </a>
       </li>
       <li class="write-item">
-        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank" rel="noopener noreferrer">
           <h3>Dia 1.6B Urdu — Dialogue-Aware Speech Synthesis</h3>
           <div class="meta">
             <span>Adapting Dia architecture for Urdu. Focused on conversational prosody, natural intonation patterns, and multi-speaker synthesis.</span>
@@ -550,7 +720,7 @@ footer::before {
         </a>
       </li>
       <li class="write-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank" rel="noopener noreferrer">
           <h3>Urdu 208h — Building a Large-Scale Urdu ASR Corpus</h3>
           <div class="meta">
             <span>Curating 208 hours of clean Urdu audio — the challenges of data collection, cleaning, and normalization for low-resource ASR.</span>
@@ -562,7 +732,7 @@ footer::before {
         </a>
       </li>
       <li class="write-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank" rel="noopener noreferrer">
           <h3>UrOCR — Optical Character Recognition for Urdu Script</h3>
           <div class="meta">
             <span>A 40K+ sample dataset for Nastaliq script OCR. The unique challenges of right-to-left ligature-heavy writing systems.</span>
@@ -576,64 +746,64 @@ footer::before {
     </ul>
   </section>
 
-  <div class="sep">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
 
   <!-- MODELS -->
-  <section class="models-sec">
-    <div class="sec-head"><span class="sec-label">Models</span></div>
+  <section class="models-sec" id="models" aria-labelledby="models-title">
+    <div class="sec-head"><h2 class="sec-label" id="models-title">Models</h2></div>
     <div class="item-grid">
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Orpheus Urdu TTS</div>
           <div class="g-meta">TTS · 3B &nbsp;<span class="g-badge">179K ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/kani-tts-400m-ur" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/kani-tts-400m-ur" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Kani TTS 400M Urdu</div>
           <div class="g-meta">TTS · 400M &nbsp;<span class="g-badge">12 ♥</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Dia 1.6B Urdu</div>
           <div class="g-meta">TTS · 1.6B &nbsp;<span class="g-badge">66 ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/Qalb-1.0-8B-Instruct-Q4_0" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/Qalb-1.0-8B-Instruct-Q4_0" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Qalb 1.0 — 8B Instruct</div>
           <div class="g-meta">LLM · 8B &nbsp;<span class="g-badge">Q4 Quant</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/qyra-350m" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/qyra-350m" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Qyra 350M</div>
           <div class="g-meta">Text Gen · 350M</div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/urd-wav2vec2-94m" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/urd-wav2vec2-94m" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Urdu Wav2Vec2 94M</div>
           <div class="g-meta">ASR · 94M</div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/F5-TTS-UR" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/F5-TTS-UR" target="_blank" rel="noopener noreferrer">
           <div class="g-name">F5-TTS Urdu</div>
           <div class="g-meta">TTS · Urdu</div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/aurora-ckpt" target="_blank">
+        <a href="https://huggingface.co/mahwizzzz/aurora-ckpt" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Aurora CKPT</div>
           <div class="g-meta">Checkpoint &nbsp;<span class="g-badge">Latest</span></div>
         </a>
@@ -641,68 +811,68 @@ footer::before {
 
     </div>
     <div class="view-all">
-      <a href="https://huggingface.co/mahwizzzz/models" target="_blank">View all 33 models →</a>
+      <a href="https://huggingface.co/mahwizzzz/models" target="_blank" rel="noopener noreferrer">View all 33 models →</a>
     </div>
   </section>
 
-  <div class="sep">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
 
   <!-- DATASETS -->
-  <section class="datasets-sec">
-    <div class="sec-head"><span class="sec-label">Datasets</span></div>
+  <section class="datasets-sec" id="datasets" aria-labelledby="datasets-title">
+    <div class="sec-head"><h2 class="sec-label" id="datasets-title">Datasets</h2></div>
     <div class="item-grid">
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Urdu 208h Audio</div>
           <div class="g-meta">ASR · Audio &nbsp;<span class="g-badge">319K ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/pak-cleaned-multilang-2025" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/pak-cleaned-multilang-2025" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Pak Multilang 2025</div>
           <div class="g-meta">Corpus &nbsp;<span class="g-badge">480K ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/1DamnAudio" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/1DamnAudio" target="_blank" rel="noopener noreferrer">
           <div class="g-name">1DamnAudio</div>
           <div class="g-meta">Audio &nbsp;<span class="g-badge">222K ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank" rel="noopener noreferrer">
           <div class="g-name">UrOCR</div>
           <div class="g-meta">OCR · Vision &nbsp;<span class="g-badge">40.8K ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/sindhi-tts-haveli" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/sindhi-tts-haveli" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Sindhi TTS Haveli</div>
           <div class="g-meta">TTS · Sindhi &nbsp;<span class="g-badge">3.7K ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/ur-med-sft" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/ur-med-sft" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Urdu Medical SFT</div>
           <div class="g-meta">Medical · SFT</div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/syn-ur-2" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/syn-ur-2" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Synthetic Urdu V2</div>
           <div class="g-meta">Synthetic &nbsp;<span class="g-badge">85K ↓</span></div>
         </a>
       </div>
 
       <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/ur_nano_codec" target="_blank">
+        <a href="https://huggingface.co/datasets/mahwizzzz/ur_nano_codec" target="_blank" rel="noopener noreferrer">
           <div class="g-name">Urdu Nano Codec</div>
           <div class="g-meta">Audio Codec &nbsp;<span class="g-badge">31K ↓</span></div>
         </a>
@@ -710,27 +880,29 @@ footer::before {
 
     </div>
     <div class="view-all">
-      <a href="https://huggingface.co/mahwizzzz/datasets" target="_blank">View all 25 datasets →</a>
+      <a href="https://huggingface.co/mahwizzzz/datasets" target="_blank" rel="noopener noreferrer">View all 25 datasets →</a>
     </div>
   </section>
 
-  <div class="sep">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
 
   <!-- CONNECT -->
-  <section class="connect-sec">
-    <div class="sec-head"><span class="sec-label">Connect</span></div>
+  <section class="connect-sec" id="connect" aria-labelledby="connect-title">
+    <div class="sec-head"><h2 class="sec-label" id="connect-title">Connect</h2></div>
     <div class="connect-links">
-      <a href="https://huggingface.co/mahwizzzz" target="_blank">HuggingFace</a>
-      <a href="https://github.com/mwzkhalil" target="_blank">GitHub</a>
-      <a href="https://twitter.com/mwzkhalil" target="_blank">Twitter</a>
-      <a href="https://www.linkedin.com/in/mahwiz-khalil" target="_blank">LinkedIn</a>
-      <a href="https://topmate.io/mahwiz" target="_blank">Book a Call</a>
+      <a href="https://huggingface.co/mahwizzzz" target="_blank" rel="noopener noreferrer">HuggingFace</a>
+      <a href="https://github.com/mwzkhalil" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://twitter.com/mwzkhalil" target="_blank" rel="noopener noreferrer">Twitter</a>
+      <a href="https://www.linkedin.com/in/mahwiz-khalil" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://topmate.io/mahwiz" target="_blank" rel="noopener noreferrer">Book a Call</a>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <div class="foot-orn">✦</div>
+    <div class="foot-orn" aria-hidden="true">✦</div>
     <div class="foot-note">Mahwiz Khalil · Karachi, Pakistan · mahwiz.me</div>
   </footer>
 
@@ -739,10 +911,10 @@ footer::before {
 <!-- LIGHTBOX -->
 <div class="lb" id="lb">
   <div class="lb-inner">
-    <button class="lb-close" id="lbClose">×</button>
-    <button class="lb-nav prev" id="lbPrev">‹</button>
+    <button class="lb-close" id="lbClose" type="button" aria-label="Close figure preview">×</button>
+    <button class="lb-nav prev" id="lbPrev" type="button" aria-label="Previous figure">‹</button>
     <img id="lbImg" src="" alt="">
-    <button class="lb-nav next" id="lbNext">›</button>
+    <button class="lb-nav next" id="lbNext" type="button" aria-label="Next figure">›</button>
     <div class="lb-count"><span id="lbCur">1</span> / <span id="lbTot">4</span></div>
   </div>
 </div>
@@ -752,6 +924,7 @@ footer::before {
   /* ── COVERFLOW ── */
   const slides = Array.from(document.querySelectorAll('.cf-slide'));
   const dotsEl = document.getElementById('cfDots');
+  const captionEl = document.getElementById('cfCaption');
   const prevBtn = document.getElementById('cfPrev');
   const nextBtn = document.getElementById('cfNext');
   let cur = 1;
@@ -760,13 +933,15 @@ footer::before {
   slides.forEach((_,i) => {
     const d = document.createElement('button');
     d.className = 'cf-dot' + (i===cur?' active':'');
-    d.setAttribute('aria-label','Slide '+(i+1));
+    d.type = 'button';
+    d.setAttribute('aria-label','Show figure '+(i+1));
     d.addEventListener('click', () => go(i));
     dotsEl.appendChild(d);
   });
 
   const dots = Array.from(document.querySelectorAll('.cf-dot'));
   const imgs = slides.map(s => s.querySelector('img').src);
+  const captions = slides.map(s => s.dataset.caption || '');
 
   function update(){
     slides.forEach((s,i) => {
@@ -780,6 +955,8 @@ footer::before {
       else s.classList.add('hidden');
     });
     dots.forEach((d,i) => d.classList.toggle('active', i===cur));
+    dots.forEach((d,i) => d.setAttribute('aria-current', i===cur ? 'true' : 'false'));
+    captionEl.textContent = captions[cur];
     prevBtn.disabled = cur===0;
     nextBtn.disabled = cur===slides.length-1;
   }
