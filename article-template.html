@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+============================================================
+ mahwiz.me — article template
+ ------------------------------------------------------------
+ To publish a new article:
+   1. Copy this file to <slug>.html in the repo root.
+   2. Search-and-replace each <!-- TODO --> marker below.
+   3. Add the new URL to sitemap.xml.
+   4. Add a card to the "Research & Writing" section of index.html.
+   5. Commit & push — Vercel auto-deploys at /<slug>.
+============================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0b">
+
+<title><!-- TODO: ARTICLE TITLE --> · Mahwiz Khalil</title>
+
+<!-- ───── SEO ───── -->
+<meta name="description" content="<!-- TODO: ARTICLE 1-SENTENCE DESCRIPTION -->">
+<meta name="author" content="Muhammad Mahwiz Khalil">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mahwiz.me/<!-- TODO: SLUG -->">
+
+<!-- ───── Open Graph ───── -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahwiz.me/<!-- TODO: SLUG -->">
+<meta property="og:title" content="<!-- TODO: ARTICLE TITLE -->">
+<meta property="og:description" content="<!-- TODO: ARTICLE DESCRIPTION -->">
+<meta property="og:image" content="https://mahwiz.me/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="mahwiz.me">
+<meta property="article:author" content="Muhammad Mahwiz Khalil">
+<meta property="article:published_time" content="<!-- TODO: YYYY-MM-DD -->">
+<meta property="article:section" content="<!-- TODO: SECTION (e.g. Machine Learning) -->">
+
+<!-- ───── Twitter ───── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mwzkhalil">
+<meta name="twitter:creator" content="@mwzkhalil">
+<meta name="twitter:title" content="<!-- TODO: ARTICLE TITLE -->">
+<meta name="twitter:description" content="<!-- TODO: ARTICLE DESCRIPTION -->">
+<meta name="twitter:image" content="https://mahwiz.me/og-image.png">
+
+<!-- ───── Icons ───── -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<!-- ───── Fonts ───── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"></noscript>
+
+<!-- ───── Stylesheets ───── -->
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/article.css">
+
+<!-- ───── JSON-LD: Article ───── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mahwiz.me/<!-- TODO: SLUG -->" },
+  "headline": "<!-- TODO: ARTICLE TITLE -->",
+  "description": "<!-- TODO: ARTICLE DESCRIPTION -->",
+  "image": "https://mahwiz.me/og-image.png",
+  "author":    { "@type": "Person", "name": "Muhammad Mahwiz Khalil", "url": "https://mahwiz.me" },
+  "publisher": { "@type": "Person", "name": "Muhammad Mahwiz Khalil", "url": "https://mahwiz.me" },
+  "datePublished": "<!-- TODO: YYYY-MM-DD -->",
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="readProgress"></span></div>
+<a class="skip-link" href="#content">Skip to article</a>
+
+<!-- ── STICKY NAV ────────────────────────────────────── -->
+<nav class="site-nav" id="siteNav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__brand">Mahwiz Khalil</a>
+    <ul class="site-nav__links">
+      <li><a href="/#research">Research</a></li>
+      <li><a href="/#selected">Work</a></li>
+      <li><a href="/#connect">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="book">
+
+  <a href="/" class="back">Mahwiz Khalil</a>
+
+  <header class="article-head reveal" id="hero">
+    <h1><!-- TODO: ARTICLE TITLE --></h1>
+    <div class="author-line">Mahwiz Khalil &nbsp;&middot;&nbsp; <!-- TODO: YEAR --></div>
+    <nav class="article-nav" aria-label="Article sections">
+      <a href="#section-1"><!-- TODO --></a>
+      <a href="#section-2"><!-- TODO --></a>
+      <a href="#section-3"><!-- TODO --></a>
+    </nav>
+  </header>
+
+  <main id="content">
+  <article>
+
+    <p>
+      <!-- TODO: opening paragraph (this is the lead, rendered in --text color). -->
+    </p>
+
+    <h2 id="section-1" class="reveal"><!-- TODO: SECTION HEADING --></h2>
+    <p class="reveal"><!-- TODO --></p>
+
+    <!-- Figure pattern:
+    <figure class="article-fig reveal">
+      <picture>
+        <source srcset="/your-image.webp" type="image/webp">
+        <img src="/your-image.png" alt="" width="1200" height="600" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="fig-cap">Caption.</figcaption>
+    </figure>
+    -->
+
+    <!-- Blockquote pattern:
+    <blockquote class="reveal"><p>...</p></blockquote>
+    -->
+
+    <!-- Math pattern:
+    <div class="math-block reveal" role="math" aria-label="...">...</div>
+    -->
+
+    <hr>
+    <p class="reveal"><em><!-- TODO: closing note --></em></p>
+
+  </article>
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-orn" aria-hidden="true">&#10026;</div>
+    <div class="article-cta"><a href="/#research">Back to Research</a></div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var bar  = document.getElementById('readProgress');
+  var nav  = document.getElementById('siteNav');
+  var hero = document.getElementById('hero');
+  var ticking = false;
+
+  function updateProgress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    bar.style.width = pct + '%';
+    ticking = false;
+  }
+  updateProgress();
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
+  }, { passive: true });
+
+  if ('IntersectionObserver' in window && nav && hero) {
+    var navObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { nav.classList.toggle('is-pinned', !e.isIntersecting); });
+    }, { rootMargin: '-80px 0px 0px 0px' });
+    navObs.observe(hero);
+  }
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !prefersReduced) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+</script>
+</body>
+</html>

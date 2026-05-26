@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0b">
+
+<title>Training a 3B-Parameter TTS Model on a Language That Didn't Have One · Mahwiz Khalil</title>
+
+<!-- ───── SEO ───── -->
+<meta name="description" content="How we built Orpheus Urdu TTS — assembling a 208h dataset from scratch, adapting a 3B model, training through Karachi power cuts, and shipping open-source.">
+<meta name="author" content="Muhammad Mahwiz Khalil">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mahwiz.me/urdu_tts_journey">
+
+<!-- ───── Open Graph ───── -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahwiz.me/urdu_tts_journey">
+<meta property="og:title" content="Training a 3B-Parameter TTS Model on a Language That Didn't Have One">
+<meta property="og:description" content="Building Orpheus Urdu — the datasets that didn't exist, the architectures that needed rewriting, the GPU bills, and the power cuts.">
+<meta property="og:image" content="https://mahwiz.me/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="mahwiz.me">
+<meta property="article:author" content="Muhammad Mahwiz Khalil">
+<meta property="article:published_time" content="2026-04-12">
+<meta property="article:section" content="Speech AI">
+<meta property="article:tag" content="Urdu">
+<meta property="article:tag" content="TTS">
+<meta property="article:tag" content="Low-Resource NLP">
+
+<!-- ───── Twitter ───── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mwzkhalil">
+<meta name="twitter:creator" content="@mwzkhalil">
+<meta name="twitter:title" content="Training a 3B-Parameter TTS Model on a Language That Didn't Have One">
+<meta name="twitter:description" content="Building Orpheus Urdu — the datasets that didn't exist, the architectures that needed rewriting.">
+<meta name="twitter:image" content="https://mahwiz.me/og-image.png">
+
+<!-- ───── Icons ───── -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<!-- ───── Fonts ───── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"></noscript>
+
+<!-- ───── Stylesheets ───── -->
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/article.css">
+
+<!-- ───── JSON-LD: Article ───── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mahwiz.me/urdu_tts_journey" },
+  "headline": "Training a 3B-Parameter TTS Model on a Language That Didn't Have One",
+  "description": "Building Orpheus Urdu TTS — datasets, architecture choices, training through power cuts, and shipping open-source.",
+  "image": "https://mahwiz.me/og-image.png",
+  "author":    { "@type": "Person", "name": "Muhammad Mahwiz Khalil", "url": "https://mahwiz.me" },
+  "publisher": { "@type": "Person", "name": "Muhammad Mahwiz Khalil", "url": "https://mahwiz.me" },
+  "datePublished": "2026-04-12",
+  "inLanguage": "en",
+  "keywords": ["Urdu TTS", "Orpheus", "Low-resource NLP", "Speech Synthesis"]
+}
+</script>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="readProgress"></span></div>
+<a class="skip-link" href="#content">Skip to article</a>
+
+<!-- ── STICKY NAV ────────────────────────────────────── -->
+<nav class="site-nav" id="siteNav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__brand">Mahwiz Khalil</a>
+    <ul class="site-nav__links">
+      <li><a href="/#research">Research</a></li>
+      <li><a href="/#selected">Work</a></li>
+      <li><a href="/#connect">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="book">
+
+  <a href="/" class="back">Mahwiz Khalil</a>
+
+  <header class="article-head reveal" id="hero">
+    <h1>Training a 3B-Parameter TTS Model on a Language That Didn't Have One</h1>
+    <div class="author-line">Mahwiz Khalil &nbsp;&middot;&nbsp; 2026</div>
+    <nav class="article-nav" aria-label="Article sections">
+      <a href="#problem">Problem</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#training">Training</a>
+      <a href="#results">Results</a>
+      <a href="#next">What's Next</a>
+    </nav>
+  </header>
+
+  <main id="content">
+  <article>
+
+    <p>
+      When I started, Urdu didn't have a text-to-speech model worth using. The state of the art was
+      either a 1990s formant synthesizer that sounded like a robot reading the Quran on a tape recorder,
+      or a handful of small models trained on a few hours of news audio — wooden, monotone, and unable
+      to handle the simplest poetic register. Eighteen months later, <strong>Orpheus Urdu TTS</strong>
+      is a 3B-parameter model that has crossed 179,000 downloads on HuggingFace and gets used in
+      production by people I have never met. This is the story of how that happened — including the
+      parts that did not work.
+    </p>
+
+    <h2 id="problem" class="reveal">The Problem with Urdu TTS</h2>
+
+    <p class="reveal">
+      The first lie I had to unlearn was that "low-resource" means "small dataset." It does not.
+      Low-resource means <em>the entire infrastructure</em> is missing. You do not have a forced aligner.
+      You do not have a phoneme set anyone agrees on. You do not have a normalization pipeline that
+      handles English loanwords gracefully, and Urdu has thousands of them.
+    </p>
+
+    <p class="reveal">
+      Urdu writes in <strong>Nastaliq</strong> — a Perso-Arabic script that flows diagonally,
+      with letters that change shape based on neighbors and ligatures that span entire words.
+      It is fundamentally context-sensitive. The same word can have three valid orthographic forms,
+      and the model has to learn that they sound identical. Then there is code-switching: real Urdu
+      speakers drop English words mid-sentence — "main aaj <em>meeting</em> mein hoon" — and any TTS
+      that can't handle this is useless outside a classroom.
+    </p>
+
+    <blockquote class="reveal">
+      <p>
+        I built three pipelines before I realized the problem wasn't the model. It was that
+        no one had ever written down what "clean Urdu text" actually means.
+      </p>
+    </blockquote>
+
+    <h2 id="dataset" class="reveal">The Dataset</h2>
+
+    <p class="reveal">
+      The dataset took eight months. That is longer than the model training took. I started with
+      every public source I could find: Common Voice (tiny, noisy), Pakistani news broadcasts
+      (great audio, terrible licensing), audiobooks from public-domain literature, parliamentary
+      proceedings, and a long tail of YouTube content I had to filter aggressively for quality.
+    </p>
+
+    <p class="reveal">
+      The cleaning pipeline ended up being four stages:
+    </p>
+
+    <ul class="reveal">
+      <li><strong>Voice activity detection</strong> with a fine-tuned Silero model to chop out silence and music beds.</li>
+      <li><strong>Speaker diarization</strong> to keep clips that were a single speaker for &ge; 4 seconds.</li>
+      <li><strong>Whisper-large transcript verification</strong> against the source text, with a CER threshold of 0.08 — anything noisier got rejected.</li>
+      <li><strong>Manual spot-checks</strong> on a stratified random sample of 500 clips per source.</li>
+    </ul>
+
+    <p class="reveal">
+      What I ended up with was <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank" rel="noopener noreferrer">208 hours of clean Urdu audio</a>,
+      37 distinct speakers, and a normalization spec that handles dates, numbers, English loanwords,
+      and the worst offender — Urdu poetry, which breaks every rule about pronunciation timing.
+    </p>
+
+    <h2 id="architecture" class="reveal">The Architecture</h2>
+
+    <p class="reveal">
+      I chose Orpheus 3B because it gave me three things at once: a strong English prior to bootstrap
+      from, a discrete audio codec (SNAC) that handles low-resource languages well, and an
+      autoregressive backbone that I already understood how to fine-tune. The alternative would have
+      been training a VITS or YourTTS model from scratch, which I had tried and which had not worked
+      — too little data, too much variance.
+    </p>
+
+    <p class="reveal">
+      The modifications were smaller than I expected:
+    </p>
+
+    <ul class="reveal">
+      <li>Extended the tokenizer with a custom <strong>Urdu-aware BPE</strong> trained on 12M cleaned sentences. The original tokenizer butchered Urdu into per-character fragments, which destroyed quality.</li>
+      <li>Added <strong>speaker conditioning embeddings</strong> for the 37 voices in the training set, with a fallback "neutral" embedding for inference.</li>
+      <li>Kept the SNAC codec frozen. Re-training the codec was tempting but every ablation showed it hurt more than it helped at this scale.</li>
+    </ul>
+
+    <p class="reveal">
+      That was it. The model is fundamentally Orpheus — what changed was the data and the tokenizer.
+      I think this is the lesson nobody emphasizes enough: <em>most of the work in low-resource speech
+      is upstream of the model.</em>
+    </p>
+
+    <h2 id="training" class="reveal">Training</h2>
+
+    <p class="reveal">
+      I had two A100s. That is it. A 3B-parameter autoregressive model on 208 hours of audio is not
+      a small training job, and I was paying for it out of pocket. The first lesson was brutal:
+      <strong>do not iterate on a 3B model.</strong> I ran 47 ablations on a 350M sandbox version
+      before I touched the full model. Every hyperparameter, every data-mix ratio, every loss schedule —
+      all of it was decided at small scale first.
+    </p>
+
+    <p class="reveal">
+      Then there was Karachi. Karachi has a relationship with electricity that can be described as
+      <em>occasional</em>. The longest single power cut during the training run was eleven hours.
+      I lost two checkpoints to UPS failures. After the second one, I rewrote my training loop to
+      checkpoint every 200 steps instead of every epoch, and to write to two physical disks
+      simultaneously. The training script became, slowly, a small piece of infrastructure software
+      in its own right.
+    </p>
+
+    <blockquote class="reveal">
+      <p>
+        The hardest bug to find was a numerical instability that only triggered after 18 hours
+        of training, on a single specific batch where speaker 23 happened to read a poem with
+        seven consecutive long vowels. It took a week. The fix was three lines.
+      </p>
+    </blockquote>
+
+    <h2 id="results" class="reveal">Results</h2>
+
+    <p class="reveal">
+      We evaluated against three baselines: the original Coqui Urdu TTS, the Microsoft Urdu Azure
+      voice, and a re-implementation of the YourTTS Urdu paper from 2022. Mean Opinion Score (MOS)
+      from 24 native speakers, listening in random order with blinded sources:
+    </p>
+
+    <div class="math-block reveal" role="math" aria-label="MOS comparison">
+      Coqui Urdu: 2.41 &nbsp;&middot;&nbsp;
+      YourTTS-Urdu: 3.08 &nbsp;&middot;&nbsp;
+      Azure: 3.71 &nbsp;&middot;&nbsp;
+      <strong>Orpheus Urdu: 4.18</strong>
+    </div>
+
+    <p class="reveal">
+      The number that mattered more was the <strong>code-switch MOS</strong> — sentences with mixed
+      Urdu and English. Azure dropped to 2.9 on these. Orpheus held at 4.0. That gap is everything,
+      because real Urdu speakers code-switch constantly, and a TTS that can't handle it is a TTS
+      no one will use.
+    </p>
+
+    <p class="reveal">
+      Then I open-sourced it. <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank" rel="noopener noreferrer">The model is on HuggingFace</a>,
+      weights and inference code, no gatekeeping. 179K downloads later, the most rewarding messages
+      I have received are from accessibility researchers building screen readers, and from a teacher
+      in rural Sindh using it to make audio lessons for kids who can't read yet.
+    </p>
+
+    <h2 id="next" class="reveal">What's Next</h2>
+
+    <p class="reveal">
+      Three things, in order:
+    </p>
+
+    <ul class="reveal">
+      <li><strong>Sindhi.</strong> I have started collecting Sindhi audio with the <a href="https://huggingface.co/datasets/mahwizzzz/sindhi-tts-haveli" target="_blank" rel="noopener noreferrer">Haveli dataset</a>. The same pipeline, a fraction of the data. We will see how far transfer learning gets us.</li>
+      <li><strong>Pashto.</strong> Different writing system, different prosody, almost no public data. This will be the hard one.</li>
+      <li><strong>Scaling Urdu to 500 hours.</strong> The 208h dataset is the floor, not the ceiling. With more speakers, more registers, and more emotional range, the next version of Orpheus Urdu should be able to read poetry the way it deserves to be read.</li>
+    </ul>
+
+    <p class="reveal">
+      The broader point I keep coming back to: the field's frontier is not always the biggest model
+      or the cleverest architecture. Sometimes it is the language that nobody trained on, in the
+      country that nobody put on the map of compute. That frontier is wide open. There is a lot
+      of room.
+    </p>
+
+    <hr>
+
+    <p class="reveal"><em>If you want to collaborate on Pakistani-language speech research, the contact links are <a href="/#connect">on the home page</a>. Reach out.</em></p>
+
+  </article>
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-orn" aria-hidden="true">&#10026;</div>
+    <div class="article-cta"><a href="/#research">Back to Research</a></div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var bar  = document.getElementById('readProgress');
+  var nav  = document.getElementById('siteNav');
+  var hero = document.getElementById('hero');
+  var ticking = false;
+
+  function updateProgress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    bar.style.width = pct + '%';
+    ticking = false;
+  }
+  updateProgress();
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
+  }, { passive: true });
+
+  if ('IntersectionObserver' in window && nav && hero) {
+    var navObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { nav.classList.toggle('is-pinned', !e.isIntersecting); });
+    }, { rootMargin: '-80px 0px 0px 0px' });
+    navObs.observe(hero);
+  }
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !prefersReduced) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+</script>
+</body>
+</html>

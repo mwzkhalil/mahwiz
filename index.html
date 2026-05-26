@@ -2,277 +2,218 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahwiz Khalil</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0b">
+
+<title>Mahwiz Khalil — AI for Pakistan's Languages</title>
+
+<!-- ───── SEO ───── -->
+<meta name="description" content="Muhammad Mahwiz Khalil — AI engineer building NLP for Urdu, Sindhi, and Pakistan's forgotten languages. Researcher, open-source author, Karachi.">
+<meta name="author" content="Muhammad Mahwiz Khalil">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mahwiz.me/">
+
+<!-- ───── Open Graph ───── -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mahwiz.me/">
+<meta property="og:title" content="Mahwiz Khalil — AI for Pakistan's Languages">
+<meta property="og:description" content="Building NLP for the languages the world forgot to teach its machines. Urdu TTS, Sindhi ASR, open-source models and datasets.">
+<meta property="og:image" content="https://mahwiz.me/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Muhammad Mahwiz Khalil — Building AI for languages the world forgot to teach its machines">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="mahwiz.me">
+
+<!-- ───── Twitter / X ───── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mwzkhalil">
+<meta name="twitter:creator" content="@mwzkhalil">
+<meta name="twitter:title" content="Mahwiz Khalil — AI for Pakistan's Languages">
+<meta name="twitter:description" content="Building NLP for the languages the world forgot to teach its machines.">
+<meta name="twitter:image" content="https://mahwiz.me/og-image.png">
+
+<!-- ───── Icons ───── -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<!-- ───── Fonts (preconnect + non-blocking) ───── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"></noscript>
+
+<!-- ───── Stylesheet ───── -->
+<link rel="stylesheet" href="/styles.css">
+
+<!-- ───── JSON-LD: Person ───── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muhammad Mahwiz Khalil",
+  "alternateName": "Mahwiz Khalil",
+  "url": "https://mahwiz.me",
+  "image": "https://mahwiz.me/og-image.png",
+  "jobTitle": "AI Engineer",
+  "description": "AI engineer and researcher building NLP for low-resource Pakistani languages — Urdu, Sindhi, Pashto.",
+  "worksFor": [
+    { "@type": "Organization", "name": "Proxima AI", "url": "https://huggingface.co/ProximaAI" },
+    { "@type": "Organization", "name": "2DamnWav", "url": "https://huggingface.co/2DamnWav" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Karachi",
+    "addressCountry": "PK"
+  },
+  "sameAs": [
+    "https://huggingface.co/mahwizzzz",
+    "https://github.com/mwzkhalil",
+    "https://twitter.com/mwzkhalil",
+    "https://www.linkedin.com/in/mahwiz-khalil"
+  ],
+  "knowsAbout": ["Speech Synthesis", "Automatic Speech Recognition", "Large Language Models", "Low-Resource NLP", "Urdu NLP", "Sindhi NLP"]
+}
+</script>
+
+<!-- ───── Page-specific styles ───── -->
 <style>
-:root {
-  --bg:        #0c0c0b;
-  --bg-subtle: #11110f;
-  --bg-card:   #171613;
-  --bg-hover:  #1c1a16;
-  --text:      #e4dccf;
-  --text-2:    #b8ad9d;
-  --text-3:    #8b8171;
-  --accent:    #ad8250;
-  --accent-2:  #c0a373;
-  --border:    #24211b;
-  --border-2:  #383126;
-  --link:      #b59b74;
-  --link-h:    #d0b98f;
-}
-
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-
-::selection { background: rgba(173,130,80,0.18); color: var(--text); }
-
-body {
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 19px;
-  line-height: 1.78;
-  color: var(--text);
-  background: var(--bg);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a, button {
-  -webkit-tap-highlight-color: transparent;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 1px solid var(--accent);
-  outline-offset: 4px;
-}
-
-.skip-link {
-  position: fixed;
-  top: .75rem;
-  left: .75rem;
-  z-index: 2000;
-  padding: .55rem .8rem;
-  background: var(--text);
-  color: var(--bg);
-  text-decoration: none;
-  transform: translateY(-180%);
-  transition: transform .2s ease;
-}
-.skip-link:focus { transform: translateY(0); }
-
-/* ── LAYOUT ── */
-.wrap {
-  width: min(100%, 640px);
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 5rem 2rem 4.5rem;
-}
-
-/* ── ANIMATIONS ── */
-@keyframes up {
-  from { opacity:0; transform:translateY(22px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-@keyframes in { from{opacity:0} to{opacity:1} }
-
-.hero,
-.about-sec,
-.sep,
-.research-sec,
-.selected-sec,
-.models-sec,
-.datasets-sec,
-.connect-sec,
-footer { animation: up .35s ease-out both; }
-
-/* ── HERO ── */
+/* ── HERO ───────────────────────────────────────────── */
 .hero {
   text-align: center;
-  margin-bottom: 3.4rem;
-  padding-bottom: 3.4rem;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
   position: relative;
 }
 .hero::after {
-  content:'';
-  position:absolute; bottom:0; left:50%;
-  transform:translateX(-50%);
-  width:48px; height:1px;
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 48px; height: 1px;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
+.hero-grain {
+  position: absolute;
+  inset: -10% -20%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: screen;
+}
 .hero h1 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 300;
-  font-size: 2.4rem;
-  letter-spacing: .1em;
+  font-size: var(--text-hero);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text);
   margin-bottom: 1.2rem;
-  line-height: 1.35;
+  line-height: 1.2;
+  animation: up 0.5s var(--ease) both;
 }
 .hero .tagline {
-  font-size: 1.05rem;
+  font-size: var(--text-body);
   color: var(--text-2);
   font-style: italic;
   font-weight: 300;
   max-width: 380px;
   margin: 0 auto;
   line-height: 1.7;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
+  animation: up 0.55s var(--ease) 0.08s both;
+}
+.hero .rule {
+  width: 60px;
+  height: 1px;
+  background: rgba(173, 130, 80, 0.3);
+  margin: 1.4rem auto 0;
+  animation: fade 0.6s 0.25s ease both;
 }
 .hero-actions {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: .75rem;
+  gap: 0.75rem;
   margin-top: 1.7rem;
-}
-.btn {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border-2);
-  padding: .55rem .95rem;
-  color: var(--text);
-  text-decoration: none;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: .78rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  transition: background .25s, border-color .25s, color .25s, transform .25s;
-}
-.btn.primary {
-  color: var(--bg);
-  background: var(--text);
-  border-color: var(--text);
-}
-.btn:hover {
-  border-color: var(--accent);
-  color: var(--accent-2);
-  transform: translateY(-1px);
-}
-.btn.primary:hover {
-  color: var(--bg);
-  background: var(--link-h);
-  border-color: var(--link-h);
+  animation: up 0.55s var(--ease) 0.18s both;
 }
 
-/* ── SECTION HEADER ── */
-.sec-head {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.sec-label {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 500;
-  font-size: .82rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: inline-block;
-  position: relative;
-}
-.sec-label::before,
-.sec-label::after {
-  content:'';
-  position:absolute; top:50%;
-  width:26px; height:1px;
-  background: var(--border-2);
-}
-.sec-label::before { right:calc(100% + 14px); }
-.sec-label::after  { left:calc(100% + 14px); }
-
-/* ── ABOUT ── */
-.about-sec {
-  margin-bottom: 3.2rem;
-  text-align: center;
-}
+/* ── ABOUT ──────────────────────────────────────────── */
+.about-sec { margin-bottom: var(--space-lg); text-align: center; }
 .about-sec p {
   color: var(--text-2);
   max-width: 490px;
-  margin: 0 auto .9rem;
+  margin: 0 auto 0.9rem;
   line-height: 1.95;
-  font-size: 1.02rem;
-  letter-spacing: .005em;
-  font-weight: 400;
+  font-size: var(--text-body);
+  letter-spacing: 0.005em;
 }
 .about-sec p:last-child { margin-bottom: 0; }
 .about-sec a {
   color: var(--link);
   text-decoration: none;
   border-bottom: 1px solid var(--border-2);
-  transition: color .25s, border-color .25s;
+  transition: color 0.25s, border-color 0.25s;
 }
 .about-sec a:hover { color: var(--link-h); border-color: var(--accent); }
 
-/* ── SEPARATOR ── */
-.sep {
-  text-align: center;
-  margin: 2.8rem auto;
-  color: var(--accent);
-  opacity: .35;
-  font-size: .7rem;
-  letter-spacing: .9em;
-}
-
-/* ── WRITING LIST (research + articles) ── */
+/* ── WRITING LIST ───────────────────────────────────── */
 .write-list { list-style: none; }
 .write-item {
   position: relative;
   padding: 1.25rem 1rem;
   border-bottom: 1px solid var(--border);
-  transition: background .25s, transform .25s, border-color .25s;
+  transition: background 0.25s, transform 0.25s, border-color 0.25s;
 }
 .write-item:first-child { border-top: 1px solid var(--border); }
-.write-item a { text-decoration: none; display: block; }
-.write-item a,
-.grid-item a {
+.write-item a {
+  text-decoration: none;
+  display: block;
   min-height: 44px;
 }
 .write-item h3 {
-  font-family: 'Crimson Pro', Georgia, serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   font-size: 1.12rem;
   color: var(--text);
-  margin-bottom: .28rem;
-  transition: color .25s;
-  letter-spacing: .01em;
+  margin-bottom: 0.28rem;
+  transition: color 0.25s;
+  letter-spacing: 0.01em;
   line-height: 1.35;
   overflow-wrap: break-word;
 }
 .write-item .meta {
-  font-size: .88rem;
+  font-size: 0.88rem;
   color: var(--text-3);
   line-height: 1.5;
   font-weight: 300;
-  letter-spacing: .005em;
   display: flex;
-  gap: .8rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
   align-items: center;
 }
-.write-item .meta span { min-width: 0; }
 .write-item .tag {
-  font-size: .72rem;
-  letter-spacing: .1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  font-family: 'Cormorant Garamond', serif;
-  opacity: .75;
+  font-family: var(--font-display);
+  opacity: 0.85;
 }
 .write-item:hover h3 { color: var(--accent); }
 .write-item:hover {
-  background: rgba(173,130,80,.035);
+  background: rgba(173, 130, 80, 0.035);
   border-color: var(--border-2);
   transform: translateX(4px);
 }
 
-/* ── ARTICLE FIGURE VIEWER ── */
+/* ── COVERFLOW ──────────────────────────────────────── */
 .coverflow-wrap {
-  padding: .2rem 1rem 1.7rem;
-  margin-bottom: .2rem;
+  padding: 0.2rem 1rem 1.7rem;
+  margin-bottom: 0.2rem;
 }
 .coverflow-track {
   position: relative;
@@ -280,24 +221,32 @@ footer { animation: up .35s ease-out both; }
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--bg-subtle);
-  box-shadow: 0 18px 56px rgba(0,0,0,.28);
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
+}
+.coverflow-track:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 4px;
 }
 .cf-slide {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  transition: opacity .35s ease, transform .35s ease;
+  top: 0; left: 0;
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
   transform: translateX(18px);
-  cursor: pointer;
+  cursor: zoom-in;
   opacity: 0;
   pointer-events: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+.cf-slide picture,
+.cf-slide img {
+  width: 100%; height: 100%;
+  display: block;
 }
 .cf-slide img {
-  width:100%; height:100%;
   object-fit: contain;
-  border-radius: 0;
   background: #eee9df;
   padding: 10px;
   filter: brightness(1.12) contrast(1.08);
@@ -307,291 +256,289 @@ footer { animation: up .35s ease-out both; }
   transform: translateX(0);
   pointer-events: auto;
   z-index: 2;
+  will-change: transform;
 }
 .cf-slide.prev-1,
 .cf-slide.prev-2,
 .cf-slide.hidden { transform: translateX(-18px); }
 .cf-slide.next-1,
 .cf-slide.next-2 { transform: translateX(18px); }
-
 .cf-caption {
   min-height: 2.6rem;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   color: var(--text-3);
-  font-size: .82rem;
+  font-size: 0.82rem;
   font-style: italic;
   line-height: 1.55;
   text-align: center;
 }
-
 .cf-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .9rem;
-  margin-top: .85rem;
+  gap: 0.9rem;
+  margin-top: 0.85rem;
 }
 .cf-btn {
-  width:44px; height:44px;
+  width: 44px; height: 44px;
   border: 1px solid var(--border-2);
   background: transparent;
   border-radius: 50%;
   cursor: pointer;
-  display: flex; align-items:center; justify-content:center;
+  display: flex; align-items: center; justify-content: center;
   color: var(--text-3);
-  font-size: .9rem;
-  transition: all .3s ease;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
-.cf-btn:hover { border-color:var(--accent); color:var(--accent); background:rgba(173,130,80,.055); }
-.cf-btn:disabled { opacity:.25; cursor:not-allowed; }
-.cf-dots { display:flex; gap:.5rem; }
+.cf-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(173, 130, 80, 0.055); }
+.cf-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+.cf-dots { display: flex; gap: 0.5rem; }
 .cf-dot {
-  width:24px; height:24px;
-  border-radius:50%;
-  background:transparent;
-  border:none; cursor:pointer;
-  transition: all .3s ease; padding:0;
-  position:relative;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
 }
 .cf-dot::after {
-  content:'';
-  position:absolute;
-  width:6px; height:6px;
-  border-radius:50%;
-  background:var(--border-2);
-  top:50%; left:50%;
-  transform:translate(-50%,-50%);
-  transition:all .25s ease;
+  content: '';
+  position: absolute;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border-2);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.25s ease;
 }
-.cf-dot.active::after { background:var(--accent); transform:translate(-50%,-50%) scale(1.45); }
-.cf-dot:hover:not(.active)::after { background:var(--text-3); }
+.cf-dot.active::after { background: var(--accent); transform: translate(-50%, -50%) scale(1.45); }
+.cf-dot:hover:not(.active)::after { background: var(--text-3); }
 
-/* ── LIGHTBOX ── */
+/* ── LIGHTBOX ───────────────────────────────────────── */
 .lb {
-  position:fixed; inset:0;
-  background:rgba(0,0,0,.94);
-  z-index:1000;
-  display:flex; align-items:center; justify-content:center;
-  opacity:0; visibility:hidden;
-  transition: opacity .3s, visibility .3s;
-  backdrop-filter: blur(10px);
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
-.lb.on { opacity:1; visibility:visible; }
+.lb.on { opacity: 1; visibility: visible; }
 .lb-inner {
-  position:relative;
-  max-width:90vw; max-height:90vh;
-  transform:scale(.92);
-  transition:transform .3s cubic-bezier(.25,.46,.45,.94);
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  transform: scale(0.92);
+  transition: transform 0.3s var(--ease);
 }
-.lb.on .lb-inner { transform:scale(1); }
+.lb.on .lb-inner { transform: scale(1); }
 .lb img {
-  max-width:90vw; max-height:85vh;
-  object-fit:contain;
-  border-radius:3px;
-  box-shadow:0 25px 80px rgba(0,0,0,.7);
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.lb-close,
+.lb-nav {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
 }
 .lb-close {
-  position:absolute; top:-48px; right:0;
-  width:38px; height:38px;
-  border:1px solid rgba(255,255,255,.15);
-  background:rgba(255,255,255,.07);
-  border-radius:50%; cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  color:rgba(255,255,255,.7); font-size:1.4rem;
-  transition:all .3s ease;
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 44px; height: 44px;
+  font-size: 1.4rem;
 }
-.lb-close:hover { background:rgba(255,255,255,.18); color:#fff; transform:rotate(90deg); }
+.lb-close:hover { background: rgba(255, 255, 255, 0.18); color: #fff; transform: rotate(90deg); }
 .lb-nav {
-  position:absolute; top:50%;
-  transform:translateY(-50%);
-  width:46px; height:46px;
-  border:1px solid rgba(255,255,255,.15);
-  background:rgba(255,255,255,.07);
-  border-radius:50%; cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  color:rgba(255,255,255,.7); font-size:1.4rem;
-  transition:all .3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px; height: 46px;
+  font-size: 1.4rem;
 }
-.lb-nav:hover { background:rgba(255,255,255,.18); color:#fff; }
-.lb-nav:disabled { opacity:.25; cursor:not-allowed; }
-.lb-nav.prev { left:-64px; }
-.lb-nav.next { right:-64px; }
+.lb-nav:hover { background: rgba(255, 255, 255, 0.18); color: #fff; }
+.lb-nav:disabled { opacity: 0.25; cursor: not-allowed; }
+.lb-nav.prev { left: -64px; }
+.lb-nav.next { right: -64px; }
 .lb-count {
-  position:absolute; bottom:-38px; left:50%;
-  transform:translateX(-50%);
-  color:rgba(255,255,255,.45);
-  font-family:'Cormorant Garamond',serif;
-  font-size:.88rem; letter-spacing:.12em;
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
 }
 
-/* ── PROJECT LISTS (models / datasets) ── */
+/* ── ITEM GRID (models, datasets) ───────────────────── */
 .item-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   border-top: 1px solid var(--border);
 }
 .grid-item {
   border-bottom: 1px solid var(--border);
   padding: 1.05rem 1rem;
-  transition: background .25s, transform .25s, border-color .25s;
+  transition: background 0.25s ease, transform 0.2s ease,
+              border-color 0.25s ease, box-shadow 0.2s ease;
   position: relative;
   overflow: hidden;
   background: transparent;
 }
 .grid-item::before {
-  content:'';
-  position:absolute; top:0; left:0; right:0; bottom:0;
-  background: rgba(173,130,80,.035);
-  opacity:0; transition:opacity .3s;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(173, 130, 80, 0.035);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
-.grid-item a { text-decoration:none; display:block; position:relative; z-index:1; }
+.grid-item a {
+  text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  min-height: 44px;
+}
 .grid-item .g-name {
   font-size: 1.02rem;
   color: var(--text);
-  transition:color .25s;
-  line-height:1.35;
-  margin-bottom:.28rem;
-  letter-spacing:.005em;
+  transition: color 0.25s;
+  line-height: 1.35;
+  margin-bottom: 0.28rem;
+  letter-spacing: 0.005em;
   overflow-wrap: break-word;
 }
 .grid-item .g-meta {
-  font-size: .75rem;
+  font-size: 0.75rem;
   color: var(--text-3);
-  letter-spacing:.04em;
-  font-family:'Cormorant Garamond',serif;
-  text-transform:uppercase;
+  letter-spacing: 0.04em;
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 .grid-item .g-badge {
-  font-size:.68rem;
-  color:var(--accent);
-  opacity:.8;
+  font-size: 0.68rem;
+  color: var(--accent);
+  opacity: 0.9;
 }
 .grid-item:hover {
-  border-color:var(--border-2);
-  transform:translateX(4px);
-  background:rgba(173,130,80,.035);
+  border-color: var(--border-2);
+  transform: translateY(-3px);
+  background: rgba(173, 130, 80, 0.035);
+  box-shadow: 0 4px 24px rgba(173, 130, 80, 0.12);
 }
-.grid-item:hover::before { opacity:1; }
-.grid-item:hover .g-name { color:var(--accent); }
+.grid-item:hover::before { opacity: 1; }
+.grid-item:hover .g-name { color: var(--accent); }
 
-.view-all {
-  text-align:center;
-  margin-top:1.2rem;
-}
+.view-all { text-align: center; margin-top: 1.2rem; }
 .view-all a {
-  font-family:'Cormorant Garamond',serif;
-  font-size:.78rem;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:var(--text-3);
-  text-decoration:none;
-  border-bottom:1px solid var(--border);
-  padding-bottom:1px;
-  transition:all .25s;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
-.view-all a:hover { color:var(--accent); border-color:var(--accent); }
+.view-all a:hover { color: var(--accent); border-color: var(--accent); }
 
-/* ── CONTACT ── */
+/* ── CONTACT ────────────────────────────────────────── */
 .connect-sec {
-  text-align:center;
-  margin-top:4rem;
-  margin-bottom:2rem;
+  text-align: center;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 .connect-links {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:2.5rem;
-  margin-top:2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 2rem;
 }
 .connect-links a {
-  font-size:.72rem;
-  color:var(--text-3);
-  text-decoration:none;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-family:'Cormorant Garamond',serif;
-  min-height:44px;
-  display:inline-flex;
-  align-items:center;
-  padding:.4rem 0;
-  position:relative;
-  transition:color .3s;
+  font-size: 0.72rem;
+  color: var(--text-3);
+  text-decoration: none;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 0.3s;
 }
 .connect-links a::after {
-  content:'';
-  position:absolute; bottom:0; left:50%;
-  width:0; height:1px;
-  background:var(--accent);
-  transition:all .35s cubic-bezier(.25,.46,.45,.94);
-  transform:translateX(-50%);
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: all 0.35s var(--ease);
+  transform: translateX(-50%);
 }
-.connect-links a:hover { color:var(--accent); }
-.connect-links a:hover::after { width:100%; }
+.connect-links a:hover { color: var(--accent); }
+.connect-links a:hover::after { width: 100%; }
 
-/* ── FOOTER ── */
-footer {
-  margin-top:5rem;
-  padding-top:3rem;
-  text-align:center;
-  position:relative;
-}
-footer::before {
-  content:'';
-  position:absolute; top:0; left:50%;
-  transform:translateX(-50%);
-  width:44px; height:1px;
-  background:linear-gradient(90deg,transparent,var(--border-2),transparent);
-}
-.foot-orn { color:var(--accent); opacity:.35; font-size:.75rem; letter-spacing:.25em; }
-.foot-note {
-  margin-top:1.2rem;
-  font-size:.75rem;
-  color:var(--text-3);
-  letter-spacing:.08em;
-  font-family:'Cormorant Garamond',serif;
-}
+/* ── SECTION SPACING ────────────────────────────────── */
+.research-sec,
+.selected-sec,
+.models-sec,
+.datasets-sec { margin-bottom: var(--space-lg); }
 
-/* ── RESPONSIVE ── */
-@media(max-width:600px) {
-  .wrap { max-width:100vw; padding:3.8rem 1.4rem 4rem; }
-  .hero { margin-bottom:2.8rem; padding-bottom:2.8rem; }
+/* ── MOBILE ─────────────────────────────────────────── */
+@media (max-width: 600px) {
   .hero h1 {
-    font-size:1.5rem;
-    letter-spacing:.08em;
-    line-height:1.45;
-    max-width:14ch;
-    margin-left:auto;
-    margin-right:auto;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    max-width: 14ch;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .hero .tagline { font-size:1rem; max-width:300px; }
-  .hero-actions { align-items:stretch; }
-  .btn { width:100%; max-width:260px; }
-  .sec-label { letter-spacing:.2em; }
+  .hero .tagline { max-width: 300px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .btn { width: 100%; max-width: 260px; margin: 0 auto; }
   .sec-label::before,
-  .sec-label::after { width:18px; }
-  .write-item,
-  .grid-item { padding-left:.7rem; padding-right:.7rem; }
-  .write-item:hover,
-  .grid-item:hover { transform:none; }
-  .connect-links { gap:1.1rem 1.5rem; }
-  .lb-nav.prev { left:8px; }
-  .lb-nav.next { right:8px; }
-  .coverflow-wrap { padding-left:0; padding-right:0; }
+  .sec-label::after { width: 18px; }
+  .write-item, .grid-item { padding-left: 0.7rem; padding-right: 0.7rem; }
+  .write-item:hover, .grid-item:hover { transform: none; }
+  .connect-links { gap: 1.1rem 1.5rem; }
+  .lb-nav.prev { left: 8px; }
+  .lb-nav.next { right: 8px; }
+  .coverflow-wrap { padding-left: 0; padding-right: 0; }
   .coverflow-track { height: 210px; }
-  .cf-slide img { padding:5px; }
-  .cf-caption { text-align:left; }
+  .cf-slide img { padding: 5px; }
+  .cf-caption { text-align: left; }
 }
-
-@media(max-width:520px) {
-  .wrap {
-    width: 390px;
-    max-width: 100vw;
-  }
-  .hero .tagline,
-  .about-sec p,
+@media (max-width: 520px) {
   .write-list,
   .item-grid {
     max-width: 320px;
@@ -599,31 +546,41 @@ footer::before {
     margin-right: auto;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-  }
-}
-
-/* ── RESEARCH SEC ── */
-.research-sec { margin-bottom:3.8rem; }
-.selected-sec { margin-bottom:3.8rem; }
-.models-sec   { margin-bottom:3.8rem; }
-.datasets-sec { margin-bottom:3.8rem; }
 </style>
 </head>
 <body>
+
 <a class="skip-link" href="#content">Skip to content</a>
-<div class="wrap">
+
+<!-- ── STICKY NAV ────────────────────────────────────── -->
+<nav class="site-nav" id="siteNav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="#top" class="site-nav__brand">Mahwiz Khalil</a>
+    <ul class="site-nav__links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#selected">Work</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
 
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero" id="hero">
+    <svg class="hero-grain" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+        <feColorMatrix values="0 0 0 0 0.68
+                               0 0 0 0 0.51
+                               0 0 0 0 0.31
+                               0 0 0 0.9 0"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#grain)"/>
+    </svg>
     <h1>Muhammad Mahwiz Khalil</h1>
     <p class="tagline">Building AI for languages the world forgot to teach its machines</p>
+    <div class="rule" aria-hidden="true"></div>
     <div class="hero-actions" aria-label="Primary actions">
       <a class="btn primary" href="#research">Read Research</a>
       <a class="btn" href="#selected">View Work</a>
@@ -634,7 +591,7 @@ footer::before {
   <main id="content">
 
   <!-- ABOUT -->
-  <section class="about-sec" aria-labelledby="about-title">
+  <section class="about-sec reveal" aria-labelledby="about-title">
     <div class="sec-head"><h2 class="sec-label" id="about-title">About</h2></div>
     <p>
       I'm an AI engineer and researcher based in Karachi, Pakistan, working on
@@ -651,31 +608,50 @@ footer::before {
     </p>
   </section>
 
-  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">&#10026; &#10026; &#10026;</div>
 
-  <!-- RESEARCH PAPERS / ARTICLES -->
-  <section class="research-sec" id="research" aria-labelledby="research-title">
+  <!-- RESEARCH & WRITING -->
+  <section class="research-sec reveal" id="research" aria-labelledby="research-title">
     <div class="sec-head"><h2 class="sec-label" id="research-title">Research &amp; Writing</h2></div>
 
-    <!-- Figure viewer for the featured article -->
-    <div class="coverflow-wrap" role="region" aria-label="Nested Learning article figures">
-      <div class="coverflow-track" id="cfTrack">
-        <div class="cf-slide" data-idx="0" data-caption="Fig 1. Uniform reusable structure and multi-timescale updates in Nested Learning."><img src="NL-1a.png" alt="Nested Learning — Uniform Structure"></div>
-        <div class="cf-slide" data-idx="1" data-caption="Fig 2. Hierarchical gradient flow compared with standard deep learning."><img src="NL-2.png" alt="Nested Learning — Gradient Flow"></div>
-        <div class="cf-slide" data-idx="2" data-caption="Fig 3. Frequency levels for nested optimization processes."><img src="NL-3.png" alt="Nested Learning — Frequency Levels"></div>
-        <div class="cf-slide" data-idx="3" data-caption="Fig 4. Nested Learning architecture overview."><img src="nest.png" alt="Nested Learning — Architecture"></div>
+    <div class="coverflow-wrap" role="region" aria-label="Featured article figures" aria-roledescription="carousel">
+      <div class="coverflow-track" id="cfTrack" tabindex="0" aria-label="Use arrow keys to change slide. Press Enter to enlarge.">
+        <button class="cf-slide" data-idx="0" data-caption="Fig 1. Uniform reusable structure and multi-timescale updates in Nested Learning." type="button" aria-label="Slide 1: Uniform reusable structure and multi-timescale updates in Nested Learning. Press Enter to enlarge.">
+          <picture>
+            <source srcset="/NL-1a.webp" type="image/webp">
+            <img src="/NL-1a.png" alt="Diagram: Nested Learning — uniform reusable structure with multi-timescale updates" width="1250" height="456" decoding="async">
+          </picture>
+        </button>
+        <button class="cf-slide" data-idx="1" data-caption="Fig 2. Hierarchical gradient flow compared with standard deep learning." type="button" aria-label="Slide 2: Hierarchical gradient flow compared with standard deep learning. Press Enter to enlarge.">
+          <picture>
+            <source srcset="/NL-2.webp" type="image/webp">
+            <img src="/NL-2.png" alt="Diagram: Nested Learning — hierarchical gradient flow vs. standard deep learning" width="1042" height="387" loading="lazy" decoding="async">
+          </picture>
+        </button>
+        <button class="cf-slide" data-idx="2" data-caption="Fig 3. Frequency levels for nested optimization processes." type="button" aria-label="Slide 3: Frequency levels for nested optimization processes. Press Enter to enlarge.">
+          <picture>
+            <source srcset="/NL-3.webp" type="image/webp">
+            <img src="/NL-3.png" alt="Diagram: Nested Learning — frequency levels of nested optimization" width="1016" height="392" loading="lazy" decoding="async">
+          </picture>
+        </button>
+        <button class="cf-slide" data-idx="3" data-caption="Fig 4. Nested Learning architecture overview." type="button" aria-label="Slide 4: Nested Learning architecture overview. Press Enter to enlarge.">
+          <picture>
+            <source srcset="/nest.webp" type="image/webp">
+            <img src="/nest.png" alt="Diagram: Nested Learning — architecture overview" width="500" height="500" loading="lazy" decoding="async">
+          </picture>
+        </button>
       </div>
-      <div class="cf-caption" id="cfCaption" aria-live="polite"></div>
+      <div class="cf-caption" id="cfCaption" aria-live="polite" aria-atomic="true"></div>
       <div class="cf-nav">
-        <button class="cf-btn" id="cfPrev" type="button" aria-label="Previous figure">‹</button>
-        <div class="cf-dots" id="cfDots"></div>
-        <button class="cf-btn" id="cfNext" type="button" aria-label="Next figure">›</button>
+        <button class="cf-btn" id="cfPrev" type="button" aria-label="Previous figure" aria-controls="cfTrack">&lsaquo;</button>
+        <div class="cf-dots" id="cfDots" role="tablist" aria-label="Choose figure"></div>
+        <button class="cf-btn" id="cfNext" type="button" aria-label="Next figure" aria-controls="cfTrack">&rsaquo;</button>
       </div>
     </div>
 
     <ul class="write-list">
       <li class="write-item">
-        <a href="nested_learning.html">
+        <a href="/nested_learning">
           <h3>Nested Learning — A Paradigm for AI Architecture</h3>
           <div class="meta">
             <span>A deep-dive into how NL decomposes architectures into nested optimization processes, making architecture and optimizer a unified system.</span>
@@ -686,13 +662,25 @@ footer::before {
           </div>
         </a>
       </li>
+      <li class="write-item">
+        <a href="/urdu_tts_journey">
+          <h3>Training a 3B-Parameter TTS Model on a Language That Didn't Have One</h3>
+          <div class="meta">
+            <span>The 18-month journey of building Orpheus Urdu — the datasets that didn't exist, the architectures that needed rewriting, the GPU bills, and the power cuts.</span>
+          </div>
+          <div class="meta" style="margin-top:.4rem">
+            <span class="tag">Research · Engineering</span>
+            <span>2026</span>
+          </div>
+        </a>
+      </li>
     </ul>
   </section>
 
-  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">&#10026; &#10026; &#10026;</div>
 
   <!-- SELECTED WORK -->
-  <section class="selected-sec" id="selected" aria-labelledby="selected-title">
+  <section class="selected-sec reveal" id="selected" aria-labelledby="selected-title">
     <div class="sec-head"><h2 class="sec-label" id="selected-title">Selected Work</h2></div>
     <ul class="write-list">
       <li class="write-item">
@@ -746,148 +734,148 @@ footer::before {
     </ul>
   </section>
 
-  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">&#10026; &#10026; &#10026;</div>
 
   <!-- MODELS -->
-  <section class="models-sec" id="models" aria-labelledby="models-title">
+  <section class="models-sec reveal" id="models" aria-labelledby="models-title">
     <div class="sec-head"><h2 class="sec-label" id="models-title">Models</h2></div>
     <div class="item-grid">
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/orpheus-urdu-tts" target="_blank" rel="noopener noreferrer" aria-label="Orpheus Urdu TTS, 3B parameters, 179K downloads">
           <div class="g-name">Orpheus Urdu TTS</div>
-          <div class="g-meta">TTS · 3B &nbsp;<span class="g-badge">179K ↓</span></div>
+          <div class="g-meta">TTS · 3B &nbsp;<span class="g-badge">179K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/kani-tts-400m-ur" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/kani-tts-400m-ur" target="_blank" rel="noopener noreferrer" aria-label="Kani TTS 400M Urdu, 12 likes">
           <div class="g-name">Kani TTS 400M Urdu</div>
-          <div class="g-meta">TTS · 400M &nbsp;<span class="g-badge">12 ♥</span></div>
+          <div class="g-meta">TTS · 400M &nbsp;<span class="g-badge">12 &hearts;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu" target="_blank" rel="noopener noreferrer" aria-label="Dia 1.6B Urdu, 66 downloads">
           <div class="g-name">Dia 1.6B Urdu</div>
-          <div class="g-meta">TTS · 1.6B &nbsp;<span class="g-badge">66 ↓</span></div>
+          <div class="g-meta">TTS · 1.6B &nbsp;<span class="g-badge">66 &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/Qalb-1.0-8B-Instruct-Q4_0" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/Qalb-1.0-8B-Instruct-Q4_0" target="_blank" rel="noopener noreferrer" aria-label="Qalb 1.0 8B Instruct, Q4 quantized">
           <div class="g-name">Qalb 1.0 — 8B Instruct</div>
           <div class="g-meta">LLM · 8B &nbsp;<span class="g-badge">Q4 Quant</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/qyra-350m" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/qyra-350m" target="_blank" rel="noopener noreferrer" aria-label="Qyra 350M text generation model">
           <div class="g-name">Qyra 350M</div>
           <div class="g-meta">Text Gen · 350M</div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/urd-wav2vec2-94m" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/urd-wav2vec2-94m" target="_blank" rel="noopener noreferrer" aria-label="Urdu Wav2Vec2 94M ASR model">
           <div class="g-name">Urdu Wav2Vec2 94M</div>
           <div class="g-meta">ASR · 94M</div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/F5-TTS-UR" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/F5-TTS-UR" target="_blank" rel="noopener noreferrer" aria-label="F5-TTS Urdu model">
           <div class="g-name">F5-TTS Urdu</div>
           <div class="g-meta">TTS · Urdu</div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/mahwizzzz/aurora-ckpt" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/mahwizzzz/aurora-ckpt" target="_blank" rel="noopener noreferrer" aria-label="Aurora checkpoint, latest">
           <div class="g-name">Aurora CKPT</div>
           <div class="g-meta">Checkpoint &nbsp;<span class="g-badge">Latest</span></div>
         </a>
-      </div>
+      </article>
 
     </div>
     <div class="view-all">
-      <a href="https://huggingface.co/mahwizzzz/models" target="_blank" rel="noopener noreferrer">View all 33 models →</a>
+      <a href="https://huggingface.co/mahwizzzz/models" target="_blank" rel="noopener noreferrer">View all 33 models &rarr;</a>
     </div>
   </section>
 
-  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">&#10026; &#10026; &#10026;</div>
 
   <!-- DATASETS -->
-  <section class="datasets-sec" id="datasets" aria-labelledby="datasets-title">
+  <section class="datasets-sec reveal" id="datasets" aria-labelledby="datasets-title">
     <div class="sec-head"><h2 class="sec-label" id="datasets-title">Datasets</h2></div>
     <div class="item-grid">
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urdu-208h" target="_blank" rel="noopener noreferrer" aria-label="Urdu 208h Audio ASR dataset, 319K downloads">
           <div class="g-name">Urdu 208h Audio</div>
-          <div class="g-meta">ASR · Audio &nbsp;<span class="g-badge">319K ↓</span></div>
+          <div class="g-meta">ASR · Audio &nbsp;<span class="g-badge">319K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/pak-cleaned-multilang-2025" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/pak-cleaned-multilang-2025" target="_blank" rel="noopener noreferrer" aria-label="Pakistani Multilingual Corpus 2025, 480K downloads">
           <div class="g-name">Pak Multilang 2025</div>
-          <div class="g-meta">Corpus &nbsp;<span class="g-badge">480K ↓</span></div>
+          <div class="g-meta">Corpus &nbsp;<span class="g-badge">480K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/1DamnAudio" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/1DamnAudio" target="_blank" rel="noopener noreferrer" aria-label="1DamnAudio dataset, 222K downloads">
           <div class="g-name">1DamnAudio</div>
-          <div class="g-meta">Audio &nbsp;<span class="g-badge">222K ↓</span></div>
+          <div class="g-meta">Audio &nbsp;<span class="g-badge">222K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/urocr" target="_blank" rel="noopener noreferrer" aria-label="UrOCR vision OCR dataset, 40.8K downloads">
           <div class="g-name">UrOCR</div>
-          <div class="g-meta">OCR · Vision &nbsp;<span class="g-badge">40.8K ↓</span></div>
+          <div class="g-meta">OCR · Vision &nbsp;<span class="g-badge">40.8K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/sindhi-tts-haveli" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/sindhi-tts-haveli" target="_blank" rel="noopener noreferrer" aria-label="Sindhi TTS Haveli dataset, 3.7K downloads">
           <div class="g-name">Sindhi TTS Haveli</div>
-          <div class="g-meta">TTS · Sindhi &nbsp;<span class="g-badge">3.7K ↓</span></div>
+          <div class="g-meta">TTS · Sindhi &nbsp;<span class="g-badge">3.7K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/ur-med-sft" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/ur-med-sft" target="_blank" rel="noopener noreferrer" aria-label="Urdu Medical SFT dataset">
           <div class="g-name">Urdu Medical SFT</div>
           <div class="g-meta">Medical · SFT</div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/syn-ur-2" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/syn-ur-2" target="_blank" rel="noopener noreferrer" aria-label="Synthetic Urdu V2 dataset, 85K downloads">
           <div class="g-name">Synthetic Urdu V2</div>
-          <div class="g-meta">Synthetic &nbsp;<span class="g-badge">85K ↓</span></div>
+          <div class="g-meta">Synthetic &nbsp;<span class="g-badge">85K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
-      <div class="grid-item">
-        <a href="https://huggingface.co/datasets/mahwizzzz/ur_nano_codec" target="_blank" rel="noopener noreferrer">
+      <article class="grid-item">
+        <a href="https://huggingface.co/datasets/mahwizzzz/ur_nano_codec" target="_blank" rel="noopener noreferrer" aria-label="Urdu Nano Codec audio dataset, 31K downloads">
           <div class="g-name">Urdu Nano Codec</div>
-          <div class="g-meta">Audio Codec &nbsp;<span class="g-badge">31K ↓</span></div>
+          <div class="g-meta">Audio Codec &nbsp;<span class="g-badge">31K &darr;</span></div>
         </a>
-      </div>
+      </article>
 
     </div>
     <div class="view-all">
-      <a href="https://huggingface.co/mahwizzzz/datasets" target="_blank" rel="noopener noreferrer">View all 25 datasets →</a>
+      <a href="https://huggingface.co/mahwizzzz/datasets" target="_blank" rel="noopener noreferrer">View all 25 datasets &rarr;</a>
     </div>
   </section>
 
-  <div class="sep" aria-hidden="true">✦ ✦ ✦</div>
+  <div class="sep" aria-hidden="true">&#10026; &#10026; &#10026;</div>
 
   <!-- CONNECT -->
-  <section class="connect-sec" id="connect" aria-labelledby="connect-title">
+  <section class="connect-sec reveal" id="connect" aria-labelledby="connect-title">
     <div class="sec-head"><h2 class="sec-label" id="connect-title">Connect</h2></div>
     <div class="connect-links">
       <a href="https://huggingface.co/mahwizzzz" target="_blank" rel="noopener noreferrer">HuggingFace</a>
@@ -901,131 +889,211 @@ footer::before {
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="foot-orn" aria-hidden="true">✦</div>
-    <div class="foot-note">Mahwiz Khalil · Karachi, Pakistan · mahwiz.me</div>
+  <footer class="site-foot">
+    <div class="foot-orn" aria-hidden="true">&#10026;</div>
+    <div class="foot-note">Mahwiz Khalil &middot; Karachi, Pakistan &middot; mahwiz.me</div>
   </footer>
 
-</div><!-- /wrap -->
+</div>
 
 <!-- LIGHTBOX -->
-<div class="lb" id="lb">
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
   <div class="lb-inner">
-    <button class="lb-close" id="lbClose" type="button" aria-label="Close figure preview">×</button>
-    <button class="lb-nav prev" id="lbPrev" type="button" aria-label="Previous figure">‹</button>
+    <button class="lb-close" id="lbClose" type="button" aria-label="Close figure preview">&times;</button>
+    <button class="lb-nav prev" id="lbPrev" type="button" aria-label="Previous figure">&lsaquo;</button>
     <img id="lbImg" src="" alt="">
-    <button class="lb-nav next" id="lbNext" type="button" aria-label="Next figure">›</button>
-    <div class="lb-count"><span id="lbCur">1</span> / <span id="lbTot">4</span></div>
+    <button class="lb-nav next" id="lbNext" type="button" aria-label="Next figure">&rsaquo;</button>
+    <div class="lb-count" id="lbTitle"><span id="lbCur">1</span> / <span id="lbTot">4</span></div>
   </div>
 </div>
 
 <script>
-(function(){
-  /* ── COVERFLOW ── */
-  const slides = Array.from(document.querySelectorAll('.cf-slide'));
-  const dotsEl = document.getElementById('cfDots');
-  const captionEl = document.getElementById('cfCaption');
-  const prevBtn = document.getElementById('cfPrev');
-  const nextBtn = document.getElementById('cfNext');
-  let cur = 1;
+(function () {
+  'use strict';
 
-  // build dots
-  slides.forEach((_,i) => {
-    const d = document.createElement('button');
-    d.className = 'cf-dot' + (i===cur?' active':'');
+  /* ── COVERFLOW ─────────────────────────────────────── */
+  var slides   = Array.prototype.slice.call(document.querySelectorAll('.cf-slide'));
+  var dotsEl   = document.getElementById('cfDots');
+  var captionEl= document.getElementById('cfCaption');
+  var prevBtn  = document.getElementById('cfPrev');
+  var nextBtn  = document.getElementById('cfNext');
+  var track    = document.getElementById('cfTrack');
+  var cur      = 0;
+
+  var imgs    = slides.map(function (s) { return s.querySelector('img').src; });
+  var alts    = slides.map(function (s) { return s.querySelector('img').alt; });
+  var captions= slides.map(function (s) { return s.dataset.caption || ''; });
+
+  slides.forEach(function (_, i) {
+    var d = document.createElement('button');
+    d.className = 'cf-dot' + (i === cur ? ' active' : '');
     d.type = 'button';
-    d.setAttribute('aria-label','Show figure '+(i+1));
-    d.addEventListener('click', () => go(i));
+    d.setAttribute('role', 'tab');
+    d.setAttribute('aria-label', 'Show figure ' + (i + 1));
+    d.setAttribute('aria-selected', i === cur ? 'true' : 'false');
+    d.addEventListener('click', function () { go(i); });
     dotsEl.appendChild(d);
   });
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.cf-dot'));
 
-  const dots = Array.from(document.querySelectorAll('.cf-dot'));
-  const imgs = slides.map(s => s.querySelector('img').src);
-  const captions = slides.map(s => s.dataset.caption || '');
-
-  function update(){
-    slides.forEach((s,i) => {
+  function update() {
+    slides.forEach(function (s, i) {
       s.className = 'cf-slide';
-      const d = i - cur;
-      if(d===0) s.classList.add('active');
-      else if(d===-1) s.classList.add('prev-1');
-      else if(d===-2) s.classList.add('prev-2');
-      else if(d===1)  s.classList.add('next-1');
-      else if(d===2)  s.classList.add('next-2');
-      else s.classList.add('hidden');
+      var d = i - cur;
+      if (d === 0)       s.classList.add('active');
+      else if (d === -1) s.classList.add('prev-1');
+      else if (d === -2) s.classList.add('prev-2');
+      else if (d ===  1) s.classList.add('next-1');
+      else if (d ===  2) s.classList.add('next-2');
+      else               s.classList.add('hidden');
+      s.setAttribute('aria-hidden', i === cur ? 'false' : 'true');
+      s.tabIndex = i === cur ? 0 : -1;
     });
-    dots.forEach((d,i) => d.classList.toggle('active', i===cur));
-    dots.forEach((d,i) => d.setAttribute('aria-current', i===cur ? 'true' : 'false'));
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === cur);
+      d.setAttribute('aria-selected', i === cur ? 'true' : 'false');
+    });
     captionEl.textContent = captions[cur];
-    prevBtn.disabled = cur===0;
-    nextBtn.disabled = cur===slides.length-1;
+    prevBtn.disabled = cur === 0;
+    nextBtn.disabled = cur === slides.length - 1;
   }
 
-  function go(i){ if(i>=0&&i<slides.length){cur=i;update();} }
-  prevBtn.addEventListener('click', () => go(cur-1));
-  nextBtn.addEventListener('click', () => go(cur+1));
+  function go(i) { if (i >= 0 && i < slides.length) { cur = i; update(); } }
 
-  slides.forEach((s,i) => {
-    s.addEventListener('click', () => {
-      if(s.classList.contains('active')) openLb(i);
+  prevBtn.addEventListener('click', function () { go(cur - 1); });
+  nextBtn.addEventListener('click', function () { go(cur + 1); });
+
+  slides.forEach(function (s, i) {
+    s.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (s.classList.contains('active')) openLb(i, s);
       else go(i);
     });
   });
 
+  // keyboard nav on the track
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(cur - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); }
+    if (e.key === 'Home')       { e.preventDefault(); go(0); }
+    if (e.key === 'End')        { e.preventDefault(); go(slides.length - 1); }
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openLb(cur, slides[cur]);
+    }
+  });
+
   // touch swipe coverflow
-  let tx=0;
-  const track = document.getElementById('cfTrack');
-  track.addEventListener('touchstart',e=>tx=e.changedTouches[0].screenX,{passive:true});
-  track.addEventListener('touchend',e=>{
-    const diff=tx-e.changedTouches[0].screenX;
-    if(Math.abs(diff)>50){ diff>0?go(cur+1):go(cur-1); }
-  },{passive:true});
+  var tx = 0;
+  track.addEventListener('touchstart', function (e) { tx = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend',   function (e) {
+    var diff = tx - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) { diff > 0 ? go(cur + 1) : go(cur - 1); }
+  }, { passive: true });
 
   update();
 
-  /* ── LIGHTBOX ── */
-  const lb = document.getElementById('lb');
-  const lbImg = document.getElementById('lbImg');
-  const lbClose = document.getElementById('lbClose');
-  const lbPrev = document.getElementById('lbPrev');
-  const lbNext = document.getElementById('lbNext');
-  const lbCur = document.getElementById('lbCur');
-  const lbTot = document.getElementById('lbTot');
-  let lbIdx = 0;
+  /* ── LIGHTBOX ─────────────────────────────────────── */
+  var lb       = document.getElementById('lb');
+  var lbImg    = document.getElementById('lbImg');
+  var lbClose  = document.getElementById('lbClose');
+  var lbPrev   = document.getElementById('lbPrev');
+  var lbNext   = document.getElementById('lbNext');
+  var lbCur    = document.getElementById('lbCur');
+  var lbTot    = document.getElementById('lbTot');
+  var lbIdx    = 0;
+  var lbReturn = null;
   lbTot.textContent = imgs.length;
 
-  function openLb(i){ lbIdx=i; syncLb(); lb.classList.add('on'); document.body.style.overflow='hidden'; }
-  function closeLb(){ lb.classList.remove('on'); document.body.style.overflow=''; }
-  function syncLb(){
-    lbImg.src = imgs[lbIdx];
-    lbCur.textContent = lbIdx+1;
-    lbPrev.disabled = lbIdx===0;
-    lbNext.disabled = lbIdx===imgs.length-1;
+  function openLb(i, trigger) {
+    lbIdx = i;
+    lbReturn = trigger || document.activeElement;
+    syncLb();
+    lb.hidden = false;
+    requestAnimationFrame(function () { lb.classList.add('on'); });
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { lbClose.focus(); }, 50);
   }
-  lbClose.addEventListener('click', closeLb);
-  lb.addEventListener('click', e => { if(e.target===lb) closeLb(); });
-  lbPrev.addEventListener('click', () => { if(lbIdx>0){lbIdx--;syncLb();} });
-  lbNext.addEventListener('click', () => { if(lbIdx<imgs.length-1){lbIdx++;syncLb();} });
+  function closeLb() {
+    lb.classList.remove('on');
+    document.body.style.overflow = '';
+    setTimeout(function () {
+      lb.hidden = true;
+      if (lbReturn && typeof lbReturn.focus === 'function') lbReturn.focus();
+    }, 250);
+  }
+  function syncLb() {
+    lbImg.src = imgs[lbIdx];
+    lbImg.alt = alts[lbIdx] || '';
+    lbCur.textContent = lbIdx + 1;
+    lbPrev.disabled = lbIdx === 0;
+    lbNext.disabled = lbIdx === imgs.length - 1;
+  }
 
-  document.addEventListener('keydown', e => {
-    if(lb.classList.contains('on')){
-      if(e.key==='Escape') closeLb();
-      if(e.key==='ArrowLeft'&&lbIdx>0){lbIdx--;syncLb();}
-      if(e.key==='ArrowRight'&&lbIdx<imgs.length-1){lbIdx++;syncLb();}
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  lbPrev.addEventListener('click', function () { if (lbIdx > 0)              { lbIdx--; syncLb(); } });
+  lbNext.addEventListener('click', function () { if (lbIdx < imgs.length-1)  { lbIdx++; syncLb(); } });
+
+  // focus trap inside dialog
+  function focusables() {
+    return Array.prototype.slice.call(
+      lb.querySelectorAll('button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])')
+    );
+  }
+  document.addEventListener('keydown', function (e) {
+    if (lb.classList.contains('on')) {
+      if (e.key === 'Escape')                       { e.preventDefault(); closeLb(); }
+      else if (e.key === 'ArrowLeft'  && lbIdx > 0) { lbIdx--; syncLb(); }
+      else if (e.key === 'ArrowRight' && lbIdx < imgs.length - 1) { lbIdx++; syncLb(); }
+      else if (e.key === 'Tab') {
+        var f = focusables();
+        if (f.length === 0) { e.preventDefault(); return; }
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     }
   });
 
   // touch swipe lightbox
-  let ltx=0;
-  lb.addEventListener('touchstart',e=>ltx=e.changedTouches[0].screenX,{passive:true});
-  lb.addEventListener('touchend',e=>{
-    const diff=ltx-e.changedTouches[0].screenX;
-    if(Math.abs(diff)>50){
-      if(diff>0&&lbIdx<imgs.length-1){lbIdx++;syncLb();}
-      else if(diff<0&&lbIdx>0){lbIdx--;syncLb();}
+  var ltx = 0;
+  lb.addEventListener('touchstart', function (e) { ltx = e.changedTouches[0].screenX; }, { passive: true });
+  lb.addEventListener('touchend',   function (e) {
+    var diff = ltx - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) {
+      if      (diff > 0 && lbIdx < imgs.length - 1) { lbIdx++; syncLb(); }
+      else if (diff < 0 && lbIdx > 0)               { lbIdx--; syncLb(); }
     }
-  },{passive:true});
+  }, { passive: true });
 
+  /* ── STICKY NAV REVEAL ────────────────────────────── */
+  var nav  = document.getElementById('siteNav');
+  var hero = document.getElementById('hero');
+  if ('IntersectionObserver' in window && nav && hero) {
+    var navObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        nav.classList.toggle('is-pinned', !e.isIntersecting);
+      });
+    }, { rootMargin: '-80px 0px 0px 0px' });
+    navObs.observe(hero);
+  }
+
+  /* ── SCROLL REVEALS ───────────────────────────────── */
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !prefersReduced) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
 })();
 </script>
 </body>

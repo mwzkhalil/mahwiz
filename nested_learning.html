@@ -2,330 +2,99 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nested Learning — Mahwiz Khalil</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
-<style>
-:root {
-  --bg:        #0c0c0b;
-  --bg-subtle: #11110f;
-  --text:      #e4dccf;
-  --text-2:    #b8ad9d;
-  --text-3:    #8b8171;
-  --accent:    #ad8250;
-  --accent-2:  #c0a373;
-  --border:    #24211b;
-  --border-2:  #383126;
-  --code-bg:   #171613;
-}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0b">
 
-*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-::selection { background:rgba(173,130,80,.18); color:var(--text); }
+<title>Nested Learning — A Paradigm for AI Architecture · Mahwiz Khalil</title>
 
-body {
-  font-family:'Crimson Pro',Georgia,serif;
-  font-size:19px;
-  line-height:1.82;
-  color:var(--text);
-  background:var(--bg);
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
+<!-- ───── SEO ───── -->
+<meta name="description" content="Nested Learning argues every modern architecture — RNNs, Transformers, SSMs — is the same nested optimization process at different frequencies. A reading.">
+<meta name="author" content="Muhammad Mahwiz Khalil">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mahwiz.me/nested_learning">
 
-a {
-  -webkit-tap-highlight-color:transparent;
-}
+<!-- ───── Open Graph ───── -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahwiz.me/nested_learning">
+<meta property="og:title" content="Nested Learning — A Paradigm for AI Architecture">
+<meta property="og:description" content="Every architecture in deep learning is secretly the same optimization process at different frequencies.">
+<meta property="og:image" content="https://mahwiz.me/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mahwiz Khalil — essays on ML">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="mahwiz.me">
+<meta property="article:author" content="Muhammad Mahwiz Khalil">
+<meta property="article:published_time" content="2026-02-01">
+<meta property="article:section" content="Machine Learning">
+<meta property="article:tag" content="Nested Learning">
+<meta property="article:tag" content="Deep Learning">
+<meta property="article:tag" content="Transformers">
 
-a:focus-visible {
-  outline:1px solid var(--accent);
-  outline-offset:4px;
-}
+<!-- ───── Twitter ───── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mwzkhalil">
+<meta name="twitter:creator" content="@mwzkhalil">
+<meta name="twitter:title" content="Nested Learning — A Paradigm for AI Architecture">
+<meta name="twitter:description" content="Every architecture in deep learning is secretly the same optimization process at different frequencies.">
+<meta name="twitter:image" content="https://mahwiz.me/og-image.png">
 
-.skip-link {
-  position:fixed;
-  top:.75rem;
-  left:.75rem;
-  z-index:2000;
-  padding:.55rem .8rem;
-  background:var(--text);
-  color:var(--bg);
-  text-decoration:none;
-  transform:translateY(-180%);
-  transition:transform .2s ease;
-}
-.skip-link:focus { transform:translateY(0); }
+<!-- ───── Icons ───── -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
 
-.progress {
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:1000;
-  width:100%;
-  height:3px;
-  background:transparent;
-}
-.progress span {
-  display:block;
-  width:0;
-  height:100%;
-  background:var(--accent);
-}
+<!-- ───── Fonts ───── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"></noscript>
 
-.book {
-  max-width:680px;
-  margin:0 auto;
-  padding:4rem 2rem 5rem;
-}
+<!-- ───── Stylesheets ───── -->
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/article.css">
 
-/* back link */
-.back {
-  min-height:44px;
-  display:inline-flex;
-  align-items:center;
-  margin-bottom:2.5rem;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.78rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--text-3);
-  text-decoration:none;
-  transition:color .25s;
+<!-- ───── JSON-LD: Article ───── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mahwiz.me/nested_learning" },
+  "headline": "Nested Learning — A Paradigm for AI Architecture",
+  "description": "Nested Learning argues every modern architecture is the same nested optimization process at different frequencies.",
+  "image": "https://mahwiz.me/og-image.png",
+  "author": { "@type": "Person", "name": "Muhammad Mahwiz Khalil", "url": "https://mahwiz.me" },
+  "publisher": { "@type": "Person", "name": "Muhammad Mahwiz Khalil", "url": "https://mahwiz.me" },
+  "datePublished": "2026-02-01",
+  "inLanguage": "en"
 }
-.back::before { content:'← '; }
-.back:hover { color:var(--accent); }
-
-.article-nav {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:.65rem;
-  margin:2.2rem auto 0;
-}
-.article-nav a,
-.article-cta a {
-  min-height:44px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid var(--border-2);
-  padding:.5rem .85rem;
-  color:var(--text-3);
-  text-decoration:none;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.74rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  transition:color .25s,border-color .25s,background .25s;
-}
-.article-nav a:hover,
-.article-cta a:hover {
-  color:var(--accent-2);
-  border-color:var(--accent);
-  background:rgba(173,130,80,.045);
-}
-
-/* header */
-header {
-  margin-bottom:4rem;
-  text-align:center;
-  position:relative;
-}
-header::after {
-  content:'';
-  display:block;
-  width:52px; height:1px;
-  background:linear-gradient(90deg,transparent,var(--accent),transparent);
-  margin:2.4rem auto 0;
-}
-header h1 {
-  font-family:'Cormorant Garamond',serif;
-  font-weight:300;
-  font-size:2.4rem;
-  letter-spacing:.04em;
-  color:var(--text);
-  margin-bottom:1.4rem;
-  line-height:1.25;
-}
-.author-line {
-  font-size:.9rem;
-  color:var(--text-3);
-  font-family:'Cormorant Garamond',serif;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-
-/* article body */
-article p {
-  margin-bottom:1.6rem;
-  color:var(--text-2);
-  font-size:1.02rem;
-}
-article p:first-child { color:var(--text); }
-
-article h2 {
-  font-family:'Cormorant Garamond',serif;
-  font-weight:500;
-  font-size:1.55rem;
-  color:var(--text);
-  margin:3rem 0 1rem;
-  letter-spacing:.02em;
-}
-article h3 {
-  font-family:'Cormorant Garamond',serif;
-  font-weight:400;
-  font-size:1.2rem;
-  color:var(--accent-2);
-  margin:2.2rem 0 .8rem;
-  letter-spacing:.03em;
-  font-style:italic;
-}
-
-article strong { color:var(--text); font-weight:600; }
-article em { color:var(--accent-2); font-style:italic; }
-
-article a {
-  color:var(--accent);
-  text-decoration:none;
-  border-bottom:1px solid var(--border-2);
-  transition:color .25s,border-color .25s;
-}
-article a:hover { color:var(--accent-2); border-color:var(--accent); }
-
-article hr {
-  border:none;
-  border-top:1px solid var(--border);
-  margin:3rem 0;
-}
-
-/* blockquote */
-article blockquote {
-  border-left:2px solid var(--accent);
-  padding:.8rem 0 .8rem 1.6rem;
-  margin:2rem 0;
-  background:rgba(173,130,80,.035);
-}
-article blockquote p {
-  margin:0;
-  font-style:italic;
-  color:var(--text-2);
-}
-
-/* images */
-article img {
-  max-width:100%;
-  height:auto;
-  display:block;
-  margin:2.5rem auto;
-  border-radius:3px;
-  border:1px solid var(--border);
-  box-shadow:0 12px 42px rgba(0,0,0,.42);
-  background:#eee9df;
-  filter:brightness(1.08) contrast(1.05);
-}
-
-/* figure caption */
-.fig-cap {
-  text-align:center;
-  font-size:.82rem;
-  color:var(--text-3);
-  font-style:italic;
-  margin-top:-.8rem;
-  margin-bottom:2rem;
-  letter-spacing:.02em;
-}
-
-/* math */
-.math-block {
-  overflow-x:auto;
-  padding:1.4rem 1.6rem;
-  background:var(--code-bg);
-  border:1px solid var(--border);
-  border-radius:3px;
-  margin:2rem 0;
-  font-size:.9rem;
-  color:var(--accent-2);
-  font-family:'Crimson Pro',serif;
-  font-style:italic;
-  text-align:center;
-}
-
-/* code */
-article pre {
-  background:var(--code-bg);
-  border:1px solid var(--border);
-  border-radius:3px;
-  padding:1.4rem 1.6rem;
-  overflow-x:auto;
-  margin:2rem 0;
-  font-size:.88rem;
-  line-height:1.6;
-}
-article code {
-  font-family:'Courier Prime',monospace;
-  font-size:.88em;
-  color:#9abf9d;
-  background:rgba(154,191,157,.08);
-  padding:.1em .35em;
-  border-radius:2px;
-}
-article pre code {
-  background:none;
-  padding:0;
-  color:#ccc;
-}
-
-/* footer */
-footer {
-  margin-top:6rem;
-  padding-top:3rem;
-  text-align:center;
-  position:relative;
-}
-footer::before {
-  content:'';
-  position:absolute; top:0; left:50%;
-  transform:translateX(-50%);
-  width:44px; height:1px;
-  background:linear-gradient(90deg,transparent,var(--border-2),transparent);
-}
-.foot-orn { color:var(--accent); opacity:.35; font-size:.75rem; letter-spacing:.25em; }
-.article-cta {
-  display:flex;
-  justify-content:center;
-  margin-top:2rem;
-}
-
-@media(max-width:600px){
-  .book { padding:3.4rem 1.4rem 4.5rem; }
-  header h1 { font-size:1.9rem; }
-  .article-nav { justify-content:flex-start; }
-  .article-nav a,
-  .article-cta a { width:100%; }
-  article p { font-size:1rem; }
-  article h2 { font-size:1.38rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior:auto; }
-  *, *::before, *::after {
-    animation-duration:.001ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.001ms !important;
-  }
-}
-</style>
+</script>
 </head>
 <body>
+
 <div class="progress" aria-hidden="true"><span id="readProgress"></span></div>
 <a class="skip-link" href="#content">Skip to article</a>
+
+<!-- ── STICKY NAV ────────────────────────────────────── -->
+<nav class="site-nav" id="siteNav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__brand">Mahwiz Khalil</a>
+    <ul class="site-nav__links">
+      <li><a href="/#research">Research</a></li>
+      <li><a href="/#selected">Work</a></li>
+      <li><a href="/#connect">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="book">
 
-  <a href="index.html" class="back">Mahwiz Khalil</a>
+  <a href="/" class="back">Mahwiz Khalil</a>
 
-  <header>
+  <header class="article-head reveal" id="hero">
     <h1>Nested Learning</h1>
-    <div class="author-line">Mahwiz Khalil &nbsp;·&nbsp; 2026</div>
+    <div class="author-line">Mahwiz Khalil &nbsp;&middot;&nbsp; 2026</div>
     <nav class="article-nav" aria-label="Article sections">
       <a href="#problem">Problem</a>
       <a href="#structure">Structure</a>
@@ -345,35 +114,40 @@ footer::before {
       viewed from different angles.
     </p>
 
-    <h2 id="problem">The Problem with How We Think About Architecture</h2>
+    <h2 id="problem" class="reveal">The Problem with How We Think About Architecture</h2>
 
-    <p>
+    <p class="reveal">
       When most people think about neural network architectures, they think about <em>layers</em>.
       You stack a self-attention block on top of a feedforward network, wrap it in residual connections,
       repeat 96 times, and call it GPT-4. The architecture is the recipe. The optimizer is separate.
       Training is something that <em>happens to</em> the architecture.
     </p>
 
-    <p>
+    <p class="reveal">
       Nested Learning (NL) says this view is wrong — not slightly off, but fundamentally backward.
       The architecture <em>is</em> the optimizer. Or more precisely: what we call an "architecture"
       is a set of nested optimization processes running at different frequencies, each with its own
       objective and context window.
     </p>
 
-    <img src="NL-1a.png" alt="Uniform and Reusable Structure — Nested Learning">
-    <div class="fig-cap">Fig 1. The brain's uniform structure (left) and its NL analogue: decomposing architectures into uniform, reusable neural learning modules.</div>
+    <figure class="article-fig reveal">
+      <picture>
+        <source srcset="/NL-1a.webp" type="image/webp">
+        <img src="/NL-1a.png" alt="Diagram: Nested Learning — uniform reusable structure with multi-timescale updates" width="1250" height="456" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="fig-cap">Fig 1. The brain's uniform structure (left) and its NL analogue: decomposing architectures into uniform, reusable neural learning modules.</figcaption>
+    </figure>
 
-    <h2 id="structure">Uniform and Reusable Structure</h2>
+    <h2 id="structure" class="reveal">Uniform and Reusable Structure</h2>
 
-    <p>
+    <p class="reveal">
       The brain has a remarkable property: its basic computational unit — the cortical column — is essentially
       the same whether it's processing vision, language, or motor control. Neuroplasticity works precisely
       because this structure is uniform and reusable. The brain doesn't rewire itself with new types of neurons;
       it rewires the <em>connections</em> between the same building blocks.
     </p>
 
-    <blockquote>
+    <blockquote class="reveal">
       <p>
         In NL, architectures are decomposed into a set of neurons (i.e., linear or locally deep MLPs),
         each of which with its own context flow and objective. This design provides a uniform and reusable
@@ -381,23 +155,23 @@ footer::before {
       </p>
     </blockquote>
 
-    <p>
+    <p class="reveal">
       This is the first key insight. Once you decompose any architecture into its NL form,
       you see the same thing everywhere: feedforward networks being optimized with respect to
       some local objective, over some local context. The apparent heterogeneity of modern architectures
       is an illusion.
     </p>
 
-    <h2 id="timescale">Multi Time Scale Update</h2>
+    <h2 id="timescale" class="reveal">Multi Time Scale Update</h2>
 
-    <p>
+    <p class="reveal">
       The brain doesn't update all its neurons at the same speed. Delta waves (0.5–4 Hz) govern
       deep slow consolidation. Gamma waves (30–100 Hz) handle rapid local processing.
       There is no single centralized clock. Earlier layers update quickly in response to immediate inputs;
       later layers integrate information over much longer time scales.
     </p>
 
-    <blockquote>
+    <blockquote class="reveal">
       <p>
         In NL, parameters in each <em>"level"</em> are updated with their own specific frequency
         and does not rely on a single centralized clock. The HoPE's design allows the earlier layers
@@ -406,107 +180,152 @@ footer::before {
       </p>
     </blockquote>
 
-    <img src="NL-2.png" alt="Nested Learning — Gradient Flow and Deep Learning Comparison">
-    <div class="fig-cap">Fig 2. Left: how deep learning flattens gradient flow. Right: NL's hierarchical gradient structure, making the internal process mathematically transparent.</div>
+    <figure class="article-fig reveal">
+      <picture>
+        <source srcset="/NL-2.webp" type="image/webp">
+        <img src="/NL-2.png" alt="Diagram: Nested Learning — hierarchical gradient flow vs. standard deep learning" width="1042" height="387" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="fig-cap">Fig 2. Left: how deep learning flattens gradient flow. Right: NL's hierarchical gradient structure, making the internal process mathematically transparent.</figcaption>
+    </figure>
 
-    <p>
+    <p class="reveal">
       This is where NL becomes genuinely strange and interesting. The standard Transformer updates
       all its parameters at the same rate — one gradient step per forward pass. But in the NL framework,
       a Transformer is actually doing something more subtle: the attention mechanism is updating
-      a "fast memory" at frequency ∞ (every token), while the FFN weights update slowly (only during
+      a "fast memory" at frequency &infin; (every token), while the FFN weights update slowly (only during
       the outer training loop).
     </p>
 
-    <h2 id="same">Everything is the Same Thing</h2>
+    <h2 id="same" class="reveal">Everything is the Same Thing</h2>
 
-    <p>
+    <p class="reveal">
       Here is the claim that initially sounds too strong to be true, but becomes more convincing
       the longer you think about it: <strong>RNNs, Transformers, and SSMs are all the same
       optimization process, parameterized differently.</strong>
     </p>
 
-    <p>
+    <p class="reveal">
       An RNN is a level-1 NL module: it maintains a hidden state (fast memory) that it updates
       at every timestep using its recurrence weights (slow memory). The recurrence is the optimizer;
       the weights are the model being optimized.
     </p>
 
-    <p>
+    <p class="reveal">
       A Transformer's attention mechanism, viewed through NL, is solving a different optimization:
       it finds the optimal "memory state" for the entire context at once, rather than incrementally.
       This is why attention has infinite context but quadratic cost — it's re-solving the whole
       optimization problem from scratch at every layer.
     </p>
 
-    <div class="math-block">
-      M* = argmin_M Σᵢ s(kᵢ, q) ‖vᵢ − M‖₂² = Σᵢ [s(kᵢ,q) / Σⱼ s(kⱼ,q)] vᵢ
+    <div class="math-block reveal" role="math" aria-label="Attention as memory optimization">
+      M* = argmin<sub>M</sub> &Sigma;<sub>i</sub> s(k<sub>i</sub>, q) &Vert;v<sub>i</sub> &minus; M&Vert;<sub>2</sub><sup>2</sup>
+      &nbsp;=&nbsp;
+      &Sigma;<sub>i</sub> [s(k<sub>i</sub>,q) / &Sigma;<sub>j</sub> s(k<sub>j</sub>,q)] v<sub>i</sub>
     </div>
 
-    <p>
+    <p class="reveal">
       This is exactly softmax attention. It's finding the optimal memory state for the
       <em>entire context</em> at once, rather than incrementally updating parameters. The formula
       that underlies every modern LLM is, in the NL view, just one particular solution to
       a particular memory optimization problem.
     </p>
 
-    <img src="NL-3.png" alt="Nested Learning — Multi-level Frequency Architecture">
-    <div class="fig-cap">Fig 3. Frequency levels in NL: each level optimizes at its own timescale. The architecture becomes a stack of nested optimization processes.</div>
+    <figure class="article-fig reveal">
+      <picture>
+        <source srcset="/NL-3.webp" type="image/webp">
+        <img src="/NL-3.png" alt="Diagram: Nested Learning — frequency levels of nested optimization" width="1016" height="392" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="fig-cap">Fig 3. Frequency levels in NL: each level optimizes at its own timescale. The architecture becomes a stack of nested optimization processes.</figcaption>
+    </figure>
 
-    <h2 id="matters">Why This Matters</h2>
+    <h2 id="matters" class="reveal">Why This Matters</h2>
 
-    <p>
+    <p class="reveal">
       The standard deep learning framework has a hidden bug: catastrophic forgetting.
       When you fine-tune a model on new data, it overwrites old knowledge. This happens because
       everything runs at the same frequency — there's no slow consolidation, no long-term
       memory that resists rapid updates.
     </p>
 
-    <p>
+    <p class="reveal">
       The promise of Nested Learning is that we can build AI systems that don't suffer from this amnesia,
       systems that can form new long-term memories gradually, consolidate experiences across time scales,
       and truly learn continually without catastrophic forgetting.
     </p>
 
-    <p>
+    <p class="reveal">
       But more than that, NL suggests that the distinction between "architecture" and "optimizer"
       is artificial. They're both parts of the same nested system. The question isn't
       "What layers should I stack?" but <strong>"What optimization processes should I nest,
       and at what frequencies?"</strong>
     </p>
 
-    <p>
+    <p class="reveal">
       This is a paradigm shift in the Thomas Kuhn sense — not just new techniques,
       but a new way of seeing the entire field. Whether NL becomes the dominant framework
       or just a useful perspective, it's asking the right questions.
     </p>
 
-    <p>
+    <p class="reveal">
       And asking the right questions, as always, is half the battle.
     </p>
 
     <hr>
 
-    <p><em>Will cover the HoPE architecture in the next part.</em></p>
+    <p class="reveal"><em>Will cover the HoPE architecture in the next part.</em></p>
 
   </article>
   </main>
 
-  <footer>
-    <div class="foot-orn" aria-hidden="true">✦</div>
-    <div class="article-cta"><a href="index.html#research">Back to Research</a></div>
+  <footer class="site-foot">
+    <div class="foot-orn" aria-hidden="true">&#10026;</div>
+    <div class="article-cta"><a href="/#research">Back to Research</a></div>
   </footer>
 
 </div>
+
 <script>
-(function(){
-  const bar = document.getElementById('readProgress');
-  function updateProgress(){
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+(function () {
+  'use strict';
+  var bar  = document.getElementById('readProgress');
+  var nav  = document.getElementById('siteNav');
+  var hero = document.getElementById('hero');
+  var ticking = false;
+
+  function updateProgress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
     bar.style.width = pct + '%';
+    ticking = false;
   }
   updateProgress();
-  window.addEventListener('scroll', updateProgress, { passive:true });
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
+  }, { passive: true });
+
+  // sticky nav reveal
+  if ('IntersectionObserver' in window && nav && hero) {
+    var navObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { nav.classList.toggle('is-pinned', !e.isIntersecting); });
+    }, { rootMargin: '-80px 0px 0px 0px' });
+    navObs.observe(hero);
+  }
+
+  // scroll reveals
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !prefersReduced) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
 })();
 </script>
 </body>
