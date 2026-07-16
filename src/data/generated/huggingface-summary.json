@@ -1,0 +1,28 @@
+{
+  "fetchedAt": "2026-07-15T13:18:30.400Z",
+  "source": "Derived from the generated Hugging Face snapshots",
+  "username": "mahwizzzz",
+  "items": [
+    {
+      "counts": {
+        "models": 43,
+        "datasets": 21,
+        "spaces": 6,
+        "writing": 0
+      },
+      "profileCounts": {
+        "models": 43,
+        "datasets": 21,
+        "spaces": 6
+      },
+      "totals": {
+        "modelDownloads": 446,
+        "datasetDownloads": 543,
+        "modelLikes": 26,
+        "datasetLikes": 12,
+        "spaceLikes": 4
+      },
+      "warnings": []
+    }
+  ]
+}

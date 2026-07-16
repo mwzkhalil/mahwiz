@@ -1,0 +1,7 @@
+{
+  "fetchedAt": "2026-07-15T13:18:30.400Z",
+  "source": "https://huggingface.co/api/posts",
+  "username": "mahwizzzz",
+  "items": [],
+  "note": "The official public posts endpoint did not expose a working author filter; no posts were imported."
+}

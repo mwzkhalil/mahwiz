@@ -1,0 +1,1072 @@
+{
+  "fetchedAt": "2026-07-15T13:18:30.400Z",
+  "source": "https://huggingface.co/api/datasets?author=mahwizzzz&full=true&limit=100",
+  "username": "mahwizzzz",
+  "items": [
+    {
+      "id": "mahwizzzz/001",
+      "name": "001",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/001",
+      "createdAt": "2025-07-01T13:52:27.000Z",
+      "lastModified": "2025-07-01T14:10:40.000Z",
+      "sha": "3983e280880e0032143c5a035466045a5e6a87d7",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 4,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "dask",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:dask",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:polars",
+        "modality:audio",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/11th-maths",
+      "name": "11th-maths",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/11th-maths",
+      "createdAt": "2024-05-28T10:00:32.000Z",
+      "lastModified": "2024-06-24T02:15:31.000Z",
+      "sha": "a67aa12c4ebf94d47ad93cdf94588285157b6421",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 25,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "language:en",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "maths",
+        "modality:text",
+        "region:us",
+        "size_categories:1K<n<10K",
+        "task_categories:text-generation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "license": null,
+      "taskCategories": [
+        "text-generation"
+      ],
+      "sizeCategories": [
+        "1K<n<10K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/1DamnAudio",
+      "name": "1DamnAudio",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/1DamnAudio",
+      "createdAt": "2025-11-28T10:11:46.000Z",
+      "lastModified": "2026-03-18T06:12:09.000Z",
+      "sha": "b5dc4aa90309f8b884de28ceb8b1021e21172c48",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 6,
+      "likes": 2,
+      "pipelineTag": null,
+      "library": "dask",
+      "sdk": null,
+      "tags": [
+        "asr",
+        "audiobook",
+        "format:parquet",
+        "language:ur",
+        "library:dask",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:polars",
+        "license:cc-by-4.0",
+        "modality:audio",
+        "modality:text",
+        "pakistan",
+        "region:us",
+        "size_categories:100K<n<1M",
+        "speech",
+        "task_categories:automatic-speech-recognition",
+        "task_categories:text-to-speech",
+        "tts",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "cc-by-4.0",
+      "taskCategories": [
+        "automatic-speech-recognition",
+        "text-to-speech"
+      ],
+      "sizeCategories": [
+        "100K<n<1M"
+      ],
+      "description": "1DamnAudio Large-scale Urdu TTS dataset with 221,929 audio-text pairs totaling 208.5 hours of speech. Dataset Statistics Metric Value Total Samples 221,929 Total Duration 208.5 hours Mean Duration 3.38 sec Std Duration 1.12 sec Min Duration 2.00 sec Max Duration 14.96 sec Sample Rate 16kHz Format WAV Avg Confidence 0.9767 Duration Distribution Percentile Duration 25% 2.52 sec 50% 3.18 sec 75% 3.96 sec… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/1DamnAudio.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/Cases-Instruct-pk",
+      "name": "Cases-Instruct-pk",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/Cases-Instruct-pk",
+      "createdAt": "2024-06-08T15:30:43.000Z",
+      "lastModified": "2024-06-24T09:50:47.000Z",
+      "sha": "00e4a0fac8c93ba7f9b01124b2c18b492907f889",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 15,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "modality:text",
+        "region:us",
+        "size_categories:1K<n<10K"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "1K<n<10K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/hh-rlhf-urdu",
+      "name": "hh-rlhf-urdu",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/hh-rlhf-urdu",
+      "createdAt": "2026-04-15T10:21:34.000Z",
+      "lastModified": "2026-04-19T17:58:53.000Z",
+      "sha": "1c8d61dee5b3a768b1257887ee24abc7bbb5e853",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 5,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "arxiv:2212.08073",
+        "conversational",
+        "format:optimized-parquet",
+        "format:parquet",
+        "helpful-harmless",
+        "language:ur",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "rlhf",
+        "size_categories:10K<n<100K",
+        "task_categories:reinforcement-learning",
+        "task_categories:text-generation",
+        "translation",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [
+        "reinforcement-learning",
+        "text-generation"
+      ],
+      "sizeCategories": [
+        "10K<n<100K",
+        "n<1K"
+      ],
+      "description": "HH-RLHF Urdu Dataset Urdu translation of the Anthropic HH-RLHF dataset created for Reinforcement Learning from Human Feedback (RLHF) research in Urdu. Example { \"chosen\": [ {\"role\": \"user\", \"content\": \"جسم کے مناسب طریقے سے کام کرنے کے لیے کون سے وٹامنز ضروری ہیں؟\"}, {\"role\": \"assistant\", \"content\": \"ایسے کچھ بہت اہم وٹامنز ہیں ...\"} ], \"rejected\": [ {\"role\": \"user\", \"content\": \"جسم کے مناسب طریقے سے کام کرنے کے لیے کون سے وٹامنز ضروری ہیں؟\"}… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/hh-rlhf-urdu.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [
+          "2212.08073"
+        ],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/sindhi_alpaca_yc_filtered",
+      "name": "sindhi_alpaca_yc_filtered",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/sindhi_alpaca_yc_filtered",
+      "createdAt": "2024-03-25T07:00:04.000Z",
+      "lastModified": "2025-03-03T08:23:05.000Z",
+      "sha": "16633d3d4a1ef716b05839f60b4be5b12898258c",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 9,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "language:sd",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K"
+      ],
+      "languages": [
+        "sd"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/syn-ur",
+      "name": "syn-ur",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/syn-ur",
+      "createdAt": "2025-11-11T12:37:57.000Z",
+      "lastModified": "2025-11-11T13:17:37.000Z",
+      "sha": "bf28f5194d143ff60a2ec16086a3e4e506589611",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 5,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "dask",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:dask",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:polars",
+        "modality:audio",
+        "modality:text",
+        "region:us",
+        "size_categories:1K<n<10K"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "1K<n<10K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/syn-ur-2",
+      "name": "syn-ur-2",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/syn-ur-2",
+      "createdAt": "2025-11-13T09:35:33.000Z",
+      "lastModified": "2025-11-13T09:58:02.000Z",
+      "sha": "1e24294d921f2383de10f59bb89ce7085dd5fcb0",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 10,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "dask",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:dask",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:polars",
+        "modality:audio",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UAT",
+      "name": "UAT",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/UAT",
+      "createdAt": "2025-02-13T07:58:45.000Z",
+      "lastModified": "2025-02-01T08:00:00.000Z",
+      "sha": "da45a8fce76781c4b8e9609f256d737d5dc5f91d",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 174,
+      "likes": 3,
+      "pipelineTag": null,
+      "library": "dask",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:dask",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:polars",
+        "modality:audio",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/ur_financial_phrasebank",
+      "name": "ur_financial_phrasebank",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/ur_financial_phrasebank",
+      "createdAt": "2023-11-21T12:44:07.000Z",
+      "lastModified": "2023-11-21T12:45:38.000Z",
+      "sha": "e81799f3667a53178672e53eaa68a607adee2cd4",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 19,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:1K<n<10K"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [
+        "1K<n<10K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/ur_nano_codec",
+      "name": "ur_nano_codec",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/ur_nano_codec",
+      "createdAt": "2025-11-03T13:46:50.000Z",
+      "lastModified": "2025-11-04T18:19:09.000Z",
+      "sha": "172618f59fbeed36d8a4ef5a987c7c32b6640c62",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 12,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": "Urdu Nano Codec TTS Dataset This dataset contains Urdu sentences along with their Nano Codec tokenized representations (nano_layer_1 to nano_layer_4) generated using NVIDIA NeMo Nano Codec model (22kHz, 0.6 kbps, 12.5 fps). It can be used for: TTS model training Audio reconstruction from tokens Low-resource Urdu speech research Dataset Structure text: Original Urdu sentences nano_layer_1 … nano_layer_4: Tokenized representations (quantized codebooks) encoded_len:… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/ur_nano_codec.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/ur_para",
+      "name": "ur_para",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/ur_para",
+      "createdAt": "2023-01-20T07:11:27.000Z",
+      "lastModified": "2023-06-24T13:06:04.000Z",
+      "sha": "d020c8636ea3634b614786543747bba081e865ec",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:json",
+        "language:ur",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:100K<n<1M",
+        "task_categories:summarization",
+        "task_categories:text-generation"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [
+        "summarization",
+        "text-generation",
+        "text2text-generation"
+      ],
+      "sizeCategories": [
+        "100K<n<1M"
+      ],
+      "description": "Paraphrase Dataset (Urdu) This dataset contains paraphrases in Urdu. It is provided in the Parquet format and is split into a training set with 393,000 rows. Dataset Details Columns: sentence1: The first sentence in a pair of paraphrases (string). sentence2: The second sentence in a pair of paraphrases (string). Usage You can use this dataset for various natural language processing tasks such as text similarity, paraphrase identification, and… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/ur_para.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/urdu_alpaca_yc_filtered",
+      "name": "urdu_alpaca_yc_filtered",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/urdu_alpaca_yc_filtered",
+      "createdAt": "2024-01-01T12:15:35.000Z",
+      "lastModified": "2024-03-25T06:51:46.000Z",
+      "sha": "63e252928f3f03d37d8f55c642a719b5d0ae26b9",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 45,
+      "likes": 1,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "instruction-finetuning",
+        "language:ur",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:cc-by-4.0",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K",
+        "task_categories:text-generation"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "cc-by-4.0",
+      "taskCategories": [
+        "text-generation"
+      ],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": "Alpaca Urdu Description The Alpaca Urdu is a translation of the original dataset into Urdu. This dataset is a part of the Alpaca project and is designed for NLP tasks. Dataset Information Size: The translated dataset contains [45,622] samples. Languages: Urdu License: [cc-by-4.0] Original Dataset: Link to the original Alpaca Cleaned dataset repository Columns The translated dataset includes the following columns: input: The input text in Urdu.… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/urdu_alpaca_yc_filtered.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/urdu_error_correction",
+      "name": "urdu_error_correction",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/urdu_error_correction",
+      "createdAt": "2025-03-20T07:51:57.000Z",
+      "lastModified": "2025-03-20T10:21:57.000Z",
+      "sha": "795a6019f67ee797cc741bf8e089ee45f7367db5",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 29,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "language:ur",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "modality:text",
+        "region:us",
+        "size_categories:100K<n<1M"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "100K<n<1M"
+      ],
+      "description": "This dataset contains paired Urdu text for error correction tasks. Data Format Each dialogue entry in the dataset is structured as follows: input_text: The text containing simulated errors. correct_text: The corresponding correct text.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/urdu-208h",
+      "name": "urdu-208h",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/urdu-208h",
+      "createdAt": "2026-01-17T16:31:24.000Z",
+      "lastModified": "2026-01-17T20:02:59.000Z",
+      "sha": "0900dd27d6fa161886aa5d8186d8a9686203cbdc",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 11,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "dask",
+      "sdk": null,
+      "tags": [
+        "format:optimized-parquet",
+        "format:parquet",
+        "language:ur",
+        "library:dask",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:polars",
+        "modality:audio",
+        "modality:text",
+        "region:us",
+        "size_categories:100K<n<1M",
+        "task_categories:text-to-speech"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": null,
+      "taskCategories": [
+        "text-to-speech"
+      ],
+      "sizeCategories": [
+        "100K<n<1M"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/urdu-g2p",
+      "name": "urdu-g2p",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/urdu-g2p",
+      "createdAt": "2025-04-19T13:46:21.000Z",
+      "lastModified": "2025-04-19T13:58:46.000Z",
+      "sha": "2ddd6b93d2aa59600332ef2f4cfb83ac98d72683",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 12,
+      "likes": 1,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduAssistant",
+      "name": "UrduAssistant",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/UrduAssistant",
+      "createdAt": "2023-08-13T13:13:42.000Z",
+      "lastModified": "2023-08-31T10:28:36.000Z",
+      "sha": "31a92c6cb90c4255ac0aa848caf283ba549dce7a",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 30,
+      "likes": 3,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "language:ur",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": "The UrduAssistant dataset provides a collection of dialogues between humans and an AI assistant, covering a wide range of topics. The dataset includes human queries and assistant responses in Urdu. Data Format Each dialogue entry in the dataset is structured as follows: Human: The human query or statement in the conversation. Assistant: The assistant's response to the human query or statement. Acknowledgments The UrduAssistant dataset is provided under the MIT license.… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/UrduAssistant.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduLegal",
+      "name": "UrduLegal",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/UrduLegal",
+      "createdAt": "2023-08-10T06:50:45.000Z",
+      "lastModified": "2025-02-13T08:43:56.000Z",
+      "sha": "926b7d79e6e75ac3d6f78d13433dbaa86663d435",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 19,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "language:ur",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:1K<n<10K"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [
+        "1K<n<10K"
+      ],
+      "description": "The UrduLegal dataset provides a collection of input and output on legal domain. The dataset includes human queries and responses in Urdu. Data Format Each dialogue entry in the dataset is structured as follows: inpput: The legal query or statement. output: The resposne of the legal querry or statement. Acknowledgments The Urdu dataset is provided under the MIT license. If you use this dataset in your work, please acknowledge the creators and consider referencing this… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/UrduLegal.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduQuotes",
+      "name": "UrduQuotes",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/UrduQuotes",
+      "createdAt": "2023-09-09T20:44:53.000Z",
+      "lastModified": "2023-09-10T12:00:49.000Z",
+      "sha": "d89d17e97fcf23357885d903d369b7adce6a72de",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 65,
+      "likes": 1,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "language:ur",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:1K<n<10K",
+        "task_categories:text-generation"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [
+        "text-generation"
+      ],
+      "sizeCategories": [
+        "1K<n<10K"
+      ],
+      "description": "The Urdu Quotes Dataset contains a collection of quotes in Urdu.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrQIA",
+      "name": "UrQIA",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/UrQIA",
+      "createdAt": "2024-05-03T10:15:15.000Z",
+      "lastModified": "2024-06-01T14:25:37.000Z",
+      "sha": "6fd7079ccd6b1826aa2aee809c5ccfb60efd5fe7",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 25,
+      "likes": 1,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:parquet",
+        "language:ur",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:1K<n<10K"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [
+        "1K<n<10K"
+      ],
+      "description": "Inspired by COIG-CQIA, Translated the data from LooksJuicy/ruozhiba The selected question data of Mentally Retarded Bar comes from the interrogative sentences provided by github . It calls GPT-4 to obtain the answers and filters out the replies that clearly refuse to answer.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/ursum",
+      "name": "ursum",
+      "author": "mahwizzzz",
+      "repoType": "dataset",
+      "url": "https://huggingface.co/datasets/mahwizzzz/ursum",
+      "createdAt": "2023-01-14T09:24:32.000Z",
+      "lastModified": "2023-05-14T13:03:37.000Z",
+      "sha": "1cf719df8656d336007786980ce361ae2a85ebdb",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 23,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "datasets",
+      "sdk": null,
+      "tags": [
+        "format:csv",
+        "language:ur",
+        "library:datasets",
+        "library:mlcroissant",
+        "library:pandas",
+        "library:polars",
+        "license:mit",
+        "modality:text",
+        "region:us",
+        "size_categories:10K<n<100K",
+        "task_categories:summarization",
+        "task_categories:text-generation"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [
+        "summarization",
+        "text-generation",
+        "text2text-generation"
+      ],
+      "sizeCategories": [
+        "10K<n<100K"
+      ],
+      "description": "Urdu Summarization Dataset Overview The Urdu Summarization dataset contains news articles in Urdu language along with their summaries. The dataset contains a total of 48,071 news articles collected from the BBC Urdu website. Each article is labeled with its headline, summary, and full text. Dataset Details The dataset contains the following columns: id (string): Unique identifier for each article url (string): URL for the original article title (string):… See the full description on the dataset page: https://huggingface.co/datasets/mahwizzzz/ursum.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    }
+  ]
+}

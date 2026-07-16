@@ -1,0 +1,2394 @@
+{
+  "fetchedAt": "2026-07-15T13:18:30.400Z",
+  "source": "https://huggingface.co/api/models?author=mahwizzzz&full=true&cardData=true&limit=100",
+  "username": "mahwizzzz",
+  "items": [
+    {
+      "id": "mahwizzzz/aegis",
+      "name": "aegis",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/aegis",
+      "createdAt": "2026-04-29T15:51:51.000Z",
+      "lastModified": "2026-05-23T19:24:50.000Z",
+      "sha": "0dbb1c34e624f9df2c56afe474285323ee8f7af8",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 19,
+      "likes": 0,
+      "pipelineTag": "token-classification",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "base_model:openai/privacy-filter",
+        "base_model:quantized:openai/privacy-filter",
+        "dataset:mahwizzzz/uopf-sipar",
+        "finance",
+        "healthcare",
+        "legal",
+        "license:apache-2.0",
+        "multi-domain",
+        "named-entity-recognition",
+        "onnx",
+        "pii-detection",
+        "privacy_filter",
+        "privacy-filtering",
+        "region:us",
+        "safetensors",
+        "token-classification",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "A privacy-filter model for detecting and redacting personally identifiable information (PII) in Urdu text across legal, financial, healthcare, government, and other domains. The model is fine-tuned from openai/privacy-filter on mahwizzzz/uopf-sipar, a 100K Urdu dataset spanning twelve domains.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "openai/privacy-filter"
+        ],
+        "datasets": [
+          "mahwizzzz/uopf-sipar"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/atup-models",
+      "name": "atup-models",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/atup-models",
+      "createdAt": "2026-06-17T11:45:49.000Z",
+      "lastModified": "2026-06-17T11:46:16.000Z",
+      "sha": "de1e5bb0732c6b0276d05b62927f62a1a8ed6cc9",
+      "private": false,
+      "gated": "manual",
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "ctc",
+        "license:other",
+        "nlp",
+        "ocr",
+        "pytorch",
+        "region:us",
+        "ur",
+        "urdu",
+        "yolo"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "other",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/aurix-v1",
+      "name": "aurix-v1",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/aurix-v1",
+      "createdAt": "2026-05-29T10:36:47.000Z",
+      "lastModified": "2026-05-29T11:35:58.000Z",
+      "sha": "9980d84681532a313773d40c3a7d977fd45c51dd",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 2,
+      "likes": 0,
+      "pipelineTag": "automatic-speech-recognition",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "arxiv:2212.04356",
+        "automatic-speech-recognition",
+        "base_model:finetune:openai/whisper-large-v3-turbo",
+        "base_model:openai/whisper-large-v3-turbo",
+        "dataset:mahwizzzz/syn-ur",
+        "dataset:mahwizzzz/syn-ur-2",
+        "endpoints_compatible",
+        "fine-tuned",
+        "license:mit",
+        "model-index",
+        "phonetic-transcription",
+        "region:us",
+        "safetensors",
+        "speech-to-ipa",
+        "transformers",
+        "ur",
+        "urdu",
+        "whisper"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "`aurix-v1` is a fine-tuned variant of `openai/whisper-large-v3-turbo` that transcribes Urdu speech directly into IPA (International Phonetic Alphabet) phonemes instead of orthographic Urdu script. The model maps a 16 kHz audio waveform of spoken Urdu to a string of phonemes annotated with primary and secondary stress, vowel length, nasalization, and the full retroflex / aspirated consonant inventory of Urdu.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "openai/whisper-large-v3-turbo"
+        ],
+        "datasets": [
+          "mahwizzzz/syn-ur",
+          "mahwizzzz/syn-ur-2"
+        ],
+        "models": [],
+        "papers": [
+          "2212.04356"
+        ],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "cer",
+          "wer"
+        ],
+        "model-index": [
+          {
+            "name": "aurix-v1",
+            "results": [
+              {
+                "task": {
+                  "type": "automatic-speech-recognition",
+                  "name": "Speech-to-IPA Transcription"
+                },
+                "dataset": {
+                  "type": "google/fleurs",
+                  "name": "FLEURS (Urdu, Pakistan)",
+                  "config": "ur_pk",
+                  "split": "test"
+                },
+                "metrics": [
+                  {
+                    "type": "cer",
+                    "value": 0.1833,
+                    "name": "Character Error Rate",
+                    "verified": false
+                  },
+                  {
+                    "type": "wer",
+                    "value": 0.3995,
+                    "name": "Word Error Rate",
+                    "verified": false
+                  },
+                  {
+                    "type": "ser",
+                    "value": 0.4874,
+                    "name": "Stress Error Rate",
+                    "verified": false
+                  },
+                  {
+                    "type": "ver",
+                    "value": 0.1457,
+                    "name": "Vowel Error Rate",
+                    "verified": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/aurora-ckpt",
+      "name": "aurora-ckpt",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/aurora-ckpt",
+      "createdAt": "2026-03-27T07:55:34.000Z",
+      "lastModified": "2026-03-27T08:06:08.000Z",
+      "sha": "8a1752a2b8e45a7dfc37d546c799b281132ebd99",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "region:us",
+        "safetensors"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": false,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/CAT",
+      "name": "CAT",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/CAT",
+      "createdAt": "2025-06-07T13:30:11.000Z",
+      "lastModified": "2025-06-24T20:53:15.000Z",
+      "sha": "8a46aa22a65a3a05d06c16a6f3e5c19be53977cf",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 1,
+      "likes": 0,
+      "pipelineTag": "image-text-to-text",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "image-text-to-text",
+        "multimodal",
+        "region:us",
+        "research",
+        "safetensors",
+        "vision-language"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "--- For reference on model card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1 Doc / guide: https://huggingface.co/docs/hub/model-cards",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/deepspeak-v1",
+      "name": "deepspeak-v1",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/deepspeak-v1",
+      "createdAt": "2026-04-26T09:50:21.000Z",
+      "lastModified": "2026-05-26T18:08:36.000Z",
+      "sha": "df4e2b1e82f46a97f373920fc83ce29dc23ec795",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 5,
+      "likes": 1,
+      "pipelineTag": "text-to-speech",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "diffusion",
+        "license:apache-2.0",
+        "rectified-flow",
+        "region:us",
+        "text-to-speech",
+        "tts",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "**DeepSpeak-v1** is an Urdu text-to-speech model built on a Rectified Flow Diffusion Transformer (DiT) architecture. It is trained from scratch on native Urdu speech and uses Qwen3.5-0.8B as the text backbone with a Semantic DACVAE codec for high-quality latent audio.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/Dia-1.6B-Urdu",
+      "name": "Dia-1.6B-Urdu",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu",
+      "createdAt": "2026-02-26T22:05:48.000Z",
+      "lastModified": "2026-03-03T10:44:39.000Z",
+      "sha": "9576ef5c4fac0d307b42ffe47586bcc6cb52ef55",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 22,
+      "likes": 2,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:nari-labs/Dia-1.6B",
+        "base_model:nari-labs/Dia-1.6B",
+        "dataset:mahwizzzz/1DamnAudio",
+        "dia",
+        "license:apache-2.0",
+        "region:us",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "[](https://huggingface.co/mahwizzzz/Dia-1.6B-Urdu) [](https://en.wikipedia.org/wiki/Urdu) [](https://huggingface.co/nari-labs/Dia-1.6B) [](LICENSE)",
+      "linkedArtifacts": {
+        "baseModels": [
+          "nari-labs/Dia-1.6B"
+        ],
+        "datasets": [
+          "mahwizzzz/1DamnAudio"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/F5-TTS-UR",
+      "name": "F5-TTS-UR",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/F5-TTS-UR",
+      "createdAt": "2025-01-23T10:44:23.000Z",
+      "lastModified": "2025-11-04T10:23:30.000Z",
+      "sha": "8d21b24380506686e14cbd5b86703c73cbd0a15f",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": "text-to-speech",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "license:mit",
+        "region:us",
+        "text-to-speech",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Urdu text-to-speech model based on the F5-TTS architecture.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/kani-tts-400m-ur",
+      "name": "kani-tts-400m-ur",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/kani-tts-400m-ur",
+      "createdAt": "2025-11-04T06:22:34.000Z",
+      "lastModified": "2025-11-07T12:29:03.000Z",
+      "sha": "6f758dcedff6f33d74dacebab2876b3e536b8c89",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 25,
+      "likes": 2,
+      "pipelineTag": "text-to-speech",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:nineninesix/kani-tts-450m-0.2-pt",
+        "base_model:nineninesix/kani-tts-450m-0.2-pt",
+        "dataset:mahwizzzz/UAT",
+        "lfm2",
+        "license:apache-2.0",
+        "region:us",
+        "safetensors",
+        "text-to-speech",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Kani-TTS-400M-UR is a Urdu Text-to-Speech (TTS) model based on Kani-TTS 400M. It has been trained on a high-quality Urdu speech dataset to produce natural, expressive, and human-like voice synthesis.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "nineninesix/kani-tts-450m-0.2-pt"
+        ],
+        "datasets": [
+          "mahwizzzz/UAT"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/lafzyn",
+      "name": "lafzyn",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/lafzyn",
+      "createdAt": "2026-05-26T13:34:28.000Z",
+      "lastModified": "2026-05-27T22:22:04.000Z",
+      "sha": "99acf9167fcaf0444d96af2ff7bf96a9f654fcf6",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 40,
+      "likes": 4,
+      "pipelineTag": "text-generation",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:Qwen/Qwen3.5-0.8B",
+        "base_model:Qwen/Qwen3.5-0.8B",
+        "conversational",
+        "dataset:custom",
+        "g2p",
+        "grapheme-to-phoneme",
+        "ipa",
+        "license:apache-2.0",
+        "qwen3",
+        "qwen3_5",
+        "region:us",
+        "safetensors",
+        "text-generation",
+        "text-to-phoneme",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Lafzyn is a fine-tuned Qwen3.5-0.8B model that converts Urdu script into IPA phonetic transcription.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "Qwen/Qwen3.5-0.8B"
+        ],
+        "datasets": [
+          "custom"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "cer"
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/lafzyn-gguf",
+      "name": "lafzyn-gguf",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/lafzyn-gguf",
+      "createdAt": "2026-05-26T13:58:28.000Z",
+      "lastModified": "2026-05-26T21:48:50.000Z",
+      "sha": "d9561617f97611f2fe46c3ba7fc677fcf86dc21e",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 25,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "base_model:mahwizzzz/lafzyn",
+        "base_model:quantized:mahwizzzz/lafzyn",
+        "conversational",
+        "endpoints_compatible",
+        "g2p",
+        "gguf",
+        "grapheme-to-phoneme",
+        "ipa",
+        "license:apache-2.0",
+        "llama-cpp",
+        "ollama",
+        "quantized",
+        "qwen3_5",
+        "region:us",
+        "safetensors",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Quantized GGUF version of Lafzyn, a fine-tuned Qwen3.5-0.8B model for converting Urdu text into IPA phonetic transcriptions.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "mahwizzzz/lafzyn"
+        ],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/LlamaClassification",
+      "name": "LlamaClassification",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/LlamaClassification",
+      "createdAt": "2023-10-16T17:47:37.000Z",
+      "lastModified": "2025-03-03T07:54:21.000Z",
+      "sha": "5738699e074fa56c0aa28b4866f62fd61ac53f74",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 3,
+      "likes": 0,
+      "pipelineTag": "text-classification",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "endpoints_compatible",
+        "license:mit",
+        "llama",
+        "pytorch",
+        "region:us",
+        "safetensors",
+        "text-classification",
+        "text-embeddings-inference",
+        "transformers"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/medwhishper",
+      "name": "medwhishper",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/medwhishper",
+      "createdAt": "2025-07-07T13:25:37.000Z",
+      "lastModified": "2025-07-11T10:51:04.000Z",
+      "sha": "ecdd59e121b00a38b8303001e70a093422353921",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 4,
+      "likes": 0,
+      "pipelineTag": "automatic-speech-recognition",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "automatic-speech-recognition",
+        "base_model:finetune:openai/whisper-small",
+        "base_model:openai/whisper-small",
+        "dataset:mahwizzzz/001",
+        "en",
+        "endpoints_compatible",
+        "generated_from_trainer",
+        "hf-asr-leaderboard",
+        "license:mit",
+        "region:us",
+        "safetensors",
+        "tensorboard",
+        "transformers",
+        "whisper"
+      ],
+      "languages": [
+        "en"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "MedWhisper: Fine-Tuned Whisper-Small for Medical Transcription",
+      "linkedArtifacts": {
+        "baseModels": [
+          "openai/whisper-small"
+        ],
+        "datasets": [
+          "mahwizzzz/001"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "wer"
+        ],
+        "model-index": [
+          {
+            "name": "medwhish",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/NastaliqBERT",
+      "name": "NastaliqBERT",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/NastaliqBERT",
+      "createdAt": "2026-04-14T06:56:04.000Z",
+      "lastModified": "2026-04-14T06:58:11.000Z",
+      "sha": "d3dd4d67787cd23c12b8ba2141bdad148f86c31b",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "abjad",
+        "bert",
+        "character-level",
+        "dataset:statmt/cc100",
+        "license:mit",
+        "low-resource",
+        "masked-language-modeling",
+        "model-index",
+        "nastaliq",
+        "neobert",
+        "region:us",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "**Character-level NeoBERT encoder pretrained on unvocalized Urdu Nastaliq text.**",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [
+          "statmt/cc100"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "perplexity"
+        ],
+        "model-index": [
+          {
+            "name": "NastaliqBERT",
+            "results": [
+              {
+                "task": {
+                  "type": "fill-mask"
+                },
+                "dataset": {
+                  "name": "CC-100 Urdu",
+                  "type": "statmt/cc100"
+                },
+                "metrics": [
+                  {
+                    "type": "perplexity",
+                    "value": 1.67,
+                    "verified": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/NID_tr",
+      "name": "NID_tr",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/NID_tr",
+      "createdAt": "2024-07-29T18:49:32.000Z",
+      "lastModified": "2025-01-02T09:36:46.000Z",
+      "sha": "e24eb04fb6db117a93d810cafea7cdeb8a895c83",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 1,
+      "likes": 0,
+      "pipelineTag": "text-classification",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "distilbert",
+        "endpoints_compatible",
+        "license:mit",
+        "pytorch",
+        "region:us",
+        "safetensors",
+        "text-classification",
+        "text-embeddings-inference",
+        "transformers"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model was fine-tuned for classifying a network packet into one of the below categories.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/orpheus-urdu-tts",
+      "name": "orpheus-urdu-tts",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/orpheus-urdu-tts",
+      "createdAt": "2025-04-05T14:47:29.000Z",
+      "lastModified": "2025-11-04T10:24:00.000Z",
+      "sha": "5b75ef609901cd1c85b77fb4f2f9f7e8a3f4ada0",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 161,
+      "likes": 10,
+      "pipelineTag": "text-to-speech",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "base_model:canopylabs/orpheus-3b-0.1-pretrained",
+        "base_model:finetune:canopylabs/orpheus-3b-0.1-pretrained",
+        "dataset:mahwizzzz/UAT",
+        "license:mit",
+        "llama",
+        "region:us",
+        "safetensors",
+        "text-to-speech",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "The Orpheus Urdu TTS model is a fine-tuned version of the Orpheus 3B text-to-speech model specifically adapted for Urdu language. This experimental model **not recommended for production use** this was trained on the `mahwizzzz/UAT` dataset, which contains 20.4k audio samples split from train. This fine-tuning was performed for 10 epochs on a single RTX 4090.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "canopylabs/orpheus-3b-0.1-pretrained"
+        ],
+        "datasets": [
+          "mahwizzzz/UAT"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/phi2-11-maths",
+      "name": "phi2-11-maths",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/phi2-11-maths",
+      "createdAt": "2024-05-28T09:57:48.000Z",
+      "lastModified": "2024-05-28T09:58:09.000Z",
+      "sha": "9bab897a9bbf064f2af33786324ffcf016760c81",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 3,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "peft",
+      "sdk": null,
+      "tags": [
+        "base_model:adapter:microsoft/phi-2",
+        "base_model:microsoft/phi-2",
+        "generated_from_trainer",
+        "license:mit",
+        "peft",
+        "region:us",
+        "safetensors",
+        "sft",
+        "tensorboard",
+        "trl"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of microsoft/phi-2 on an unknown dataset.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "microsoft/phi-2"
+        ],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "results",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/piper-voice-ur-aegis-female",
+      "name": "piper-voice-ur-aegis-female",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/piper-voice-ur-aegis-female",
+      "createdAt": "2026-07-04T12:22:04.000Z",
+      "lastModified": "2026-07-04T12:32:04.000Z",
+      "sha": "c6c48520b53b677056d9003fc25bc46942eee23e",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": "text-to-speech",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "accessibility",
+        "license:mit",
+        "onnx",
+        "piper",
+        "region:us",
+        "text-to-speech",
+        "tts",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Female Urdu Piper TTS voice (medium quality).",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/Qalb-1.0-8B-Instruct-Q4_0",
+      "name": "Qalb-1.0-8B-Instruct-Q4_0",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/Qalb-1.0-8B-Instruct-Q4_0",
+      "createdAt": "2026-02-06T07:40:41.000Z",
+      "lastModified": "2026-02-06T09:15:31.000Z",
+      "sha": "ffa7c3edee8d3ad26cf5c113d8be6f61cc0e3b3e",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 8,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "base_model:enstazao/Qalb-1.0-8B-Instruct",
+        "base_model:quantized:enstazao/Qalb-1.0-8B-Instruct",
+        "en",
+        "endpoints_compatible",
+        "fine-tuned",
+        "gguf",
+        "instruct",
+        "license:apache-2.0",
+        "llama-3.1",
+        "llama.cpp",
+        "nlp",
+        "quantized",
+        "region:us",
+        "transformers",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "en",
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This is a **4-bit quantized** (Q4_0) GGUF version of **enstazao/Qalb-1.0-8B-Instruct**.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "enstazao/Qalb-1.0-8B-Instruct"
+        ],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/qyra-350m",
+      "name": "qyra-350m",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/qyra-350m",
+      "createdAt": "2026-02-18T13:43:34.000Z",
+      "lastModified": "2026-02-18T21:52:58.000Z",
+      "sha": "7ca94bb7e4d7166e1e5250bab3e041361bf8ef73",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 6,
+      "likes": 0,
+      "pipelineTag": "text-generation",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:LiquidAI/LFM2-350M",
+        "base_model:LiquidAI/LFM2-350M",
+        "causal-lm",
+        "continued-pretraining",
+        "conversational",
+        "dataset:ReySajju742/shaistagi_clean",
+        "language-model",
+        "lfm2",
+        "license:apache-2.0",
+        "model-index",
+        "region:us",
+        "safetensors",
+        "text-generation",
+        "ur",
+        "urdu"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [
+        "text-generation"
+      ],
+      "sizeCategories": [],
+      "description": "Continued-pretrained Urdu language model based on `LiquidAI/LFM2-350M`.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "LiquidAI/LFM2-350M"
+        ],
+        "datasets": [
+          "ReySajju742/shaistagi_clean"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "qyra-350M",
+            "results": [
+              {
+                "task": {
+                  "type": "language-modeling"
+                },
+                "dataset": {
+                  "name": "Urdu Evaluation Prompts",
+                  "type": "custom"
+                },
+                "metrics": [
+                  {
+                    "type": "perplexity",
+                    "value": 27.82,
+                    "verified": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/RomanUrduClassification",
+      "name": "RomanUrduClassification",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/RomanUrduClassification",
+      "createdAt": "2023-08-25T10:55:59.000Z",
+      "lastModified": "2023-09-11T12:24:32.000Z",
+      "sha": "d777769e1c2279ca21d6249e3fbaba623ca9de12",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 2,
+      "likes": 0,
+      "pipelineTag": "text-classification",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:urduhack/roberta-urdu-small",
+        "base_model:urduhack/roberta-urdu-small",
+        "endpoints_compatible",
+        "generated_from_trainer",
+        "license:mit",
+        "pytorch",
+        "region:us",
+        "roberta",
+        "safetensors",
+        "tensorboard",
+        "text-classification",
+        "text-embeddings-inference",
+        "transformers"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of urduhack/roberta-urdu-small on the None dataset.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "urduhack/roberta-urdu-small"
+        ],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "RomanUrduClassification",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/skyloom",
+      "name": "skyloom",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/skyloom",
+      "createdAt": "2026-06-04T14:11:20.000Z",
+      "lastModified": "2026-06-05T13:28:31.000Z",
+      "sha": "2d17042168a3a1488a6573c087a369bedc63dd12",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 12,
+      "likes": 0,
+      "pipelineTag": "time-series-forecasting",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "air-quality",
+        "aqi",
+        "base_model:finetune:google/timesfm-2.5-200m-transformers",
+        "base_model:google/timesfm-2.5-200m-transformers",
+        "dataset:Syed110-3/karachi-aqi-predictor",
+        "endpoints_compatible",
+        "environmental-monitoring",
+        "karachi",
+        "karachi-aqi",
+        "license:apache-2.0",
+        "model-index",
+        "pollution-forecasting",
+        "region:us",
+        "safetensors",
+        "time-series-forecasting",
+        "timesfm",
+        "timesfm-2.5",
+        "timesfm2_5",
+        "transformers"
+      ],
+      "languages": [],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This is a fine‑tuned version of `google/timesfm-2.5-200m-transformers` for **hourly Air Quality Index (AQI) forecasting in Karachi, Pakistan**. The model is optimised for a 24‑step forecast horizon (next 24 hours).",
+      "linkedArtifacts": {
+        "baseModels": [
+          "google/timesfm-2.5-200m-transformers"
+        ],
+        "datasets": [
+          "Syed110-3/karachi-aqi-predictor"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "mae",
+          "rmse",
+          "smape",
+          "mape",
+          "mase"
+        ],
+        "model-index": [
+          {
+            "name": "skyloom",
+            "results": [
+              {
+                "task": {
+                  "type": "time-series-forecasting",
+                  "name": "Time-series forecasting"
+                },
+                "dataset": {
+                  "name": "Karachi AQI hourly dataset",
+                  "type": "Syed110-3/karachi-aqi-predictor"
+                },
+                "metrics": [
+                  {
+                    "type": "mae",
+                    "value": 5.178,
+                    "name": "Test MAE (24-step ahead)",
+                    "verified": false
+                  },
+                  {
+                    "type": "rmse",
+                    "value": 8.859,
+                    "name": "Test RMSE (24-step ahead)",
+                    "verified": false
+                  },
+                  {
+                    "type": "smape",
+                    "value": 5.456,
+                    "name": "Test sMAPE (24-step ahead)",
+                    "verified": false
+                  },
+                  {
+                    "type": "mase",
+                    "value": 0.4687,
+                    "name": "Test MASE (24-step ahead)",
+                    "verified": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/SmolUrixtral",
+      "name": "SmolUrixtral",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/SmolUrixtral",
+      "createdAt": "2025-07-31T05:55:37.000Z",
+      "lastModified": "2025-07-31T06:34:24.000Z",
+      "sha": "ea60a0580487eeda6b44f4f5c7fe639364f52360",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "dataset:El-chapoo/Urdu-1M-news-text",
+        "license:mit",
+        "mixtral",
+        "region:us",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "A PyTorch implementation of a Mixtral inspired transformer model with Mixture of Experts (MoE), designed for text generation and understanding tasks. This model is built on the Mixtral architecture with enhancements like Flash Attention, SWiGLU activation, and Liger kernels for optimized performance.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [
+          "El-chapoo/Urdu-1M-news-text"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/stable-tts-urdu",
+      "name": "stable-tts-urdu",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/stable-tts-urdu",
+      "createdAt": "2025-04-26T22:12:21.000Z",
+      "lastModified": "2025-11-04T10:20:04.000Z",
+      "sha": "8aa2092c66c3cba8d148ffdfc33e80ae0ab855d3",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": "text-to-speech",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "license:mit",
+        "region:us",
+        "text-to-speech",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Urdu text-to-speech model trained on Stable-TTS architecture.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/tinygemma-Urdu",
+      "name": "tinygemma-Urdu",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/tinygemma-Urdu",
+      "createdAt": "2025-08-18T09:54:07.000Z",
+      "lastModified": "2025-08-18T10:23:06.000Z",
+      "sha": "b303ed4562b6245d232b836ddd56ac19c4075d7d",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "arxiv:1910.07467",
+        "arxiv:2002.05202",
+        "arxiv:2104.09864",
+        "arxiv:2305.13245",
+        "arxiv:2503.19786",
+        "license:mit",
+        "region:us"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "tinyGemma Urdu Trained a 0.96 million parameters Urdu Gemma.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [
+          "1910.07467",
+          "2002.05202",
+          "2104.09864",
+          "2305.13245",
+          "2503.19786"
+        ],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/U-CTC",
+      "name": "U-CTC",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/U-CTC",
+      "createdAt": "2025-07-15T12:40:44.000Z",
+      "lastModified": "2025-07-19T14:01:11.000Z",
+      "sha": "e3dc728f39fb269fbc08f5d60eac71003d903001",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 2,
+      "likes": 0,
+      "pipelineTag": "automatic-speech-recognition",
+      "library": "nemo",
+      "sdk": null,
+      "tags": [
+        "automatic-speech-recognition",
+        "base_model:finetune:nvidia/parakeet-ctc-0.6b",
+        "base_model:nvidia/parakeet-ctc-0.6b",
+        "license:cc-by-4.0",
+        "nemo",
+        "region:us",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "cc-by-4.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "U-CTC **U-CTC** is an Urdu automatic speech recognition (ASR) model based on the Parakeet-CTC-0.6B architecture. It has been fine-tuned on ~21 hours of Urdu speech data using the NVIDIA NeMo framework. The model is optimized for CTC-based transcription of spoken Urdu.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "nvidia/parakeet-ctc-0.6b"
+        ],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/ur_int8_ct2",
+      "name": "ur_int8_ct2",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/ur_int8_ct2",
+      "createdAt": "2026-02-17T12:47:20.000Z",
+      "lastModified": "2026-02-17T13:01:07.000Z",
+      "sha": "898341b167e4e656012082033994acf93aee66b6",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 5,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "asr",
+        "ctranslate2",
+        "faster-whisper",
+        "gpu",
+        "int8",
+        "license:mit",
+        "region:us",
+        "ur",
+        "urdu",
+        "whisper"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "CTranslate2 int8 conversion for use with faster-whisper.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/urd-wav2vec2-94m",
+      "name": "urd-wav2vec2-94m",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/urd-wav2vec2-94m",
+      "createdAt": "2026-02-02T06:53:53.000Z",
+      "lastModified": "2026-02-02T07:44:45.000Z",
+      "sha": "3b94302197d57f084ea9817071530a531ac17d0c",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 1,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "pytorch",
+        "region:us",
+        "wav2vec2"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/urdu_text_correction",
+      "name": "urdu_text_correction",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/urdu_text_correction",
+      "createdAt": "2025-03-20T11:00:40.000Z",
+      "lastModified": "2025-03-21T01:04:49.000Z",
+      "sha": "ad465ee22c8ae2a4112130f027ede1b95894bd9a",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 28,
+      "likes": 1,
+      "pipelineTag": null,
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "base_model:facebook/mbart-large-50",
+        "base_model:finetune:facebook/mbart-large-50",
+        "dataset:mahwizzzz/urdu_error_correction",
+        "endpoints_compatible",
+        "generated_from_trainer",
+        "license:mit",
+        "mbart",
+        "region:us",
+        "safetensors",
+        "text2text-generation",
+        "transformers"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model fine-tunes facebook/mbart-large-50 for automatic correction of Urdu text, addressing spelling mistakes, grammatical errors, and improving text fluency.",
+      "linkedArtifacts": {
+        "baseModels": [
+          "facebook/mbart-large-50"
+        ],
+        "datasets": [
+          "mahwizzzz/urdu_error_correction"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "wer",
+          "bleu",
+          "rouge"
+        ],
+        "model-index": [
+          {
+            "name": "urdu_text_correction",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/Urdu-Bert",
+      "name": "Urdu-Bert",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/Urdu-Bert",
+      "createdAt": "2025-08-07T06:49:30.000Z",
+      "lastModified": "2025-08-07T07:01:17.000Z",
+      "sha": "c618a40957708cd9cccab83020331ffc27b0deca",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "license:mit",
+        "region:us",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "I implemented BERT model from scratch with Pytorch on Urdu Data. It uses Masked Language Modeling (MLM) and Next Sentence Prediction (NSP) tasks, just like the original BERT model.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/urdu-dummy",
+      "name": "urdu-dummy",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/urdu-dummy",
+      "createdAt": "2022-10-20T20:42:30.000Z",
+      "lastModified": "2022-10-20T20:54:15.000Z",
+      "sha": "3b7e8dda1de9bbccae9a221ce1112b6e0a429d2c",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "license:mit",
+        "region:us"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduBert",
+      "name": "UrduBert",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduBert",
+      "createdAt": "2023-09-24T09:43:20.000Z",
+      "lastModified": "2023-11-27T09:44:22.000Z",
+      "sha": "8b48ae69860494385a84a96b76db525bedcdb746",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 7,
+      "likes": 1,
+      "pipelineTag": "fill-mask",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "endpoints_compatible",
+        "fill-mask",
+        "generated_from_trainer",
+        "pytorch",
+        "region:us",
+        "roberta",
+        "safetensors",
+        "tensorboard",
+        "transformers"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of [](https://huggingface.co/) on an unknown dataset.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "UrduBert",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduClassification",
+      "name": "UrduClassification",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduClassification",
+      "createdAt": "2023-07-28T11:57:27.000Z",
+      "lastModified": "2025-03-03T07:55:32.000Z",
+      "sha": "f5578a5d6e2b08b5d1b6421c4b42504a6316a570",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 11,
+      "likes": 0,
+      "pipelineTag": "text-classification",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:urduhack/roberta-urdu-small",
+        "base_model:urduhack/roberta-urdu-small",
+        "dataset:imdb_urdu_reviews",
+        "endpoints_compatible",
+        "generated_from_trainer",
+        "license:mit",
+        "pytorch",
+        "region:us",
+        "roberta",
+        "safetensors",
+        "tensorboard",
+        "text-classification",
+        "text-embeddings-inference",
+        "transformers",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of urduhack/roberta-urdu-small on the imdb_urdu_reviews dataset. It achieves the following results on the evaluation set: - Loss: 0.4703",
+      "linkedArtifacts": {
+        "baseModels": [
+          "urduhack/roberta-urdu-small"
+        ],
+        "datasets": [
+          "imdb_urdu_reviews"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "UrduClassification",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduGPT2",
+      "name": "UrduGPT2",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduGPT2",
+      "createdAt": "2023-07-06T01:55:52.000Z",
+      "lastModified": "2023-08-21T08:05:53.000Z",
+      "sha": "878faa9ea69852009ff0da2430a2418970417554",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 3,
+      "likes": 0,
+      "pipelineTag": "text-generation",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "endpoints_compatible",
+        "generated_from_keras_callback",
+        "gpt2",
+        "region:us",
+        "text-generation",
+        "tf",
+        "transformers"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of [](https://huggingface.co/) on an unknown dataset. It achieves the following results on the evaluation set: - Train Loss: 0.5016 - Train Accuracy: 0.9034 - Epoch: 54",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "UrduGPT2",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduIntentClassification",
+      "name": "UrduIntentClassification",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduIntentClassification",
+      "createdAt": "2023-09-02T06:52:09.000Z",
+      "lastModified": "2023-09-03T11:35:05.000Z",
+      "sha": "078026a78cdac0873d16174e397e9d32931751ba",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 1,
+      "likes": 0,
+      "pipelineTag": "text-classification",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:urduhack/roberta-urdu-small",
+        "base_model:urduhack/roberta-urdu-small",
+        "dataset:mteb/amazon_massive_intent",
+        "endpoints_compatible",
+        "generated_from_trainer",
+        "license:mit",
+        "pytorch",
+        "region:us",
+        "roberta",
+        "text-classification",
+        "text-embeddings-inference",
+        "transformers",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of urduhack/roberta-urdu-small on the massive dataset. It achieves the following results on the evaluation set: - Loss: 0.7482",
+      "linkedArtifacts": {
+        "baseModels": [
+          "urduhack/roberta-urdu-small"
+        ],
+        "datasets": [
+          "mteb/amazon_massive_intent"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "UrduIntentClassification",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduNER",
+      "name": "UrduNER",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduNER",
+      "createdAt": "2023-08-02T07:36:54.000Z",
+      "lastModified": "2025-03-03T08:19:21.000Z",
+      "sha": "036e937e16f42f2251ff5d72bc0b28f6ee9f4ed5",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 1,
+      "likes": 0,
+      "pipelineTag": "token-classification",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:urduhack/roberta-urdu-small",
+        "base_model:urduhack/roberta-urdu-small",
+        "dataset:wikiann",
+        "endpoints_compatible",
+        "generated_from_trainer",
+        "license:mit",
+        "pytorch",
+        "region:us",
+        "roberta",
+        "safetensors",
+        "token-classification",
+        "transformers",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of urduhack/roberta-urdu-small on the wikiann dataset. It achieves the following results on the evaluation set: - Loss: 0.1163 - Overall Precision: 0.9540 - Overall Recall: 0.9553 - Overall F1: 0.9546 - Overall Accuracy: 0.9836 - Loc F1: 0.9643 - Org F1: 0.9448 - Per F1: 0.9491",
+      "linkedArtifacts": {
+        "baseModels": [
+          "urduhack/roberta-urdu-small"
+        ],
+        "datasets": [
+          "wikiann"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "seqeval"
+        ],
+        "model-index": [
+          {
+            "name": "UrduNER",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduOPT-2.7b-lora",
+      "name": "UrduOPT-2.7b-lora",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduOPT-2.7b-lora",
+      "createdAt": "2023-08-12T11:56:04.000Z",
+      "lastModified": "2023-09-19T10:42:45.000Z",
+      "sha": "22626632bf63922c37a384227fa96619f5bc0008",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 1,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": "peft",
+      "sdk": null,
+      "tags": [
+        "base_model:adapter:facebook/opt-2.7b",
+        "base_model:facebook/opt-2.7b",
+        "bnb",
+        "dataset:anuragshas/ur_opus100_processed",
+        "license:mit",
+        "peft",
+        "region:us",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "The following `bitsandbytes` quantization config was used during training: - quant_method: bitsandbytes - load_in_8bit: True - load_in_4bit: False - llm_int8_threshold: 6.0 - llm_int8_skip_modules: None - llm_int8_enable_fp32_cpu_offload: False - llm_int8_has_fp16_weight: False - bnb_4bit_quant_type: fp4 - bnb_4bit_use_double_quant: False - bnb_4bit_compute_dtype: float32 Framework versions",
+      "linkedArtifacts": {
+        "baseModels": [
+          "facebook/opt-2.7b"
+        ],
+        "datasets": [
+          "anuragshas/ur_opus100_processed"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduParaphraseBERT",
+      "name": "UrduParaphraseBERT",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduParaphraseBERT",
+      "createdAt": "2023-06-08T18:15:47.000Z",
+      "lastModified": "2023-07-07T21:21:02.000Z",
+      "sha": "a6cd8cf7be6acfaa33baf8632b11ef833f27df96",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 2,
+      "likes": 4,
+      "pipelineTag": null,
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "dataset:mwz/ur_para",
+        "encoder-decoder",
+        "license:mit",
+        "paraphrase",
+        "pytorch",
+        "region:us",
+        "safetensors",
+        "text2text-generation",
+        "transformers",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This repository contains a trained Urdu paraphrasing model based on the BERT-based encoder-decoder architecture. The model has been fine-tuned on the Urdu Paraphrase Dataset and can generate paraphrases for given input sentences in Urdu.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [
+          "mwz/ur_para"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduSentimentClassification",
+      "name": "UrduSentimentClassification",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduSentimentClassification",
+      "createdAt": "2023-11-23T08:36:51.000Z",
+      "lastModified": "2023-11-29T11:52:42.000Z",
+      "sha": "d519732d590d99d1a2fad7c6576c1f15894ab7cf",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 11,
+      "likes": 0,
+      "pipelineTag": "text-classification",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "base_model:finetune:urduhack/roberta-urdu-small",
+        "base_model:urduhack/roberta-urdu-small",
+        "dataset:mwz/ur_financial_phrasebank",
+        "endpoints_compatible",
+        "generated_from_trainer",
+        "license:mit",
+        "region:us",
+        "roberta",
+        "safetensors",
+        "tensorboard",
+        "text-classification",
+        "text-embeddings-inference",
+        "transformers"
+      ],
+      "languages": [],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "This model is a fine-tuned version of urduhack/roberta-urdu-small on Financial dataset. It achieves the following results on the evaluation set: - Loss: 0.4924",
+      "linkedArtifacts": {
+        "baseModels": [
+          "urduhack/roberta-urdu-small"
+        ],
+        "datasets": [
+          "mwz/ur_financial_phrasebank"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "model-index": [
+          {
+            "name": "UrduSentimentClassification",
+            "results": []
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/UrduVec",
+      "name": "UrduVec",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/UrduVec",
+      "createdAt": "2023-09-18T10:32:27.000Z",
+      "lastModified": "2023-09-18T10:34:45.000Z",
+      "sha": "cd85bed053f9819e4c58624491cfb15738be5b01",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": "feature-extraction",
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "feature-extraction",
+        "license:mit",
+        "region:us",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/vits-ur",
+      "name": "vits-ur",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/vits-ur",
+      "createdAt": "2025-02-14T09:12:28.000Z",
+      "lastModified": "2025-11-04T10:16:37.000Z",
+      "sha": "db7a37ddda9cf93a4286c77a5931bf3eab328030",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 9,
+      "likes": 0,
+      "pipelineTag": "text-to-speech",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "endpoints_compatible",
+        "license:mit",
+        "region:us",
+        "safetensors",
+        "text-to-speech",
+        "transformers",
+        "ur",
+        "vits"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/whisper-urdu-pytorch",
+      "name": "whisper-urdu-pytorch",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/whisper-urdu-pytorch",
+      "createdAt": "2025-08-11T05:51:06.000Z",
+      "lastModified": "2025-08-11T05:53:44.000Z",
+      "sha": "19230a6860b827f1976e1e074aaa74e8b86617fd",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": null,
+      "tags": [
+        "license:mit",
+        "region:us",
+        "ur"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "mit",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Urdu Whisper model in Pytorch from scratch implementation",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/whispLM-600m",
+      "name": "whispLM-600m",
+      "author": "mahwizzzz",
+      "repoType": "model",
+      "url": "https://huggingface.co/mahwizzzz/whispLM-600m",
+      "createdAt": "2026-06-29T11:23:56.000Z",
+      "lastModified": "2026-06-29T17:51:28.000Z",
+      "sha": "70b7a5f180be4a978e82f89dc985a8eb12d8f1e3",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 25,
+      "likes": 1,
+      "pipelineTag": "automatic-speech-recognition",
+      "library": "transformers",
+      "sdk": null,
+      "tags": [
+        "automatic-speech-recognition",
+        "dataset:khawajaaliarshad/common-voice-urdu-processed-expanded",
+        "encoder-decoder",
+        "endpoints_compatible",
+        "license:apache-2.0",
+        "low-resource",
+        "model-index",
+        "qwen",
+        "region:us",
+        "safetensors",
+        "speech-llm",
+        "transformers",
+        "ur",
+        "urdu",
+        "whisper"
+      ],
+      "languages": [
+        "ur"
+      ],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "**whispLM-600m** is a Speech-LLM for low-resource Urdu automatic speech recognition (ASR). It couples a Whisper-tiny acoustic encoder with a Qwen3-0.6B language model decoder via a learned compression projector, trained using a two-stage curriculum.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [
+          "khawajaaliarshad/common-voice-urdu-processed-expanded"
+        ],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {
+        "metrics": [
+          "wer",
+          "cer"
+        ],
+        "model-index": [
+          {
+            "name": "whispLM-600m",
+            "results": [
+              {
+                "task": {
+                  "type": "automatic-speech-recognition"
+                },
+                "dataset": {
+                  "name": "Common Voice Urdu Expanded",
+                  "type": "khawajaaliarshad/common-voice-urdu-processed-expanded",
+                  "split": "test"
+                },
+                "metrics": [
+                  {
+                    "type": "wer",
+                    "value": 0.5566,
+                    "verified": false
+                  },
+                  {
+                    "type": "cer",
+                    "value": 0.2805,
+                    "verified": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "runtime": null,
+      "cardAvailable": true,
+      "cardError": null
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap');
+:root{--paper:#f4eee3;--paper-light:#fbf8f0;--ink:#3b2b23;--soft:#705d51;--faint:#9d897a;--line:rgba(59,43,35,.18);--accent:#7b5139;--fill:rgba(123,81,57,.08);--serif:'Newsreader',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--max:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased}a{color:inherit}button,input,select{font:inherit}::selection{background:rgba(123,81,57,.18)}

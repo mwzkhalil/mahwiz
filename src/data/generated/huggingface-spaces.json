@@ -1,0 +1,390 @@
+{
+  "fetchedAt": "2026-07-15T13:18:30.400Z",
+  "source": "https://huggingface.co/api/spaces?author=mahwizzzz&full=true&limit=100",
+  "username": "mahwizzzz",
+  "items": [
+    {
+      "id": "mahwizzzz/cadenza-demo",
+      "name": "cadenza-demo",
+      "author": "mahwizzzz",
+      "repoType": "space",
+      "url": "https://huggingface.co/spaces/mahwizzzz/cadenza-demo",
+      "createdAt": "2026-06-04T11:22:26.000Z",
+      "lastModified": "2026-07-05T14:03:54.000Z",
+      "sha": "9e63c24b2d114bfa6cf2523ac41b398f9a3e5e08",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 1,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": "gradio",
+      "tags": [
+        "gradio",
+        "onnx",
+        "piper",
+        "region:us",
+        "text-to-speech",
+        "urdu"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "short_description: Interactive Urdu text-to-speech demo",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [
+          "mahwizzzz/cadenza"
+        ],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": {
+        "stage": "RUNNING",
+        "hardware": {
+          "current": "cpu-basic",
+          "requested": "cpu-basic"
+        },
+        "gcTimeout": 172800,
+        "replicas": {
+          "current": 1,
+          "requested": 1
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "mahwizzzz-cadenza-demo.hf.space",
+            "stage": "READY"
+          }
+        ],
+        "sha": "9e63c24b2d114bfa6cf2523ac41b398f9a3e5e08"
+      },
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/de-identify",
+      "name": "de-identify",
+      "author": "mahwizzzz",
+      "repoType": "space",
+      "url": "https://huggingface.co/spaces/mahwizzzz/de-identify",
+      "createdAt": "2026-04-29T19:14:10.000Z",
+      "lastModified": "2026-05-23T19:40:23.000Z",
+      "sha": "0d5e49caeaae87bd7fe84c24bd89bb5de02575e2",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": "gradio",
+      "tags": [
+        "gradio",
+        "legal",
+        "ner",
+        "pii",
+        "privacy",
+        "region:us",
+        "urdu",
+        "zero-gpu"
+      ],
+      "languages": [],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": null,
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": {
+        "stage": "RUNNING",
+        "hardware": {
+          "current": "zero-a10g",
+          "requested": "zero-a10g"
+        },
+        "gcTimeout": 172800,
+        "replicas": {
+          "current": 1,
+          "requested": 1
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "mahwizzzz-urdu-legal-privacy-filter.hf.space",
+            "stage": "READY"
+          },
+          {
+            "domain": "mahwizzzz-de-identify.hf.space",
+            "stage": "READY"
+          }
+        ],
+        "sha": "0d5e49caeaae87bd7fe84c24bd89bb5de02575e2"
+      },
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/lafzyn",
+      "name": "lafzyn",
+      "author": "mahwizzzz",
+      "repoType": "space",
+      "url": "https://huggingface.co/spaces/mahwizzzz/lafzyn",
+      "createdAt": "2026-05-26T18:14:21.000Z",
+      "lastModified": "2026-05-27T22:01:24.000Z",
+      "sha": "8a13653becbbcd27756faaa41b56d1edfb30e469",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 2,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": "gradio",
+      "tags": [
+        "g2p",
+        "gradio",
+        "ipa",
+        "nlp",
+        "phonetics",
+        "region:us",
+        "urdu"
+      ],
+      "languages": [],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Convert Urdu text into IPA phonetic transcription using a fine-tuned Qwen3.5-0.8B model.",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [
+          "mahwizzzz/lafzyn",
+          "mahwizzzz/lafzyn-gguf"
+        ],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": {
+        "stage": "RUNNING",
+        "hardware": {
+          "current": "cpu-basic",
+          "requested": "cpu-basic"
+        },
+        "gcTimeout": 172800,
+        "replicas": {
+          "current": 1,
+          "requested": 1
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "mahwizzzz-lafzyn.hf.space",
+            "stage": "READY"
+          }
+        ],
+        "sha": "8a13653becbbcd27756faaa41b56d1edfb30e469"
+      },
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/Local_ChatGPT",
+      "name": "Local_ChatGPT",
+      "author": "mahwizzzz",
+      "repoType": "space",
+      "url": "https://huggingface.co/spaces/mahwizzzz/Local_ChatGPT",
+      "createdAt": "2024-06-06T07:30:33.000Z",
+      "lastModified": "2026-04-22T18:39:57.000Z",
+      "sha": "d09127ef6ceb782ede3259856954659fb7f4a027",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": "streamlit",
+      "tags": [
+        "region:us",
+        "streamlit"
+      ],
+      "languages": [],
+      "license": null,
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": {
+        "stage": "BUILD_ERROR",
+        "hardware": {
+          "current": null,
+          "requested": "cpu-basic"
+        },
+        "gcTimeout": 172800,
+        "errorMessage": "Job failed with exit code: 1. Reason: cache miss: [base 7/7] RUN mkdir -p /home/user && ( [ -e /home/user/app ] || ln -s /app/ /home/user/app ) || true\ncache miss: [pipfreeze 1/2] RUN mkdir -p /pipfreeze\ncache miss: [base 6/7] RUN mkdir -p .streamlit && git config --global core.excludesfile ~/.gitignore && echo \".streamlit\" > ~/.gitignore\ncache miss: [base 5/7] RUN --mount=target=/tmp/requirements.txt,source=requirements.txt     pip install --no-cache-dir -r /tmp/requirements.txt     streamlit==1.35.0     \"uvicorn>=0.14.0\" \"websockets>=10.4\"     spaces\ncache miss: [pipfreeze 2/2] RUN pip freeze > /pipfreeze/freeze.txt\ncache miss: [run 2/2] COPY --from=pipfreeze --link /pipfreeze/ /pipfreeze/\ncache miss: [run 2/2] LINK COPY --from=pipfreeze --link /pipfreeze/ /pipfreeze/\ncache miss: [run 1/2] LINK COPY --link ./ /app\ncache miss: [run 1/2] COPY --link ./ /app\n{\"total\":25,\"completed\":18,\"user_total\":14,\"user_cached\":4,\"user_completed\":7,\"user_cacheable\":13,\"from\":1,\"miss\":9,\"client_duration_ms\":228798}\n",
+        "replicas": {
+          "requested": 1
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "mwz-local-chatgpt.hf.space",
+            "stage": "READY"
+          },
+          {
+            "domain": "mahwizzzz-local-chatgpt.hf.space",
+            "stage": "READY"
+          }
+        ]
+      },
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/Qalb-DPO",
+      "name": "Qalb-DPO",
+      "author": "mahwizzzz",
+      "repoType": "space",
+      "url": "https://huggingface.co/spaces/mahwizzzz/Qalb-DPO",
+      "createdAt": "2026-04-22T19:03:25.000Z",
+      "lastModified": "2026-04-23T07:24:56.000Z",
+      "sha": "da2c4fec125a142b53e1fff96289fff6cb736f2b",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 0,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": "gradio",
+      "tags": [
+        "comparison",
+        "dpo",
+        "gradio",
+        "llama",
+        "nlp",
+        "region:us",
+        "rlhf",
+        "text-generation",
+        "urdu",
+        "zero-gpu"
+      ],
+      "languages": [],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "Side-by-side **streaming** comparison between:",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": {
+        "stage": "RUNNING",
+        "hardware": {
+          "current": "zero-a10g",
+          "requested": "zero-a10g"
+        },
+        "gcTimeout": 172800,
+        "replicas": {
+          "current": 1,
+          "requested": 1
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "mahwizzzz-qalb-vs-qalb.hf.space",
+            "stage": "READY"
+          },
+          {
+            "domain": "mahwizzzz-qalb-compare.hf.space",
+            "stage": "READY"
+          },
+          {
+            "domain": "mahwizzzz-qalb-dpo.hf.space",
+            "stage": "READY"
+          }
+        ],
+        "sha": "da2c4fec125a142b53e1fff96289fff6cb736f2b"
+      },
+      "cardAvailable": true,
+      "cardError": null
+    },
+    {
+      "id": "mahwizzzz/skyloom",
+      "name": "skyloom",
+      "author": "mahwizzzz",
+      "repoType": "space",
+      "url": "https://huggingface.co/spaces/mahwizzzz/skyloom",
+      "createdAt": "2026-06-05T13:32:14.000Z",
+      "lastModified": "2026-06-13T19:42:06.000Z",
+      "sha": "d2d79ebef5056dda505b5d11c89a5fc3c8533514",
+      "private": false,
+      "gated": false,
+      "disabled": false,
+      "downloads": 0,
+      "likes": 1,
+      "pipelineTag": null,
+      "library": null,
+      "sdk": "gradio",
+      "tags": [
+        "gradio",
+        "region:us"
+      ],
+      "languages": [],
+      "license": "apache-2.0",
+      "taskCategories": [],
+      "sizeCategories": [],
+      "description": "[](https://huggingface.co/spaces/mahwizzzz/skyloom)",
+      "linkedArtifacts": {
+        "baseModels": [],
+        "datasets": [],
+        "models": [],
+        "papers": [],
+        "spaces": []
+      },
+      "evaluation": {},
+      "runtime": {
+        "stage": "SLEEPING",
+        "hardware": {
+          "current": null,
+          "requested": "cpu-basic"
+        },
+        "gcTimeout": 172800,
+        "replicas": {
+          "requested": 1
+        },
+        "devMode": false,
+        "domains": [
+          {
+            "domain": "mahwizzzz-skyloom.hf.space",
+            "stage": "READY"
+          }
+        ]
+      },
+      "cardAvailable": true,
+      "cardError": null
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "fetchedAt": "2026-07-15T13:18:30.400Z",
+  "source": "https://huggingface.co/api/users/mahwizzzz/overview",
+  "username": "mahwizzzz",
+  "items": [
+    {
+      "username": "mahwizzzz",
+      "fullName": "Mahwiz Khalil",
+      "details": null,
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62c5a943b4d97e47fd7cfaf7/9n6_uboSLr8yOeQXE0bTb.jpeg",
+      "createdAt": "2022-07-06T15:24:51.000Z",
+      "counts": {
+        "models": 43,
+        "datasets": 21,
+        "spaces": 6
+      },
+      "url": "https://huggingface.co/mahwizzzz"
+    }
+  ]
+}
