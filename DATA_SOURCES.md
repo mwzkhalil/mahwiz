@@ -1,29 +1,16 @@
 # Portfolio data sources
 
-The site is designed to build from local snapshots. Visitors do not make live Hugging Face API requests.
+## Displayed Research content
 
-## Hugging Face
+`src/data/research.ts` is the explicit curated source of truth. It contains exactly five projects requested by the owner: Cadenza, Qalb-DPO, Avey-B Urdu, Lafzyn, and Aegis for Piper. Full-Hub generated snapshots are no longer imported by the frontend.
 
-Run:
+- Avey-B Urdu and Lafzyn: descriptions, architecture attribution, reported results, and limitations supplied by the owner from their model cards.
+- Cadenza and Qalb-DPO: supplied Space links and official public Hugging Face metadata.
+- Piper contribution: https://huggingface.co/rhasspy/piper-voices/discussions/89, whose discussion records the voice package and merge.
+- The official Hub `/api/spaces/mahwizzzz/{space}` endpoint was used to confirm each embedded host on 7 October 2026.
 
-```bash
-npm run sync:hf
-```
+Do not attach upstream paper benchmark claims to the Urdu adaptation, treat demo outputs as held-out evaluations, or show hard-coded uptime or popularity counts.
 
-The synchronizer uses public official Hugging Face API and raw repository-card endpoints for `mahwizzzz`. It follows API pagination, applies timeouts and transient retries, normalizes and sorts repository records, and writes snapshots atomically to `src/data/generated/`. It does not require a token and does not download model weights or datasets.
+## Optional archive maintenance
 
-If a core inventory request fails, the command exits with an error and preserves the last generated snapshots. Individual missing or malformed cards are recorded as warnings without failing the entire sync.
-
-The public posts endpoint currently does not provide a working author filter. The writing snapshot therefore remains empty rather than importing the global feed and misattributing posts.
-
-## Portfolio CSV
-
-Place the authoritative CSV at `data/portfolio.csv`, or pass an explicit path:
-
-```bash
-npm run import:csv -- /absolute/path/to/portfolio.csv
-```
-
-The importer writes `src/data/generated/portfolio.json`, reports malformed rows and unknown/private-looking columns, and preserves the previous valid snapshot when parsing or writing fails.
-
-Do not place credentials, private contact details, or secrets in generated public data.
+The original `npm run sync:hf` and `npm run import:csv -- path/to/file.csv` scripts are retained. They update `src/data/generated/` only; these snapshots do not populate the curated Research page. No API credential is required for the public Hub sync. Do not put secrets or private contact information into public data files.

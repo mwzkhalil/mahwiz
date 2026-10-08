@@ -1,3 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap');
-:root{--paper:#f4eee3;--paper-light:#fbf8f0;--ink:#3b2b23;--soft:#705d51;--faint:#9d897a;--line:rgba(59,43,35,.18);--accent:#7b5139;--fill:rgba(123,81,57,.08);--serif:'Newsreader',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--max:980px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased}a{color:inherit}button,input,select{font:inherit}::selection{background:rgba(123,81,57,.18)}
+/* dm-sans-latin-400-normal */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./assets/fonts/dm-sans-latin-400-normal.woff2') format('woff2');
+}
+/* dm-sans-latin-500-normal */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./assets/fonts/dm-sans-latin-500-normal.woff2') format('woff2');
+}
+/* dm-sans-latin-600-normal */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./assets/fonts/dm-sans-latin-600-normal.woff2') format('woff2');
+}
+/* dm-sans-latin-700-normal */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./assets/fonts/dm-sans-latin-700-normal.woff2') format('woff2');
+}
+/* newsreader-latin-400-normal */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./assets/fonts/newsreader-latin-400-normal.woff2') format('woff2');
+}
+/* newsreader-latin-400-italic */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./assets/fonts/newsreader-latin-400-italic.woff2') format('woff2');
+}
+/* newsreader-latin-500-normal */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./assets/fonts/newsreader-latin-500-normal.woff2') format('woff2');
+}
+/* newsreader-latin-600-normal */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./assets/fonts/newsreader-latin-600-normal.woff2') format('woff2');
+}
+/* noto-nastaliq-urdu-arabic-400-normal */
+@font-face {
+  font-family: 'Noto Nastaliq Urdu';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./assets/fonts/noto-nastaliq-urdu-arabic-400-normal.woff2') format('woff2');
+}
+:root{--paper:#f8f9f5;--paper-light:#fff;--ink:#202b26;--soft:#5f6962;--faint:#6b756e;--line:#dce1d8;--accent:#2a5b42;--fill:#edf1e9;--serif:'Newsreader',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--urdu:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-underline-offset:4px}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:wait}::selection{background:#d3e3c9}img,svg{max-width:100%}a,button,summary{-webkit-tap-highlight-color:transparent}:focus-visible{outline:2px solid var(--accent);outline-offset:5px}main:focus,main:focus-visible{outline:none}button,a,summary{touch-action:manipulation}[lang='ur']{font-family:var(--urdu)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
