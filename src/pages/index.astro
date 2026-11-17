@@ -1,0 +1,95 @@
+---
+import ExperienceCard from "@components/cards/ExperienceCard.astro";
+import PostCard from "@components/cards/PostCard.astro";
+import ImageGrid from "@components/sections/ImageGrid.astro";
+import SkillCard from "@components/cards/SkillCard.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+
+const unsortedExperience = await getCollection("experience");
+const experience = unsortedExperience
+    .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
+    .slice(0, 3);
+
+const unsortedSkills = await getCollection("skills");
+const skills = unsortedSkills
+    .sort((a, b) => a.data.id - b.data.id)
+    .slice(0, 6);
+
+const posts = (await getCollection("posts"))
+    .sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime())
+    .slice(0, 3);
+
+---
+
+<BaseLayout
+    title={site.title}
+    description={site.description}
+>
+    <header class="hero">
+        <h1>Hi, I'm {site.fullName}</h1>
+        <p>{site.intro}</p>
+    </header>
+
+    <ImageGrid />
+
+    <section class="space-y-4">
+        <h2>My Skills</h2>
+        <p>{site.sections.skills}</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {
+                skills.map((skill) => (
+                    <li>
+                        <SkillCard skill={skill} />
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+
+    <section class="space-y-4">
+        <h2>Recent Experience</h2>
+        <p>{site.sections.experience}</p>
+        <ul class="space-y-4">
+            {
+                experience.map((exp) => (
+                    <li>
+                        {" "}
+                        <ExperienceCard experience={exp} />
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+
+    <section class="space-y-4">
+        <h2>Writing</h2>
+        <p>{site.sections.posts}</p>
+        <ul class="space-y-4">
+            {posts.map((post) => <li><PostCard post={post} /></li>)}
+        </ul>
+    </section>
+
+    <section class="space-y-4">
+        <h2>Contact</h2>
+        <p>Interested in Urdu NLP, speech technology, or production AI? Get in touch.</p>
+        <div class="card space-y-3">
+            <p>
+                <a href={`mailto:${site.links.email}`}>{site.links.email}</a>
+            </p>
+            <p>
+                <a href={site.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+            <p>
+                <a href={site.links.huggingFace} target="_blank" rel="noreferrer">Hugging Face</a>
+            </p>
+            <p>
+                <a href={site.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            </p>
+            <p>
+                <a href={site.links.x} target="_blank" rel="noreferrer">X</a>
+            </p>
+        </div>
+    </section>
+</BaseLayout>

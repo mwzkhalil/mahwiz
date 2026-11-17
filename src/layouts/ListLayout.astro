@@ -1,0 +1,41 @@
+---
+import Head from "@components/layout/Head.astro";
+import NavBar from "@components/layout/NavBar.astro";
+import Logo from "@components/layout/Logo.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    contentType: "Projects" | "Skills" | "Experience" | "Education" | "Certifications" | "Blogs";
+}
+
+const { title, description, contentType } = Astro.props;
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
+
+const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: contentType,
+            item: pageUrl
+        }
+    ]
+};
+---
+
+<html lang="en">
+    <head>
+        <Head title={title} description={description} structuredData={[breadcrumbStructuredData]} />
+    </head>
+    <body class="max-w-7xl mx-auto">
+        <NavBar pathname={pageUrl.pathname}>
+            <Logo />
+        </NavBar>
+        <main class="pt-16 pb-[50vh] w-11/12 md:w-3/4 lg:w-1/2 mx-auto">
+            <slot />
+        </main>
+    </body>
+</html>

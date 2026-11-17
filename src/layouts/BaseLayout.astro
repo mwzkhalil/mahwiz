@@ -1,0 +1,39 @@
+---
+import Head from "@components/layout/Head.astro";
+import NavBar from "@components/layout/NavBar.astro";
+import Logo from "@components/layout/Logo.astro";
+import { personSchema } from "@utils/schema";
+import { site } from "@data/site";
+
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
+
+const websiteStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.fullName,
+    alternateName: site.shortName,
+    description,
+    url: pageUrl,
+    author: personSchema(Astro.site)
+};
+---
+
+<html lang="en">
+    <head>
+        <Head title={title} description={description} structuredData={[websiteStructuredData]} />
+    </head>
+    <body id="portfolio" class="max-w-7xl mx-auto">
+        <NavBar pathname={pageUrl.pathname}>
+            <Logo />
+        </NavBar>
+        <main class="pt-16 pb-[50vh] w-11/12 md:w-3/4 lg:w-1/2 mx-auto">
+            <slot />
+        </main>
+    </body>
+</html>

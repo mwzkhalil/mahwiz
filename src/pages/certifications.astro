@@ -1,0 +1,35 @@
+---
+import ListLayout from "@layouts/ListLayout.astro";
+import { site } from "@data/site";
+import { certifications } from "@data/certifications";
+---
+
+<ListLayout
+    title={`${site.name} | Certifications`}
+    description={site.sections.certifications}
+    contentType="Certifications"
+>
+    <header>
+        <h1>Licenses & Certifications</h1>
+        <p>{site.sections.certifications}</p>
+    </header>
+
+    <section class="space-y-4">
+        {
+            certifications.map((item) => (
+                <article class="card">
+                    <h4>{item.title}</h4>
+                    <p class="faded">{item.issuer} · Issued {item.issued}</p>
+                    {item.credentialId && (
+                        <p class="faded text-sm">Credential ID {item.credentialId}</p>
+                    )}
+                    {item.credentialUrl && (
+                        <a class="text-sm" href={item.credentialUrl} target="_blank" rel="noopener noreferrer">
+                            Show credential
+                        </a>
+                    )}
+                </article>
+            ))
+        }
+    </section>
+</ListLayout>

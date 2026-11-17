@@ -1,0 +1,65 @@
+---
+/**
+ * Shared <head> for every layout: metadata, Open Graph / Twitter cards,
+ * canonical URL, JSON-LD, fonts, global styles and analytics.
+ */
+import { ClientRouter } from "astro:transitions";
+import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import { site } from "@data/site";
+
+import "@fontsource/lilex";
+import "@fontsource/geist-sans";
+import "@fontsource/alice";
+import "@styles/global.css";
+
+interface Props {
+    title: string;
+    description: string;
+    ogImage?: string;
+    ogType?: "website" | "article";
+    structuredData?: Record<string, unknown>[];
+}
+
+const {
+    title,
+    description,
+    ogImage = site.defaultOgImage,
+    ogType = "website",
+    structuredData = []
+} = Astro.props;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site).toString();
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={site.fullName} />
+<link rel="canonical" href={pageUrl} />
+<link rel="icon" href={site.avatar} type="image/jpeg" />
+<link rel="sitemap" href="/sitemap.xml" />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={pageUrl} />
+<meta property="og:image" content={ogImageUrl} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+{
+    structuredData.map((data) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />
+    ))
+}
+
+<Analytics />
+<SpeedInsights />
+<ClientRouter />
